@@ -44,20 +44,27 @@ def render_index(comics: list[dict]) -> str:
     for comic in comics:
         cover = f"/comics/{comic['slug']}/{comic['pages'][0]}" if comic.get("pages") else ""
         reader_href = f"/comics/{esc(comic['slug'])}/#read"
+        pdf_href = f"/comics/{esc(comic['slug'])}/{esc(comic.get('pdf', ''))}" if comic.get("pdf") else ""
+        pdf_button = f'<a class="mini-btn ghost" href="{pdf_href}">PDF</a>' if pdf_href else ""
         cards.append(
-            f'<a class="card" href="{reader_href}" aria-label="Open {esc(comic["person"])} comic fullscreen reader">'
+            '<article class="archive-card">'
+            f'<a class="archive-cover" href="{reader_href}" aria-label="Read {esc(comic["person"])} fullscreen">'
             f'<img src="{esc(cover)}" alt="{esc(comic["person"])} comic cover" loading="lazy">'
-            '<div class="body">'
+            '</a>'
+            '<div class="archive-copy">'
             f'<div class="meta">{esc(comic.get("published_at", ""))} · {esc(comic.get("years", ""))}</div>'
             f'<h3>{esc(comic["person"])}</h3>'
             f'<p>{esc(comic.get("dek", ""))}</p>'
-            '</div></a>'
+            '<div class="archive-actions">'
+            f'<a class="mini-btn primary" href="{reader_href}">Read</a>'
+            f'{pdf_button}'
+            '</div></div></article>'
         )
     latest_button = ""
     if latest:
-        latest_button = f'<a class="btn primary" href="/comics/{esc(latest["slug"])}/#read">Read fullscreen: {esc(latest["person"])}</a>'
+        latest_button = f'<a class="btn primary" href="/comics/{esc(latest["slug"])}/#read">Read latest</a>'
     archive = "".join(cards) if cards else '<div class="empty">No comics published yet.</div>'
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Memento Mori Obituary Comics</title><meta name="description" content="Daily obituary comics about people who faced death and made their work anyway."><link rel="stylesheet" href="/assets/style.css"></head><body><header class="hero"><div class="wrap"><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1><p>Lives that met death early, then used borrowed time to make something that outlived them.</p><div class="rule"></div><div class="btns">{latest_button}<a class="btn" href="#archive">Archive</a></div></div></header><main class="wrap section" id="archive"><h2>Archive</h2><div class="grid">{archive}</div></main><footer>Built for Megabyte’s morning death-reminder ritual. Clean comics, verified lives, no motivational slop.</footer></body></html>'''
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Memento Mori Obituary Comics</title><meta name="description" content="Daily obituary comics about people who faced death and made their work anyway."><link rel="stylesheet" href="/assets/style.css"></head><body><header class="hero"><div class="wrap"><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1><p>Lives that met death early, then used borrowed time to make something that outlived them.</p><div class="rule"></div><div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a></div></div></header><main class="wrap section" id="archive"><div class="section-head"><div><div class="kicker">Small shelf, not doomscroll</div><h2>Archive</h2></div><p>Compact comic/PDF cards. Open a reader only when you choose it.</p></div><div class="archive-grid">{archive}</div></main><footer>Built for Megabyte’s morning death-reminder ritual. Clean comics, verified lives, no motivational slop.</footer></body></html>'''
 
 
 def render_comic(comic: dict) -> str:
