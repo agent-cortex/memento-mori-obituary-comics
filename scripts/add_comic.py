@@ -43,8 +43,9 @@ def render_index(comics: list[dict]) -> str:
     cards: list[str] = []
     for comic in comics:
         cover = f"/comics/{comic['slug']}/{comic['pages'][0]}" if comic.get("pages") else ""
+        reader_href = f"/comics/{esc(comic['slug'])}/#read"
         cards.append(
-            f'<a class="card" href="/comics/{esc(comic["slug"])}/">'
+            f'<a class="card" href="{reader_href}" aria-label="Open {esc(comic["person"])} comic fullscreen reader">'
             f'<img src="{esc(cover)}" alt="{esc(comic["person"])} comic cover" loading="lazy">'
             '<div class="body">'
             f'<div class="meta">{esc(comic.get("published_at", ""))} · {esc(comic.get("years", ""))}</div>'
@@ -54,20 +55,21 @@ def render_index(comics: list[dict]) -> str:
         )
     latest_button = ""
     if latest:
-        latest_button = f'<a class="btn primary" href="/comics/{esc(latest["slug"])}/">Read latest: {esc(latest["person"])}</a>'
+        latest_button = f'<a class="btn primary" href="/comics/{esc(latest["slug"])}/#read">Read fullscreen: {esc(latest["person"])}</a>'
     archive = "".join(cards) if cards else '<div class="empty">No comics published yet.</div>'
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Memento Mori Obituary Comics</title><meta name="description" content="Daily obituary comics about people who faced death and made their work anyway."><link rel="stylesheet" href="/assets/style.css"></head><body><header class="hero"><div class="wrap"><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1><p>Lives that met death early, then used borrowed time to make something that outlived them.</p><div class="rule"></div><div class="btns">{latest_button}<a class="btn" href="#archive">Archive</a></div></div></header><main class="wrap section" id="archive"><h2>Archive</h2><div class="grid">{archive}</div></main><footer>Built for Megabyte’s morning death-reminder ritual. Clean comics, verified lives, no motivational slop.</footer></body></html>'''
 
 
 def render_comic(comic: dict) -> str:
     pages = "".join(
-        f'<figure class="page"><img src="{esc(src)}" alt="Page {i} of {esc(comic["person"])}: {esc(comic["title"])}" loading="lazy"><figcaption>Page {i:02d}</figcaption></figure>'
+        f'<figure class="reader-page" id="page-{i:02d}"><img src="{esc(src)}" alt="Page {i} of {esc(comic["person"])}: {esc(comic["title"])}" loading="{"eager" if i == 1 else "lazy"}"><figcaption>Page {i:02d}</figcaption></figure>'
         for i, src in enumerate(comic.get("pages", []), 1)
     )
     sources = "; ".join(comic.get("sources", []))
-    pdf_button = f'<a class="btn primary" href="{esc(comic["pdf"])}">Download PDF</a>' if comic.get("pdf") else ""
-    contact_button = f'<a class="btn" href="{esc(comic["contact_sheet"])}">Contact sheet</a>' if comic.get("contact_sheet") else ""
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{esc(comic["person"])} — {esc(comic["title"])}</title><meta name="description" content="{esc(comic.get("dek", ""))}"><link rel="stylesheet" href="/assets/style.css"></head><body><div class="wrap topnav"><a class="brand" href="/">Obituary Comics</a><a class="btn" href="/">Archive</a></div><header class="comic-head wrap"><div class="kicker">{esc(comic.get("published_at", ""))} · {esc(comic.get("years", ""))}</div><h1>{esc(comic["title"])}</h1><p class="sub"><strong>{esc(comic["person"])}</strong> — {esc(comic.get("dek", ""))}</p><p class="note">Mortality hinge: {esc(comic.get("mortality_event", ""))}</p><div class="btns">{pdf_button}{contact_button}</div></header><main class="wrap"><section class="pages">{pages}</section></main><footer>{esc(comic.get("closing_line", ""))}<br><span class="small">Sources: {esc(sources)}</span></footer></body></html>'''
+    pdf_button = f'<a class="reader-btn primary" href="{esc(comic["pdf"])}">PDF</a>' if comic.get("pdf") else ""
+    contact_button = f'<a class="reader-btn" href="{esc(comic["contact_sheet"])}">Contact</a>' if comic.get("contact_sheet") else ""
+    fullscreen_button = '<button class="reader-btn" id="fullscreenBtn" type="button">Fullscreen</button>'
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>{esc(comic["person"])} — {esc(comic["title"])}</title><meta name="description" content="{esc(comic.get("dek", ""))}"><link rel="stylesheet" href="/assets/style.css"></head><body class="reader-mode"><nav class="reader-toolbar" aria-label="Reader controls"><a class="reader-btn" href="/">← Archive</a><div class="reader-title">{esc(comic["person"])} · {esc(comic["title"])}</div><div class="reader-actions">{fullscreen_button}{pdf_button}{contact_button}</div></nav><main id="read" class="reader-pages" aria-label="Fullscreen scrollable comic pages">{pages}</main><footer class="reader-footer"><div class="reader-source-line">{esc(comic.get("closing_line", ""))}<br><span class="small">Sources: {esc(sources)}</span></div></footer><script>(function(){{const btn=document.getElementById('fullscreenBtn');const root=document.documentElement;function setState(){{document.body.classList.toggle('fullscreen-active',!!document.fullscreenElement)}}if(btn&&document.fullscreenEnabled){{btn.addEventListener('click',async()=>{{try{{if(document.fullscreenElement){{await document.exitFullscreen();}}else{{await root.requestFullscreen();}}}}catch(e){{console.warn('fullscreen failed',e)}}}});document.addEventListener('fullscreenchange',setState)}}else if(btn){{btn.style.display='none'}}}})();</script></body></html>'''
 
 
 def find_optional(source: Path, patterns: list[str]) -> Path | None:
