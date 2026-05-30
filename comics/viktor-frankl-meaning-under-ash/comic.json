@@ -19,9 +19,72 @@
   "pdf": "viktor-frankl-meaning-under-ash.pdf",
   "contact_sheet": "contact-sheet.jpg",
   "sources": [
-    "Viktor Frankl Institute",
-    "Britannica",
-    "Library of Congress"
+    {
+      "name": "Viktor Frankl Institute",
+      "url": "https://www.viktorfrankl.org/biography.html"
+    },
+    {
+      "name": "Britannica",
+      "url": "https://www.britannica.com/biography/Viktor-Frankl"
+    },
+    {
+      "name": "Open Library",
+      "url": "https://openlibrary.org/works/OL33647113W/Man%27s_search_for_meaning"
+    }
   ],
-  "closing_line": "The camps took his family and a manuscript. The work he rebuilt is what remains."
+  "citable_summary": [
+    "Viktor Emil Frankl (1905–1997) was an Austrian neurologist and psychiatrist who survived Nazi concentration camps and later founded logotherapy.",
+    "Frankl was deported through Theresienstadt and Auschwitz, then sent to Kaufering and Türkheim, where he reconstructed ideas for his work while ill and imprisoned.",
+    "This obituary comic focuses on the loss of family and manuscript, then on Frankl's postwar reconstruction of meaning as clinical theory and testimony."
+  ],
+  "story_notes": [
+    "Frankl's story is not simply a survival anecdote. Before deportation, he was already a psychiatrist concerned with suicide, depression, and the human need for meaning.",
+    "The comic follows the pressure placed on that work by the camps: family members were murdered, his manuscript was lost, and the question of meaning had to survive contact with catastrophe.",
+    "After liberation, Frankl returned to Vienna and wrote the work published in English as Man's Search for Meaning. The page's sources connect his institutional biography, reference biography, and the publication history of the book."
+  ],
+  "page_summaries": [
+    "Opening page introducing Viktor Frankl and the search for meaning under catastrophe.",
+    "Frankl's early medical and psychiatric work before deportation.",
+    "The Nazi camps strip away family, home, and manuscript.",
+    "Auschwitz and transfer to forced labor camps become the story's central mortality pressure.",
+    "Illness and deprivation test whether meaning can remain more than an idea.",
+    "Frankl reconstructs thought under conditions designed to erase personhood.",
+    "Liberation leaves grief and the task of rebuilding the work.",
+    "Closing page on logotherapy and the book that carried the testimony forward."
+  ],
+  "closing_line": "The camps took his family and a manuscript. The work he rebuilt is what remains.",
+  "page_dimensions": {
+    "pages/01-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/02-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/03-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/04-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/05-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/06-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/07-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ],
+    "pages/08-viktor-frankl-meaning-under-ash.jpg": [
+      768,
+      1408
+    ]
+  }
 }

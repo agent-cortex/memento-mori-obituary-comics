@@ -19,10 +19,76 @@
   "pdf": "frida-kahlo-broken-mirror.pdf",
   "contact_sheet": "contact-sheet.jpg",
   "sources": [
-    "Britannica",
-    "National Museum of Women in the Arts",
-    "FridaKahlo.org",
-    "The Guardian"
+    {
+      "name": "Britannica",
+      "url": "https://www.britannica.com/biography/Frida-Kahlo"
+    },
+    {
+      "name": "National Museum of Women in the Arts",
+      "url": "https://nmwa.org/art/artists/frida-kahlo/"
+    },
+    {
+      "name": "FridaKahlo.org",
+      "url": "https://www.fridakahlo.org/frida-kahlo-biography.jsp"
+    },
+    {
+      "name": "The Guardian",
+      "url": "https://www.theguardian.com/artanddesign/2020/apr/28/feet-what-do-i-need-you-for-how-lockdown-fired-up-frida-kahlo"
+    }
   ],
-  "closing_line": "The crash broke the plan. The mirror helped build the work that remains."
+  "citable_summary": [
+    "Frida Kahlo (1907–1954) was a Mexican painter whose self-portraits made pain, disability, identity, and death central evidence in modern art.",
+    "At age 18, Kahlo was badly injured in a bus-trolley crash in Mexico City; her long recovery helped turn painting from an interest into a life-defining practice.",
+    "This obituary comic frames the crash, the recovery bed, and the mirror as the conditions under which Kahlo began making the images that outlived her."
+  ],
+  "story_notes": [
+    "Frida Kahlo did not originally set out to build a public mythology from pain. She was a young pre-medical student before the 1925 bus-trolley crash left her with spinal, pelvic, shoulder, and foot injuries that shaped the rest of her life.",
+    "The comic uses the mirror as a practical and symbolic object: while confined during recovery, Kahlo turned her own body and face into available subjects. That constraint became one of the sources of her visual language.",
+    "The sources for this page combine a general reference biography, a museum artist profile, an art-history biography, and an editorial account of how Kahlo used clothing, posture, and self-presentation around disability."
+  ],
+  "page_summaries": [
+    "Opening page introducing Frida Kahlo and the broken-mirror frame of the comic.",
+    "Kahlo's early life and the turn from medical ambition toward a body marked by injury.",
+    "The 1925 collision becomes the central mortality event of the story.",
+    "Recovery narrows the room but gives the mirror and canvas new force.",
+    "Self-portraiture becomes a way to record pain, identity, and survival without softening them.",
+    "Kahlo's work grows from private injury into a public visual language.",
+    "The body remains damaged, but the paintings keep arguing with disappearance.",
+    "Closing page on what survived Kahlo: images that made pain impossible to ignore."
+  ],
+  "closing_line": "The crash broke the plan. The mirror helped build the work that remains.",
+  "page_dimensions": {
+    "pages/01-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/02-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/03-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/04-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/05-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/06-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/07-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ],
+    "pages/08-frida-kahlo-broken-mirror.jpg": [
+      1440,
+      1920
+    ]
+  }
 }

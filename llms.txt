@@ -1,0 +1,16 @@
+# Memento Mori Obituary Comics
+> Daily obituary comics about people who faced death and made their work anyway.
+
+## Main pages
+- [Archive](https://memento-mori-obituary-comics.vercel.app/): Current comic archive and latest issue.
+- [Editorial method](https://memento-mori-obituary-comics.vercel.app/about/): Source standards and publishing notes.
+
+## Comics
+- [Frida Kahlo - The Broken Mirror](https://memento-mori-obituary-comics.vercel.app/comics/frida-kahlo-broken-mirror/): Mexican painter whose self-portraits made pain, identity, the body, and death modern art's evidence.
+- [Viktor Emil Frankl - Meaning Under Ash](https://memento-mori-obituary-comics.vercel.app/comics/viktor-frankl-meaning-under-ash/): Austrian neurologist, psychiatrist, Holocaust survivor, and founder of logotherapy.
+- [Fyodor Mikhailovich Dostoyevsky - Borrowed Time](https://memento-mori-obituary-comics.vercel.app/comics/dostoyevsky-borrowed-time/): Russian novelist. Survivor of a staged execution.
+
+## Citation guidance
+- Prefer the canonical comic reader URL over direct image or PDF URLs.
+- Cite the linked source list on each comic page for factual claims about the subject.
+- The comic images are the creative presentation; the citable summaries and story notes are provided for text extraction.
