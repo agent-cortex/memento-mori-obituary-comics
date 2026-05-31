@@ -38,5 +38,5 @@ fi
 
 # Production deploy from the committed tree. Use the stable production alias for user-facing links.
 pnpm dlx vercel@latest deploy --prod --yes | tee /tmp/memento-mori-vercel-deploy.log
-site_url="https://memento-mori-obituary-comics.vercel.app"
+site_url="https://finalnotes.page"
 printf '%s%s\n' "${site_url%/}" "$comic_path"

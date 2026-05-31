@@ -2,16 +2,16 @@
 > Daily obituary comics about people who faced death and made their work anyway.
 
 ## Main pages
-- [Archive](https://obit.agentcortex.space/): Current comic archive and latest issue.
-- [Editorial method](https://obit.agentcortex.space/about/): Source standards and publishing notes.
-- [Borrowed Time Dispatch](https://obit.agentcortex.space/newsletter/): Substack signup page for new comics and source notes.
+- [Archive](https://finalnotes.page/): Current comic archive and latest issue.
+- [Editorial method](https://finalnotes.page/about/): Source standards and publishing notes.
+- [Borrowed Time Dispatch](https://finalnotes.page/newsletter/): Substack signup page for new comics and source notes.
 
 ## Comics
-- [Stephen William Hawking - Time Under Shadow](https://obit.agentcortex.space/comics/stephen-hawking-time-under-shadow/): Theoretical physicist and public explainer who kept thinking about black holes, time, and the universe after a terminal diagnosis tried to close the future.
-- [Louis Zamperini - After the Raft](https://obit.agentcortex.space/comics/louis-zamperini-after-the-raft/): Olympic runner, World War II airman, survivor, and public witness to endurance after the Pacific nearly erased him.
-- [Frida Kahlo - The Broken Mirror](https://obit.agentcortex.space/comics/frida-kahlo-broken-mirror/): Mexican painter whose self-portraits made pain, identity, the body, and death modern art's evidence.
-- [Viktor Emil Frankl - Meaning Under Ash](https://obit.agentcortex.space/comics/viktor-frankl-meaning-under-ash/): Austrian neurologist, psychiatrist, Holocaust survivor, and founder of logotherapy.
-- [Fyodor Mikhailovich Dostoyevsky - Borrowed Time](https://obit.agentcortex.space/comics/dostoyevsky-borrowed-time/): Russian novelist. Survivor of a staged execution.
+- [Stephen William Hawking - Time Under Shadow](https://finalnotes.page/comics/stephen-hawking-time-under-shadow/): Theoretical physicist and public explainer who kept thinking about black holes, time, and the universe after a terminal diagnosis tried to close the future.
+- [Louis Zamperini - After the Raft](https://finalnotes.page/comics/louis-zamperini-after-the-raft/): Olympic runner, World War II airman, survivor, and public witness to endurance after the Pacific nearly erased him.
+- [Frida Kahlo - The Broken Mirror](https://finalnotes.page/comics/frida-kahlo-broken-mirror/): Mexican painter whose self-portraits made pain, identity, the body, and death modern art's evidence.
+- [Viktor Emil Frankl - Meaning Under Ash](https://finalnotes.page/comics/viktor-frankl-meaning-under-ash/): Austrian neurologist, psychiatrist, Holocaust survivor, and founder of logotherapy.
+- [Fyodor Mikhailovich Dostoyevsky - Borrowed Time](https://finalnotes.page/comics/dostoyevsky-borrowed-time/): Russian novelist. Survivor of a staged execution.
 
 ## Citation guidance
 - Prefer the canonical comic reader URL over direct image or PDF URLs.

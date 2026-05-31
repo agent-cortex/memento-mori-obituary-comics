@@ -7,7 +7,7 @@ Use this when creating the Substack publication and connecting it to the static 
 - Create a Substack publication named `Borrowed Time Dispatch`.
 - Use the connected publication URL: `https://finalnotes.substack.com`.
 - Start from `docs/newsletter/substack-publication-profile.md` for the publication profile, About page, welcome email, and paid-tier draft.
-- Point the public site back to `https://obit.agentcortex.space/newsletter/`.
+- Point the public site back to `https://finalnotes.page/newsletter/`.
 - Add the live site, archive, and editorial method links to the Substack About page.
 - Keep the first issue free so the public archive, the Substack list, and the site signup can all build trust before a paid ask.
 
@@ -27,7 +27,7 @@ Then deploy and verify:
 - `/newsletter/` renders the Substack embed instead of the placeholder.
 - The homepage `Borrowed Time Dispatch` button opens the Substack publication.
 - A comic reader page shows the newsletter CTA after the PDF section.
-- `sitemap.xml` includes `https://obit.agentcortex.space/newsletter/`.
+- `sitemap.xml` includes `https://finalnotes.page/newsletter/`.
 
 ## First Issue
 

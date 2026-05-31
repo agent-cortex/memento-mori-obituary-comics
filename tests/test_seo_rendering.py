@@ -10,7 +10,7 @@ from scripts import verify_substack_launch
 
 
 ZEC_ADDRESS = "u1cyxqx2za9c7g2h7tjz0nn7rdf5fgykmqgw4eke7fvfa9pd7lynjkqfeq4hzd3tkys4pvku5xnmmwclm77jv9ljkhdefrvzc6pgehc63rcnmylqlxt0fmz55t6wdp6dyk5w2hzx06hs93xun5smexvwn04ju4ppy54gx477ftequajh0t"
-SITE_URL = "https://obit.agentcortex.space"
+SITE_URL = "https://finalnotes.page"
 
 
 SAMPLE_COMIC = {

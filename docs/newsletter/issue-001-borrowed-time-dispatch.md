@@ -16,31 +16,31 @@ This first note is a quiet table of contents for the archive so far.
 
 A theoretical physicist receives a terminal diagnosis around his 21st birthday. The future narrows, then somehow expands into decades of work on black holes, time, and public science.
 
-Read it: https://obit.agentcortex.space/comics/stephen-hawking-time-under-shadow/
+Read it: https://finalnotes.page/comics/stephen-hawking-time-under-shadow/
 
 ### Louis Zamperini: After The Raft
 
 An Olympic runner survives a Pacific crash, 47 days adrift, and nearly two years as a prisoner of war. The later work is testimony, endurance, and forgiveness under pressure.
 
-Read it: https://obit.agentcortex.space/comics/louis-zamperini-after-the-raft/
+Read it: https://finalnotes.page/comics/louis-zamperini-after-the-raft/
 
 ### Frida Kahlo: The Broken Mirror
 
 A bus crash breaks the old plan. Recovery gives Kahlo the bed, the mirror, and the hard evidence of her own body.
 
-Read it: https://obit.agentcortex.space/comics/frida-kahlo-broken-mirror/
+Read it: https://finalnotes.page/comics/frida-kahlo-broken-mirror/
 
 ### Viktor Frankl: Meaning Under Ash
 
 The camps take his family and a manuscript. He rebuilds the work into a public argument about meaning under conditions that should have erased it.
 
-Read it: https://obit.agentcortex.space/comics/viktor-frankl-meaning-under-ash/
+Read it: https://finalnotes.page/comics/viktor-frankl-meaning-under-ash/
 
 ### Fyodor Dostoyevsky: Borrowed Time
 
 A staged execution turns into reprieve at the last possible second. The remaining life becomes fiction obsessed with guilt, grace, punishment, and the soul under threat.
 
-Read it: https://obit.agentcortex.space/comics/dostoyevsky-borrowed-time/
+Read it: https://finalnotes.page/comics/dostoyevsky-borrowed-time/
 
 ## Why This Exists
 
@@ -58,6 +58,6 @@ Reply with a name you think belongs in this archive. The best suggestions are de
 
 The public archive is here:
 
-https://obit.agentcortex.space/
+https://finalnotes.page/
 
 Paid subscriptions will help fund research time, comic production, and source maintenance once the dispatch has a regular rhythm. Crypto support also lives on the site for readers and agents who prefer that path.
