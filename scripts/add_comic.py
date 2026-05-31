@@ -1350,7 +1350,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         for item in source_items(comic)
     )
     pdf_download = f'<p><a class="mini-btn primary" href="{esc(media_asset_path(comic, comic["pdf"]))}">Download the PDF</a></p>' if comic.get("pdf") else ""
-    contact_download = f'<p><a class="mini-btn ghost" href="{esc(media_asset_path(comic, comic["contact_sheet"]))}">View Contact Sheet</a></p>' if comic.get("contact_sheet") else ""
+    contact_download = ""
     comic_json_escaped = json.dumps(comic).replace("<", "\\u003c")
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">{head}</head>'

@@ -122,7 +122,7 @@ class SeoRenderingTests(unittest.TestCase):
         self.assertIn('href="/media/comics/sample-comic/sample-comic.pdf"', html)
         self.assertIn('<a class="reader-btn" href="/media/comics/sample-comic/sample-comic.pdf"><svg', html)
         self.assertNotIn('<a class="reader-btn primary" href="/media/comics/sample-comic/sample-comic.pdf"><svg', html)
-        self.assertIn('href="/media/comics/sample-comic/contact-sheet.jpg"', html)
+        self.assertNotIn('href="/media/comics/sample-comic/contact-sheet.jpg"', html)
         self.assertIn(f'"image": "{SITE_URL}/media/comics/sample-comic/pages/01-sample-comic.jpg"', html)
         self.assertIn('"@type": "CreativeWork"', html)
         self.assertIn('"@type": "BreadcrumbList"', html)
