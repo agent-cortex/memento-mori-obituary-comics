@@ -42,6 +42,38 @@ On this machine, older ignored binaries may still exist locally. If you omit `--
 
 The site is intentionally boring infrastructure: static HTML and Vercel Functions. Comic binaries live in private Vercel Blob storage and are served through stable `/media/comics/...` site URLs with CDN cache headers. No database. No auth for the public reader.
 
+## Substack newsletter
+
+The public newsletter surface is `Borrowed Time Dispatch` at:
+
+```text
+/newsletter/
+```
+
+The connected Substack publication is:
+
+```text
+https://finalnotes.substack.com
+```
+
+Render and verify the connected newsletter artifacts with:
+
+```bash
+python scripts/add_comic.py --render-only
+python scripts/verify_substack_launch.py --url https://finalnotes.substack.com
+pnpm test
+```
+
+The generator also accepts `SUBSTACK_URL=...` as an override for staging or future publication changes. When the URL is configured, `/newsletter/` embeds the Substack signup iframe and the newsletter buttons open the publication URL. Substack's native embed code can be found in the publication settings under Growth features.
+
+Launch copy and first-issue materials live in:
+
+```text
+docs/newsletter/substack-publication-profile.md
+docs/newsletter/substack-launch-checklist.md
+docs/newsletter/issue-001-borrowed-time-dispatch.md
+```
+
 ## Vercel Blob comic assets
 
 Production deployments must set:

@@ -12,6 +12,7 @@ import argparse
 import datetime as dt
 import html
 import json
+import os
 import re
 import shutil
 from urllib.parse import urlencode
@@ -24,6 +25,8 @@ SITE_URL = "https://obit.agentcortex.space"
 SITE_NAME = "Memento Mori Obituary Comics"
 SITE_DESCRIPTION = "Daily obituary comics about people who faced death and made their work anyway."
 SUPPORT_ZEC_ADDRESS = "u1cyxqx2za9c7g2h7tjz0nn7rdf5fgykmqgw4eke7fvfa9pd7lynjkqfeq4hzd3tkys4pvku5xnmmwclm77jv9ljkhdefrvzc6pgehc63rcnmylqlxt0fmz55t6wdp6dyk5w2hzx06hs93xun5smexvwn04ju4ppy54gx477ftequajh0t"
+NEWSLETTER_NAME = "Borrowed Time Dispatch"
+SUBSTACK_URL = "https://finalnotes.substack.com"
 PUBLISHER = {
     "@type": "Organization",
     "name": SITE_NAME,
@@ -138,6 +141,35 @@ def json_script(data: Any) -> str:
 def support_button(css_class: str = "btn") -> str:
     svg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><path d="M12 21a9 9 0 1 1 9-9 9 9 0 0 1-9 9zm0-11.5a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 12 9.5zm0 4.5v3"></path></svg>'
     return f'<button class="{css_class} support-open-btn" type="button" onclick="openSupportModal()">{svg}Support</button>'
+
+
+def newsletter_href() -> str:
+    configured = os.environ.get("SUBSTACK_URL", SUBSTACK_URL).strip().rstrip("/")
+    return configured if configured else "/newsletter/"
+
+
+def newsletter_link_attrs() -> str:
+    if newsletter_href() == "/newsletter/":
+        return 'href="/newsletter/"'
+    return f'href="{esc(newsletter_href())}" target="_blank" rel="noopener noreferrer"'
+
+
+def substack_embed_url() -> str:
+    href = newsletter_href()
+    return f"{href}/embed" if href != "/newsletter/" else ""
+
+
+def newsletter_signup(css_class: str = "newsletter-signup") -> str:
+    return (
+        f'<section class="{esc(css_class)}" aria-label="Newsletter signup">'
+        '<div class="newsletter-copy">'
+        '<div class="kicker">Newsletter</div>'
+        f'<h2>{esc(NEWSLETTER_NAME)}</h2>'
+        '<p>Get the next obituary comic by email.</p>'
+        '</div>'
+        f'<a class="mini-btn primary newsletter-link" {newsletter_link_attrs()}>Start with Substack</a>'
+        '</section>'
+    )
 
 
 def support_modal() -> str:
@@ -525,6 +557,19 @@ def about_schema() -> list[dict[str, Any]]:
             "name": "About Memento Mori Obituary Comics",
             "url": f"{SITE_URL}/about/",
             "description": "Editorial method and source standards for Memento Mori Obituary Comics.",
+            "publisher": PUBLISHER,
+        }
+    ]
+
+
+def newsletter_schema() -> list[dict[str, Any]]:
+    return [
+        {
+            "@type": "WebPage",
+            "@id": f"{SITE_URL}/newsletter/#newsletter",
+            "name": NEWSLETTER_NAME,
+            "url": f"{SITE_URL}/newsletter/",
+            "description": "Substack newsletter for new Memento Mori Obituary Comics.",
             "publisher": PUBLISHER,
         }
     ]
@@ -1250,10 +1295,11 @@ def render_index(comics: list[dict[str, Any]]) -> str:
         f'<div class="rule-container"><div class="rule-line"></div><div class="rule-icon">{hourglass_svg}</div><div class="rule-line"></div></div>'
         f'{latest_feature}'
         f'<div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a></div>'
-        '<div class="hero-secondary-links"><a href="/about/">Editorial method</a><button type="button" class="hero-link support-open-btn" onclick="openSupportModal()">Support</button></div>'
+        '<div class="hero-secondary-links"><a href="/about/">Editorial method</a><a href="/newsletter/">Newsletter</a><button type="button" class="hero-link support-open-btn" onclick="openSupportModal()">Support</button></div>'
         '</div></header><main class="wrap section" id="archive"><div class="section-head"><div><div class="kicker">Small shelf, not doomscroll</div><h2>Archive</h2></div>'
         '<p>Compact comic/PDF cards. Open a reader only when you choose it.</p></div>'
         f'<div class="archive-grid">{archive}</div></main>'
+        f'{newsletter_signup()}'
         '<section class="wrap section homepage-rituals" aria-label="Reader rituals">'
         '<div class="section-head"><div><div class="kicker">Optional ritual</div><h2>Before You Read</h2></div><p>For readers who want the slower morning ritual after they have seen the archive.</p></div>'
         '<button class="quote-widget" id="quoteWidget" onclick="cycleQuote()" type="button" aria-label="Cycle philosophical quote"><p class="quote-text" id="quoteText">"You could leave life right now. Let that determine what you do and say and think."</p><p class="quote-author" id="quoteAuthor">Marcus Aurelius</p><div class="quote-tip">Reflect further</div></button>'
@@ -1379,6 +1425,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<h2>Download PDF</h2>'
         f'{pdf_download}'
         f'{contact_download}'
+        f'{newsletter_signup("newsletter-signup reader-newsletter")}'
         f'</section>{next_teaser}</footer>'
         f'<button class="hotkeys-helper-btn" type="button" onclick="toggleHotkeysPanel()" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: middle;"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line><line x1="10" y1="12" x2="14" y2="12"></line></svg></button>'
         '<div class="hotkeys-hud-panel" id="hotkeysPanel" hidden>'
@@ -1391,6 +1438,54 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<div class="hotkey-row"><span class="hotkey-key">F</span> <span class="hotkey-action">Fullscreen</span></div>'
         '<button class="mini-btn ghost" type="button" onclick="toggleHotkeysPanel()" style="width:100%; margin-top:10px; font-size:9px;">Close</button>'
         f'</div>{support_modal()}{pdf_support_modal()}<script>window.comicData = {comic_json_escaped};</script><script>{reader_script()}</script></body></html>'
+    )
+
+
+def render_newsletter(comics: list[dict[str, Any]]) -> str:
+    latest = comics[0] if comics else None
+    embed_url = substack_embed_url()
+    open_substack_link = f'<a class="btn" {newsletter_link_attrs()}>Open Substack</a>' if embed_url else ""
+    if embed_url:
+        signup_panel = (
+            '<div class="newsletter-embed-wrap">'
+            f'<iframe class="newsletter-embed" src="{esc(embed_url)}" title="{esc(NEWSLETTER_NAME)} Substack signup" loading="lazy"></iframe>'
+            '</div>'
+        )
+    else:
+        signup_panel = (
+            '<div class="newsletter-placeholder">'
+            '<!-- Add your Substack URL in scripts/add_comic.py -->'
+            '<div class="kicker">Substack setup</div>'
+            '<h2>Substack is ready to connect</h2>'
+            '<p>The Substack edition is being connected. Check back soon for new comics, source notes, and weekly memento mori reading.</p>'
+            '</div>'
+        )
+    head = meta_head(
+        f"{NEWSLETTER_NAME} | {SITE_NAME}",
+        "A Substack dispatch for new obituary comics, source notes, and weekly memento mori reading.",
+        abs_url("/newsletter/"),
+        first_image_url(latest) if latest else "",
+        "website",
+        newsletter_schema(),
+    )
+    return (
+        f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        f'<meta name="viewport" content="width=device-width, initial-scale=1">{head}</head>'
+        '<body data-page-type="newsletter"><div class="bg-particles" id="particles-js"></div>'
+        '<main class="wrap section newsletter-page">'
+        '<div class="newsletter-hero">'
+        '<div class="kicker">Newsletter</div>'
+        f'<h1>{esc(NEWSLETTER_NAME)}</h1>'
+        '<p>Get the next obituary comic by email, plus short source notes and one useful reflection for the week.</p>'
+        '<div class="newsletter-page-actions">'
+        '<a class="btn primary" href="/">Back to archive</a>'
+        f'{open_substack_link}'
+        '</div>'
+        '</div>'
+        f'{signup_panel}'
+        '</main>'
+        '<footer>Clean comics, verified lives, no motivational slop. <a href="/">Archive</a>.</footer>'
+        '</body></html>'
     )
 
 
@@ -1442,6 +1537,7 @@ def render_sitemap(comics: list[dict[str, Any]]) -> str:
     urls = [
         (abs_url("/"), latest),
         (abs_url("/about/"), latest),
+        (abs_url("/newsletter/"), latest),
         *[(comic_url(comic), comic.get("published_at", latest)) for comic in comics],
     ]
     entries = "".join(
@@ -1491,6 +1587,7 @@ def render_llms(comics: list[dict[str, Any]]) -> str:
 ## Main pages
 - [Archive]({SITE_URL}/): Current comic archive and latest issue.
 - [Editorial method]({SITE_URL}/about/): Source standards and publishing notes.
+- [Borrowed Time Dispatch]({SITE_URL}/newsletter/): Substack signup page for new comics and source notes.
 
 ## Comics
 {comic_links}
@@ -1520,6 +1617,9 @@ def render_site(comics: list[dict[str, Any]]) -> list[dict[str, Any]]:
     about_dir = ROOT / "about"
     about_dir.mkdir(exist_ok=True)
     (about_dir / "index.html").write_text(render_about(normalized), encoding="utf-8")
+    newsletter_dir = ROOT / "newsletter"
+    newsletter_dir.mkdir(exist_ok=True)
+    (newsletter_dir / "index.html").write_text(render_newsletter(normalized), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(render_sitemap(normalized), encoding="utf-8")
     (ROOT / "robots.txt").write_text(render_robots(), encoding="utf-8")
     (ROOT / "llms.txt").write_text(render_llms(normalized), encoding="utf-8")
