@@ -14,6 +14,7 @@ import html
 import json
 import re
 import shutil
+from urllib.parse import urlencode
 from pathlib import Path
 from typing import Any
 from xml.sax.saxutils import escape as xml_escape
@@ -28,6 +29,11 @@ PUBLISHER = {
     "name": SITE_NAME,
     "url": f"{SITE_URL}/",
 }
+IMAGE_OPTIMIZATION_WIDTHS = [384, 640, 768, 1080, 1440, 1920]
+IMAGE_OPTIMIZATION_QUALITY = 75
+ARCHIVE_IMAGE_SIZES = "(min-width: 900px) 25vw, 100vw"
+READER_IMAGE_SIZES = "(min-width: 900px) 80vw, 100vw"
+NEXT_IMAGE_SIZES = "(min-width: 900px) 240px, 45vw"
 
 
 def esc(value: object) -> str:
@@ -50,6 +56,51 @@ def abs_url(path: str = "") -> str:
 
 def comic_path(comic: dict[str, Any]) -> str:
     return f"/comics/{comic['slug']}/"
+
+
+def comic_blob_path(comic: dict[str, Any], asset_path: str) -> str:
+    return f"comics/{comic['slug']}/{asset_path.lstrip('/')}"
+
+
+def media_asset_path(comic: dict[str, Any], asset_path: str) -> str:
+    return f"/media/{comic_blob_path(comic, asset_path)}"
+
+
+def optimized_image_widths(comic: dict[str, Any], src: str) -> list[int]:
+    size = image_dimensions(comic, src)
+    if not size:
+        return IMAGE_OPTIMIZATION_WIDTHS
+
+    intrinsic_width = size[0]
+    widths = [width for width in IMAGE_OPTIMIZATION_WIDTHS if width <= intrinsic_width]
+    return widths or [IMAGE_OPTIMIZATION_WIDTHS[0]]
+
+
+def optimized_image_path(comic: dict[str, Any], src: str, width: int | None = None) -> str:
+    widths = optimized_image_widths(comic, src)
+    target_width = width or widths[-1]
+    source_path = media_asset_path(comic, src)
+    query = urlencode({
+        "url": source_path,
+        "w": target_width,
+        "q": IMAGE_OPTIMIZATION_QUALITY,
+    })
+    return f"/_vercel/image?{query}"
+
+
+def optimized_image_srcset(comic: dict[str, Any], src: str) -> str:
+    return ", ".join(
+        f"{optimized_image_path(comic, src, width)} {width}w"
+        for width in optimized_image_widths(comic, src)
+    )
+
+
+def optimized_image_attrs(comic: dict[str, Any], src: str, sizes: str) -> str:
+    return (
+        f' srcset="{esc(optimized_image_srcset(comic, src))}"'
+        f' sizes="{esc(sizes)}"'
+        f"{image_attrs(comic, src)}"
+    )
 
 
 def comic_url(comic: dict[str, Any]) -> str:
@@ -182,7 +233,7 @@ def first_image_path(comic: dict[str, Any]) -> str:
     pages = comic.get("pages") or []
     if not pages:
         return ""
-    return f"/comics/{comic['slug']}/{pages[0]}"
+    return media_asset_path(comic, pages[0])
 
 
 def first_image_url(comic: dict[str, Any]) -> str:
@@ -1051,12 +1102,13 @@ def render_index(comics: list[dict[str, Any]]) -> str:
     latest = comics[0] if comics else None
     cards: list[str] = []
     for index, comic in enumerate(comics):
-        cover = first_image_path(comic)
+        cover_src = comic["pages"][0] if comic.get("pages") else ""
+        cover = optimized_image_path(comic, cover_src) if cover_src else ""
         page_href = comic_path(comic)
         reader_href = f"{page_href}#read"
-        pdf_href = f"/comics/{esc(comic['slug'])}/{esc(comic.get('pdf', ''))}" if comic.get("pdf") else ""
+        pdf_href = media_asset_path(comic, comic["pdf"]) if comic.get("pdf") else ""
         pdf_button = f'<a class="mini-btn ghost" href="{pdf_href}">PDF</a>' if pdf_href else ""
-        image_extra = image_attrs(comic, comic["pages"][0]) if comic.get("pages") else ""
+        image_extra = optimized_image_attrs(comic, cover_src, ARCHIVE_IMAGE_SIZES) if cover_src else ""
         priority = ' fetchpriority="high"' if index == 0 else ""
         loading = "eager" if index == 0 else "lazy"
         mortality_event = comic.get("mortality_event", "")
@@ -1138,18 +1190,19 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         priority = ' fetchpriority="high"' if index == 1 else ""
         figures.append(
             f'<figure class="reader-page" id="page-{index:02d}">'
-            f'<img src="{esc(src)}" alt="{esc(alt)}"{image_attrs(comic, src)} loading="{loading}"{priority}>'
+            f'<img src="{esc(optimized_image_path(comic, src))}" alt="{esc(alt)}"{optimized_image_attrs(comic, src, READER_IMAGE_SIZES)} loading="{loading}"{priority}>'
             f'<figcaption>{esc(summary or f"Page {index:02d}")}</figcaption></figure>'
         )
     pages = "".join(figures)
     sources_html = "".join(f'<span class="source-chip">{esc(item["name"])}</span>' for item in source_items(comic))
-    pdf_button = f'<a class="reader-btn primary" href="{esc(comic["pdf"])}">PDF</a>' if comic.get("pdf") else ""
-    contact_button = f'<a class="reader-btn" href="{esc(comic["contact_sheet"])}">Contact</a>' if comic.get("contact_sheet") else ""
+    pdf_button = f'<a class="reader-btn primary" href="{esc(media_asset_path(comic, comic["pdf"]))}">PDF</a>' if comic.get("pdf") else ""
+    contact_button = f'<a class="reader-btn" href="{esc(media_asset_path(comic, comic["contact_sheet"]))}">Contact</a>' if comic.get("contact_sheet") else ""
     fullscreen_button = '<button class="reader-btn" id="fullscreenBtn" type="button">Fullscreen</button>'
     next_teaser = ""
     if next_comic:
-        next_cover = first_image_path(next_comic)
-        next_image_extra = image_attrs(next_comic, next_comic["pages"][0]) if next_comic.get("pages") else ""
+        next_cover_src = next_comic["pages"][0] if next_comic.get("pages") else ""
+        next_cover = optimized_image_path(next_comic, next_cover_src) if next_cover_src else ""
+        next_image_extra = optimized_image_attrs(next_comic, next_cover_src, NEXT_IMAGE_SIZES) if next_cover_src else ""
         next_teaser = (
             '<div class="next-comic-teaser"><div class="next-kicker">Up Next</div>'
             f'<a href="/comics/{esc(next_comic["slug"])}/#read" class="next-comic-link">'
@@ -1167,7 +1220,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         if item.get("url") else f"<li>{esc(item['name'])}</li>"
         for item in source_items(comic)
     )
-    pdf_download = f'<p><a class="mini-btn primary" href="{esc(comic["pdf"])}">Download the PDF</a></p>' if comic.get("pdf") else ""
+    pdf_download = f'<p><a class="mini-btn primary" href="{esc(media_asset_path(comic, comic["pdf"]))}">Download the PDF</a></p>' if comic.get("pdf") else ""
     comic_json_escaped = json.dumps(comic).replace("<", "\\u003c")
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">{head}</head>'

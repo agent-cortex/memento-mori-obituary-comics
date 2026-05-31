@@ -39,6 +39,18 @@ export function resolveComicPdfPath(comic, rootDir) {
   return path.join(rootDir, "comics", comic.slug, comic.pdf);
 }
 
+export function resolveComicPdfBlobPath(comic) {
+  if (!comic?.slug || !comic?.pdf) {
+    throw new Error("Comic PDF metadata is incomplete");
+  }
+
+  if (path.basename(comic.pdf) !== comic.pdf) {
+    throw new Error("Unsafe PDF filename");
+  }
+
+  return path.posix.join("comics", comic.slug, comic.pdf);
+}
+
 export function buildPdfHeaders(comic, contentLength) {
   const filename = path.basename(comic.pdf);
   return {

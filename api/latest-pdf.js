@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { get as getBlob } from "@vercel/blob";
 import { facilitator } from "@coinbase/x402";
 import { HTTPFacilitatorClient } from "@x402/core/server";
 import { ExactEvmScheme } from "@x402/evm/exact/server";
@@ -12,7 +13,7 @@ import {
   buildPdfHeaders,
   findLatestComicWithPdf,
   jsonError,
-  resolveComicPdfPath,
+  resolveComicPdfBlobPath,
 } from "./latest-pdf.helpers.js";
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -30,6 +31,7 @@ function isEvmAddress(value) {
 function createApp(env = process.env, options = {}) {
   const app = new Hono();
   const payTo = env.X402_PAY_TO;
+  const blobClient = options.blobClient || { get: getBlob };
   const facilitatorClient = options.facilitatorClient || new HTTPFacilitatorClient(facilitator);
   const syncFacilitatorOnStart = options.syncFacilitatorOnStart ?? true;
 
@@ -68,11 +70,15 @@ function createApp(env = process.env, options = {}) {
       try {
         const comics = JSON.parse(await readFile(COMICS_JSON_PATH, "utf8"));
         const latestComic = findLatestComicWithPdf(comics);
-        const pdfPath = resolveComicPdfPath(latestComic, ROOT_DIR);
-        const pdf = await readFile(pdfPath);
+        const pdfBlobPath = resolveComicPdfBlobPath(latestComic);
+        const pdf = await blobClient.get(pdfBlobPath, { access: "private" });
 
-        return new Response(pdf, {
-          headers: buildPdfHeaders(latestComic, pdf.byteLength),
+        if (!pdf || pdf.statusCode !== 200) {
+          throw new Error(`Latest PDF Blob not found: ${pdfBlobPath}`);
+        }
+
+        return new Response(pdf.stream, {
+          headers: buildPdfHeaders(latestComic, pdf.blob.size),
         });
       } catch (error) {
         console.error("latest-pdf endpoint failed", error);

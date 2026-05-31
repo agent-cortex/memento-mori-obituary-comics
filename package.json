@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "blob:dry-run": "node scripts/upload_comics_to_blob.js --dry-run",
+    "blob:upload": "node scripts/upload_comics_to_blob.js",
     "test": "node --test tests/*.test.js && python3 -m unittest tests/test_seo_rendering.py"
   },
   "dependencies": {

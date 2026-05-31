@@ -4,6 +4,7 @@ import test from "node:test";
 
 import {
   findLatestComicWithPdf,
+  resolveComicPdfBlobPath,
   resolveComicPdfPath,
 } from "../api/latest-pdf.helpers.js";
 
@@ -48,4 +49,18 @@ test("resolveComicPdfPath returns the expected in-comic PDF path", () => {
   );
 
   assert.equal(resolved, path.join("/repo", "comics", "safe", "comic.pdf"));
+});
+
+test("resolveComicPdfBlobPath rejects traversal PDF names", () => {
+  assert.throws(
+    () => resolveComicPdfBlobPath({ slug: "safe", pdf: "../secret.pdf" }),
+    /Unsafe PDF filename/,
+  );
+});
+
+test("resolveComicPdfBlobPath returns the expected private Blob pathname", () => {
+  assert.equal(
+    resolveComicPdfBlobPath({ slug: "safe", pdf: "comic.pdf" }),
+    "comics/safe/comic.pdf",
+  );
 });

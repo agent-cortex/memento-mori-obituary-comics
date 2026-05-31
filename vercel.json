@@ -1,9 +1,40 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/media/(.*)",
+      "destination": "/api/blob-media?path=$1"
+    }
+  ],
   "functions": {
     "api/latest-pdf.js": {
-      "includeFiles": "{comics.json,comics/**}"
+      "includeFiles": "comics.json"
     }
+  },
+  "images": {
+    "sizes": [
+      384,
+      640,
+      768,
+      1080,
+      1440,
+      1920
+    ],
+    "localPatterns": [
+      {
+        "pathname": "^/media/comics/.*\\.(jpg|jpeg|png)$",
+        "search": ""
+      }
+    ],
+    "qualities": [
+      75
+    ],
+    "formats": [
+      "image/avif",
+      "image/webp"
+    ],
+    "minimumCacheTTL": 31536000,
+    "contentDispositionType": "inline"
   },
   "trailingSlash": true
 }
