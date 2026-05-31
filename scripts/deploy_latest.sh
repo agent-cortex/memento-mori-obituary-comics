@@ -10,7 +10,8 @@ comic_path="$1"
 commit_message="${2:-publish comic ${comic_path}}"
 
 if ! git diff --quiet || [ -n "$(git status --porcelain)" ]; then
-  git add index.html comics.json comics assets scripts README.md vercel.json .github .gitignore
+  git add index.html comics.json comics assets scripts README.md vercel.json .github .gitignore \
+    about llms.txt sitemap.xml robots.txt api tests docs package.json package-lock.json
   git commit -m "$commit_message"
   git push origin main
 fi
