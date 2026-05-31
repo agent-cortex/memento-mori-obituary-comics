@@ -196,6 +196,74 @@ document.addEventListener('click', (event) => {{
 """
 
 
+def pdf_support_modal() -> str:
+    return (
+        '<div class="support-modal" id="pdfSupportModal" hidden>'
+        '<div class="support-dialog" role="dialog" aria-modal="true" aria-labelledby="pdfSupportTitle">'
+        '<button class="support-close" type="button" aria-label="Close support modal" onclick="closePdfSupportModal()">×</button>'
+        '<div class="kicker">Support development</div>'
+        '<h2 id="pdfSupportTitle" class="support-highlight">Support the Development by donating some ZEC</h2>'
+        '<div class="support-qr-container" style="text-align: center; margin: 20px 0;">'
+        '<img src="/assets/zec-qr.png" alt="ZEC donation QR Code" class="support-qr-image" style="max-width: 200px; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); display: inline-block;">'
+        '</div>'
+        '<p>Help keep new obituary comics, source work, and reader tooling moving. Send ZEC to this shielded address:</p>'
+        f'<code class="support-address" id="pdfZecAddress">{esc(SUPPORT_ZEC_ADDRESS)}</code>'
+        '<div class="support-actions" style="margin-top: 20px; display: flex; gap: 12px; flex-direction: column;">'
+        '<button class="mini-btn primary" type="button" onclick="copyPdfSupportAddress()" style="width: 100%;">Copy ZEC address</button>'
+        '<a class="mini-btn ghost" id="pdfSkipBtn" href="#" target="_blank" onclick="closePdfSupportModal()" style="text-align: center; text-decoration: none; width: 100%;">Skip for now</a>'
+        '</div>'
+        '<p class="support-copy-status" id="pdfCopyStatus" aria-live="polite" style="text-align: center; margin-top: 8px; font-size: 11px; color: var(--gold); min-height: 16px;"></p>'
+        '</div></div>'
+    )
+
+
+def pdf_support_script() -> str:
+    return f"""
+function triggerPdfSupportModal(event, pdfUrl) {{
+  event.preventDefault();
+  const modal = document.getElementById('pdfSupportModal');
+  if (!modal) return false;
+  const skipBtn = document.getElementById('pdfSkipBtn');
+  if (skipBtn) {{
+    skipBtn.href = pdfUrl;
+  }}
+  modal.hidden = false;
+  document.body.classList.add('support-modal-open');
+  const status = document.getElementById('pdfCopyStatus');
+  if (status) status.textContent = '';
+  return false;
+}}
+function closePdfSupportModal() {{
+  const modal = document.getElementById('pdfSupportModal');
+  if (!modal) return;
+  modal.hidden = true;
+  document.body.classList.remove('support-modal-open');
+}}
+async function copyPdfSupportAddress() {{
+  const status = document.getElementById('pdfCopyStatus');
+  try {{
+    await navigator.clipboard.writeText(supportZecAddress);
+    if (status) status.textContent = 'ZEC address copied.';
+  }} catch (error) {{
+    if (status) status.textContent = supportZecAddress;
+  }}
+}}
+document.addEventListener('keydown', (event) => {{
+  if (event.key === 'Escape') closePdfSupportModal();
+}});
+document.addEventListener('click', (event) => {{
+  const modal = document.getElementById('pdfSupportModal');
+  if (modal && event.target === modal) closePdfSupportModal();
+  
+  // Dynamic event delegation to intercept all PDF download clicks globally
+  const link = event.target.closest('a[href$=".pdf"]');
+  if (link && link.id !== 'pdfSkipBtn') {{
+    triggerPdfSupportModal(event, link.getAttribute('href'));
+  }}
+}});
+"""
+
+
 def meta_head(
     title: str,
     description: str,
@@ -717,7 +785,7 @@ function runBreathingCycle() {
   }, 1000);
   breathingState = 'active';
 }
-""" + support_script()
+""" + support_script() + pdf_support_script()
 
 
 def reader_script() -> str:
@@ -1100,7 +1168,7 @@ const savedLayout = localStorage.getItem('memento-layout') || 'vertical';
 setTimeout(() => {
   setLayout(savedLayout);
 }, 20);
-""" + support_script()
+""" + support_script() + pdf_support_script()
 
 
 def render_index(comics: list[dict[str, Any]]) -> str:
@@ -1205,7 +1273,7 @@ def render_index(comics: list[dict[str, Any]]) -> str:
         '</div>'
         '</div>'
         '</section>'
-        f'<footer>Built for the morning death-reminder ritual. Clean comics, verified lives, no motivational slop. <a href="/about/">Editorial method</a>.</footer>{support_modal()}<script>{home_script()}</script></body></html>'
+        f'<footer>Built for the morning death-reminder ritual. Clean comics, verified lives, no motivational slop. <a href="/about/">Editorial method</a>.</footer>{support_modal()}{pdf_support_modal()}<script>{home_script()}</script></body></html>'
     )
 
 
@@ -1315,7 +1383,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<div class="hotkey-row"><span class="hotkey-key">Z</span> <span class="hotkey-action">Toggle sound</span></div>'
         '<div class="hotkey-row"><span class="hotkey-key">F</span> <span class="hotkey-action">Fullscreen</span></div>'
         '<button class="mini-btn ghost" type="button" onclick="toggleHotkeysPanel()" style="width:100%; margin-top:10px; font-size:9px;">Close</button>'
-        f'</div>{support_modal()}<script>window.comicData = {comic_json_escaped};</script><script>{reader_script()}</script></body></html>'
+        f'</div>{support_modal()}{pdf_support_modal()}<script>window.comicData = {comic_json_escaped};</script><script>{reader_script()}</script></body></html>'
     )
 
 

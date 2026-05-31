@@ -2395,3 +2395,11 @@ body::before {
   line-height: 1.6;
   color: var(--paper);
 }
+
+.support-highlight {
+  color: var(--gold) !important;
+  text-shadow: 0 0 12px var(--gold-glow);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.3;
+}
