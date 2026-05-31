@@ -418,13 +418,71 @@ function cycleQuote() {
   const authEl = document.getElementById('quoteAuthor');
   if (!textEl || !authEl) return;
   quoteIdx = (quoteIdx + 1) % quotes.length;
-  textEl.style.opacity = 0;
+  textEl.classList.add('switching');
+  authEl.style.opacity = 0;
   setTimeout(() => {
     textEl.textContent = `"${quotes[quoteIdx].text}"`;
     authEl.textContent = quotes[quoteIdx].author;
-    textEl.style.opacity = 1;
-  }, 200);
+    textEl.classList.remove('switching');
+    authEl.style.opacity = 1;
+  }, 250);
 }
+function triggerHourglassSpin(el) {
+  if (el.classList.contains('clicked')) return;
+  el.classList.add('clicked');
+  setTimeout(() => {
+    el.classList.remove('clicked');
+  }, 800);
+}
+function renderReflections() {
+  const listEl = document.getElementById('reflectionLogList');
+  if (!listEl) return;
+  const reflections = JSON.parse(localStorage.getItem('memento_reflections') || '[]');
+  if (reflections.length === 0) {
+    listEl.hidden = true;
+    return;
+  }
+  listEl.hidden = false;
+  listEl.innerHTML = reflections.map((item, idx) => `
+    <div class="reflection-log-item">
+      <div class="reflection-log-meta">${item.date}</div>
+      <p class="reflection-log-text">"${htmlEscape(item.text)}"</p>
+      <span class="reflection-log-quote">— Reflecting on: ${htmlEscape(item.quote)}</span>
+      <button class="delete-reflection-btn" onclick="deleteReflection(${idx})" title="Delete entry" aria-label="Delete entry">×</button>
+    </div>
+  `).join('');
+}
+function deleteReflection(idx) {
+  const reflections = JSON.parse(localStorage.getItem('memento_reflections') || '[]');
+  reflections.splice(idx, 1);
+  localStorage.setItem('memento_reflections', JSON.stringify(reflections));
+  renderReflections();
+}
+function htmlEscape(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function commitReflection() {
+  const textarea = document.getElementById('reflectionTextarea');
+  if (!textarea) return;
+  const text = textarea.value.trim();
+  if (!text) return;
+  const quoteText = document.getElementById('quoteText').textContent;
+  const reflections = JSON.parse(localStorage.getItem('memento_reflections') || '[]');
+  const newEntry = {
+    date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+    text: text,
+    quote: quoteText
+  };
+  reflections.unshift(newEntry);
+  localStorage.setItem('memento_reflections', JSON.stringify(reflections));
+  textarea.value = '';
+  renderReflections();
+}
+// Init reflections
+setTimeout(() => {
+  renderReflections();
+}, 50);
+
 (function() {
   const container = document.getElementById('particles-js');
   if (!container) return;
@@ -435,6 +493,18 @@ function cycleQuote() {
   const ctx = canvas.getContext('2d');
   let width = canvas.width = container.offsetWidth;
   let height = canvas.height = container.offsetHeight;
+  
+  const mouse = { x: null, y: null };
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  container.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
   window.addEventListener('resize', () => {
     width = canvas.width = container.offsetWidth;
     height = canvas.height = container.offsetHeight;
@@ -442,11 +512,13 @@ function cycleQuote() {
   const particles = [];
   const particleCount = 45;
   for (let i = 0; i < particleCount; i++) {
+    const vy = Math.random() * 0.4 + 0.1;
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
       r: Math.random() * 1.5 + 0.5,
-      vy: Math.random() * 0.4 + 0.1,
+      vy: vy,
+      originalVy: vy,
       vx: Math.random() * 0.2 - 0.1
     });
   }
@@ -467,12 +539,29 @@ function cycleQuote() {
       const p = particles[i];
       p.y += p.vy;
       p.x += p.vx;
+      
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          const force = (120 - dist) / 120;
+          const angle = Math.atan2(dy, dx) + Math.PI / 2;
+          p.vx += Math.cos(angle) * force * 0.12;
+          p.vy += Math.sin(angle) * force * 0.12;
+        }
+      }
+      
+      p.vx *= 0.98;
+      p.vy = p.vy * 0.98 + p.originalVy * 0.02;
+
       if (p.y > height) {
         particles[i] = {
           x: Math.random() * width,
           y: -10,
           r: p.r,
-          vy: p.vy,
+          vy: p.originalVy,
+          originalVy: p.originalVy,
           vx: p.vx
         };
       }
@@ -486,6 +575,92 @@ function cycleQuote() {
   }
   loop();
 })();
+
+let breathingInterval = null;
+let breathingState = 'idle';
+
+function toggleBreathingRitual() {
+  const btn = document.getElementById('breathingBtn');
+  const circle = document.getElementById('breathingCircle');
+  const instruction = document.getElementById('breathingInstruction');
+  const timer = document.getElementById('breathingTimer');
+  if (!btn || !circle || !instruction || !timer) return;
+  
+  if (breathingState !== 'idle') {
+    clearInterval(breathingInterval);
+    breathingState = 'idle';
+    btn.textContent = 'Start Ritual';
+    circle.style.transform = 'scale(1)';
+    circle.className = 'breathing-circle-active';
+    instruction.textContent = 'Ready';
+    timer.textContent = 'Click start to begin';
+    return;
+  }
+  
+  btn.textContent = 'Stop Ritual';
+  runBreathingCycle();
+}
+
+function runBreathingCycle() {
+  const circle = document.getElementById('breathingCircle');
+  const instruction = document.getElementById('breathingInstruction');
+  const timer = document.getElementById('breathingTimer');
+  if (!circle || !instruction || !timer) return;
+  
+  let phase = 'inhale';
+  let duration = 4;
+  let count = 0;
+  
+  function updatePhase() {
+    circle.className = 'breathing-circle-active ' + phase;
+    if (phase === 'inhale') {
+      instruction.textContent = 'Inhale';
+      instruction.style.color = 'var(--gold)';
+    } else if (phase === 'hold') {
+      instruction.textContent = 'Hold';
+      instruction.style.color = 'var(--paper)';
+    } else {
+      instruction.textContent = 'Exhale';
+      instruction.style.color = 'var(--red)';
+    }
+  }
+  
+  updatePhase();
+  
+  breathingInterval = setInterval(() => {
+    count++;
+    
+    if (phase === 'inhale') {
+      const progress = count / 4;
+      const scale = 1 + progress * 2.5;
+      circle.style.transform = `scale(${scale})`;
+    } else if (phase === 'hold') {
+      circle.style.transform = 'scale(3.5)';
+    } else if (phase === 'exhale') {
+      const progress = count / 8;
+      const scale = 3.5 - progress * 2.5;
+      circle.style.transform = `scale(${scale})`;
+    }
+    
+    timer.textContent = `${count}s / ${duration}s`;
+    
+    if (count >= duration) {
+      count = 0;
+      if (phase === 'inhale') {
+        phase = 'hold';
+        duration = 7;
+      } else if (phase === 'hold') {
+        phase = 'exhale';
+        duration = 8;
+      } else {
+        phase = 'inhale';
+        duration = 4;
+      }
+      updatePhase();
+    }
+  }, 1000);
+  breathingState = 'active';
+}
 """ + support_script()
 
 
@@ -520,9 +695,7 @@ window.addEventListener('mousemove', (e) => {
   if (e.clientY < 40 && toolbar) {
     toolbar.classList.remove('toolbar-hidden');
   }
-});
-
-function setTheme(theme) {
+})function setTheme(theme) {
   document.body.classList.remove('theme-sepia', 'theme-stark');
   if (theme === 'sepia') document.body.classList.add('theme-sepia');
   if (theme === 'stark') document.body.classList.add('theme-stark');
@@ -530,48 +703,314 @@ function setTheme(theme) {
   const activeBtn = document.getElementById(`theme-btn-${theme}`);
   if (activeBtn) activeBtn.classList.add('active');
   localStorage.setItem('memento-theme', theme);
+  playChime();
 }
 const savedTheme = localStorage.getItem('memento-theme') || 'obsidian';
 setTheme(savedTheme);
 
+let currentTextSizeIdx = 2; // md
+const textSizes = ['xs', 'sm', 'md', 'lg'];
+function adjustTextSize(dir) {
+  currentTextSizeIdx = Math.max(0, Math.min(textSizes.length - 1, currentTextSizeIdx + dir));
+  document.body.classList.remove('text-size-adjust-xs', 'text-size-adjust-sm', 'text-size-adjust-md', 'text-size-adjust-lg');
+  document.body.classList.add(`text-size-adjust-${textSizes[currentTextSizeIdx]}`);
+  localStorage.setItem('memento-text-size', textSizes[currentTextSizeIdx]);
+}
+const savedTextSize = localStorage.getItem('memento-text-size') || 'md';
+currentTextSizeIdx = textSizes.indexOf(savedTextSize);
+document.body.classList.add(`text-size-adjust-${savedTextSize}`);
+
 let currentSlideIdx = 0;
 const pagesContainer = document.getElementById('read');
+
 function setLayout(layout) {
   if (!pagesContainer) return;
-  pagesContainer.classList.remove('layout-vertical', 'layout-spread', 'layout-slide');
+  pagesContainer.classList.remove('layout-vertical', 'layout-spread', 'layout-slide', 'layout-split', 'reader-split-layout');
   pagesContainer.classList.add(`layout-${layout}`);
   document.querySelectorAll('[id^="layout-btn-"]').forEach(btn => btn.classList.remove('active'));
   const activeBtn = document.getElementById(`layout-btn-${layout}`);
   if (activeBtn) activeBtn.classList.add('active');
   const pages = pagesContainer.querySelectorAll('.reader-page');
+  
   if (layout === 'slide') {
     pages.forEach((p, idx) => {
       if (idx === currentSlideIdx) p.classList.add('active');
       else p.classList.remove('active');
     });
     updateProgress(currentSlideIdx + 1, pages.length);
+    updateDots();
+    updateSidebarContent();
+    playChime();
   } else {
     pages.forEach(p => p.classList.remove('active'));
+    const sidebar = document.getElementById('readerSidebar');
+    if (sidebar) sidebar.style.display = 'none';
+    const dotsContainer = document.getElementById('slideDotsContainer');
+    if (dotsContainer) dotsContainer.style.display = 'none';
     updateProgressFromScroll();
   }
   localStorage.setItem('memento-layout', layout);
 }
+
+function updateDots() {
+  const dotsContainer = document.getElementById('slideDotsContainer');
+  if (!dotsContainer) return;
+  const layout = localStorage.getItem('memento-layout') || 'vertical';
+  if (layout !== 'slide') {
+    dotsContainer.style.display = 'none';
+    return;
+  }
+  dotsContainer.style.display = 'flex';
+  const pages = pagesContainer.querySelectorAll('.reader-page');
+  if (dotsContainer.children.length !== pages.length) {
+    dotsContainer.innerHTML = Array.from(pages).map((_, idx) => `
+      <button class="slide-dot ${idx === currentSlideIdx ? 'active' : ''}" 
+               onclick="jumpToSlide(${idx})" 
+               title="Page ${idx + 1}"
+               aria-label="Go to page ${idx + 1}"></button>
+    `).join('');
+  } else {
+    Array.from(dotsContainer.children).forEach((dot, idx) => {
+      if (idx === currentSlideIdx) dot.classList.add('active');
+      else dot.classList.remove('active');
+    });
+  }
+}
+
+function jumpToSlide(idx) {
+  if (!pagesContainer) return;
+  const pages = pagesContainer.querySelectorAll('.reader-page');
+  if (idx < 0 || idx >= pages.length) return;
+  
+  const dirClass = idx > currentSlideIdx ? 'slide-next-enter' : 'slide-prev-enter';
+  const oldIdx = currentSlideIdx;
+  currentSlideIdx = idx;
+  
+  pages.forEach((p, i) => {
+    p.classList.remove('active', 'slide-next-enter', 'slide-prev-enter');
+    if (i === currentSlideIdx) {
+      p.classList.add(dirClass);
+      void p.offsetWidth;
+      p.classList.remove(dirClass);
+      p.classList.add('active');
+    }
+  });
+  updateProgress(currentSlideIdx + 1, pages.length);
+  updateDots();
+  updateSidebarContent();
+  playChime();
+}
+
 function navigateSlide(direction) {
   if (!pagesContainer) return;
   const pages = pagesContainer.querySelectorAll('.reader-page');
   if (pages.length === 0) return;
-  currentSlideIdx = (currentSlideIdx + direction + pages.length) % pages.length;
-  pages.forEach((p, idx) => {
-    if (idx === currentSlideIdx) p.classList.add('active');
-    else p.classList.remove('active');
-  });
-  updateProgress(currentSlideIdx + 1, pages.length);
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  const nextIdx = (currentSlideIdx + direction + pages.length) % pages.length;
+  jumpToSlide(nextIdx);
 }
+
+function updateSidebarContent() {
+  const sidebar = document.getElementById('readerSidebar');
+  if (!sidebar) return;
+  const layout = localStorage.getItem('memento-layout') || 'vertical';
+  
+  if (window.innerWidth <= 900 || layout !== 'slide' || !window.comicData) {
+    sidebar.style.display = 'none';
+    pagesContainer.classList.remove('reader-split-layout');
+    return;
+  }
+  
+  sidebar.style.display = 'flex';
+  pagesContainer.classList.add('reader-split-layout');
+  
+  const person = document.body.dataset.person || 'Subject';
+  const pageIdx = currentSlideIdx + 1;
+  const summaries = comicData.page_summaries || [];
+  const activeSummary = summaries[currentSlideIdx] || `Reflecting on the life and legacy of ${person}.`;
+  const closing = comicData.closing_line || '';
+  const note = (comicData.story_notes || [])[currentSlideIdx % (comicData.story_notes || []).length || 0] || '';
+  
+  sidebar.innerHTML = `
+    <div class="reader-sidebar-title">Page ${pageIdx} of ${comicData.pages.length}</div>
+    <h2 class="reader-sidebar-header">${person}</h2>
+    <p class="reader-sidebar-desc">${activeSummary}</p>
+    <div class="reader-sidebar-context">
+      <h3>Context / Story Notes</h3>
+      <p>${note || 'No specific notes for this page.'}</p>
+      ${closing ? `<h3>MORTALITY REFLECTION</h3><p style="font-style: italic; color: var(--gold); margin-top: 8px;">"${closing}"</p>` : ''}
+    </div>
+  `;
+}
+
+// Touch Swipes Support for Mobile
+let touchStartX = 0;
+let touchEndX = 0;
+document.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  const diffX = touchEndX - touchStartX;
+  const layout = localStorage.getItem('memento-layout') || 'vertical';
+  if (layout === 'slide') {
+    if (diffX > 55) navigateSlide(-1);
+    else if (diffX < -55) navigateSlide(1);
+  }
+}, { passive: true });
+
+// Meditative Ambient Sound Synthesizer (Web Audio API)
+let audioCtx = null;
+let focusOscs = [];
+let focusGain = null;
+let lfoOsc = null;
+let lfoGain = null;
+let zenActive = false;
+
+function initZenAudio() {
+  if (audioCtx) return;
+  try {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    focusGain = audioCtx.createGain();
+    focusGain.gain.setValueAtTime(0, audioCtx.currentTime);
+    
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(220, audioCtx.currentTime);
+    
+    // Generative chord structure (Bb minor triad: Bb2 116.54Hz, Db3 138.59Hz, F3 174.61Hz, Bb1 58.27Hz drone)
+    const pitches = [58.27, 116.54, 138.59, 174.61];
+    pitches.forEach((freq, idx) => {
+      const osc = audioCtx.createOscillator();
+      osc.type = idx === 0 ? 'sine' : 'triangle';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      
+      const oscGain = audioCtx.createGain();
+      const vol = idx === 0 ? 0.35 : (idx === 1 ? 0.25 : (idx === 2 ? 0.18 : 0.12));
+      oscGain.gain.setValueAtTime(vol, audioCtx.currentTime);
+      
+      osc.connect(oscGain);
+      oscGain.connect(filter);
+      osc.start();
+      focusOscs.push(osc);
+    });
+    
+    // Create LFO to simulate breathing (modulate the main gain slightly to create a breathing rise/fall: 6s cycle = 0.16Hz)
+    lfoOsc = audioCtx.createOscillator();
+    lfoOsc.frequency.setValueAtTime(0.16, audioCtx.currentTime);
+    
+    lfoGain = audioCtx.createGain();
+    lfoGain.gain.setValueAtTime(0.02, audioCtx.currentTime);
+    
+    lfoOsc.connect(lfoGain);
+    lfoGain.connect(focusGain.gain);
+    
+    filter.connect(focusGain);
+    focusGain.connect(audioCtx.destination);
+    
+    lfoOsc.start();
+  } catch(e) {
+    console.warn("Web Audio API not supported", e);
+  }
+}
+
+// Sound effect: Temple Chime
+function playChime() {
+  if (!audioCtx || !zenActive) return;
+  try {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    
+    const now = audioCtx.currentTime;
+    
+    // Fundamental chime freq (1200Hz) + partials for metallic sound
+    const frequencies = [1200, 1650, 1950, 2400];
+    frequencies.forEach((freq, idx) => {
+      const chimeOsc = audioCtx.createOscillator();
+      chimeOsc.type = 'sine';
+      chimeOsc.frequency.setValueAtTime(freq, now);
+      
+      const chimeGain = audioCtx.createGain();
+      const vol = idx === 0 ? 0.05 : (idx === 1 ? 0.025 : (idx === 2 ? 0.015 : 0.008));
+      
+      chimeGain.gain.setValueAtTime(0, now);
+      chimeGain.gain.linearRampToValueAtTime(vol, now + 0.005);
+      chimeGain.gain.exponentialRampToValueAtTime(0.00001, now + (3.5 - idx * 0.5));
+      
+      chimeOsc.connect(chimeGain);
+      chimeGain.connect(audioCtx.destination);
+      
+      chimeOsc.start();
+      chimeOsc.stop(now + 4);
+    });
+  } catch (e) {
+    console.warn("Chime failed", e);
+  }
+}
+
+function toggleZenMode() {
+  initZenAudio();
+  if (!audioCtx) return;
+  const zenBtn = document.getElementById('zenBtn');
+  if (!zenBtn) return;
+  
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  
+  zenActive = !zenActive;
+  if (zenActive) {
+    focusGain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 1.5);
+    zenBtn.classList.add('active');
+    zenBtn.textContent = '🔊 Zen Mode';
+    playChime();
+  } else {
+    focusGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8);
+    zenBtn.classList.remove('active');
+    zenBtn.textContent = '🔇 Zen Mode';
+  }
+}
+
+// Hotkey Panel Control
+function toggleHotkeysPanel() {
+  const panel = document.getElementById('hotkeysPanel');
+  if (panel) panel.hidden = !panel.hidden;
+}
+
+// Keyboard shortcuts mapping
 document.addEventListener('keydown', (e) => {
-  if (!pagesContainer || !pagesContainer.classList.contains('layout-slide')) return;
-  if (e.key === 'ArrowLeft') navigateSlide(-1);
-  if (e.key === 'ArrowRight') navigateSlide(1);
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  const key = e.key.toUpperCase();
+  const layout = localStorage.getItem('memento-layout') || 'vertical';
+  
+  if (e.key === 'ArrowLeft' || key === 'A') {
+    if (layout === 'slide') navigateSlide(-1);
+  }
+  if (e.key === 'ArrowRight' || key === 'D') {
+    if (layout === 'slide') navigateSlide(1);
+  }
+  if (key === 'T') {
+    const themes = ['obsidian', 'sepia', 'stark'];
+    const currentTheme = localStorage.getItem('memento-theme') || 'obsidian';
+    const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+    setTheme(nextTheme);
+  }
+  if (key === 'L') {
+    const layouts = ['vertical', 'spread', 'slide'];
+    const currentLayout = localStorage.getItem('memento-layout') || 'vertical';
+    const nextLayout = layouts[(layouts.indexOf(currentLayout) + 1) % layouts.length];
+    setLayout(nextLayout);
+  }
+  if (key === 'Z') {
+    toggleZenMode();
+  }
+  if (key === 'F') {
+    const btn = document.getElementById('fullscreenBtn');
+    if (btn) btn.click();
+  }
+  if (e.key === 'Escape') {
+    const panel = document.getElementById('hotkeysPanel');
+    if (panel && !panel.hidden) panel.hidden = true;
+  }
 });
 
 const progressBar = document.getElementById('readerProgressBar');
@@ -588,7 +1027,11 @@ function updateProgressFromScroll() {
   if (progressBar) progressBar.style.width = `${pct}%`;
 }
 window.addEventListener('scroll', updateProgressFromScroll, { passive: true });
-window.addEventListener('resize', updateProgressFromScroll, { passive: true });
+window.addEventListener('resize', () => {
+  updateProgressFromScroll();
+  updateSidebarContent();
+}, { passive: true });
+
 const savedLayout = localStorage.getItem('memento-layout') || 'vertical';
 setTimeout(() => {
   setLayout(savedLayout);
@@ -642,10 +1085,32 @@ def render_index(comics: list[dict[str, Any]]) -> str:
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{head}</head>'
         '<body data-page-type="archive"><div class="bg-particles" id="particles-js"></div><header class="hero"><div class="hero-content wrap">'
-        '<div class="hourglass-loader" aria-hidden="true"></div><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1>'
+        '<div class="hourglass-loader" aria-hidden="true" title="Spin hourglass" onclick="triggerHourglassSpin(this)"></div><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1>'
         '<p>Lives that met death early, then used borrowed time to make something that outlived them.</p>'
         '<div class="rule-container"><div class="rule-line"></div><div class="rule-icon">⏳</div><div class="rule-line"></div></div>'
         '<div class="quote-widget" id="quoteWidget" onclick="cycleQuote()"><p class="quote-text" id="quoteText">"You could leave life right now. Let that determine what you do and say and think."</p><p class="quote-author" id="quoteAuthor">Marcus Aurelius</p><div class="quote-tip">Reflect further</div></div>'
+        '<div class="reflection-widget" id="reflectionWidget">'
+        '<h3 class="reflection-title">⏳ Daily Reflection Log</h3>'
+        '<p class="reflection-prompt">Reflect on mortality for today. What will you do with your borrowed time?</p>'
+        '<div class="reflection-input-container">'
+        '<textarea class="reflection-textarea" id="reflectionTextarea" placeholder="Write your single-sentence reflection here..."></textarea>'
+        '<button class="mini-btn primary reflection-submit-btn" type="button" onclick="commitReflection()">Commit to Log</button>'
+        '</div>'
+        '<div class="reflection-log-list" id="reflectionLogList" hidden></div>'
+        '</div>'
+        '<div class="breathing-widget" id="breathingWidget">'
+        '<h3 class="breathing-widget-header">⏳ Mindful Breathing Ritual</h3>'
+        '<p class="breathing-prompt">Take a moment of quiet focus before reading. Center yourself with 4-7-8 breathing.</p>'
+        '<div class="breathing-circle-container">'
+        '<div class="breathing-circle-bg"></div>'
+        '<div class="breathing-circle-active" id="breathingCircle"></div>'
+        '</div>'
+        '<p class="breathing-instruction" id="breathingInstruction">Ready</p>'
+        '<p class="breathing-timer" id="breathingTimer">Click start to begin</p>'
+        '<div class="breathing-controls">'
+        '<button class="mini-btn primary" type="button" id="breathingBtn" onclick="toggleBreathingRitual()">Start Ritual</button>'
+        '</div>'
+        '</div>'
         f'<div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a><a class="btn" href="/about/">About</a>{support_button()}</div>'
         '</div></header><main class="wrap section" id="archive"><div class="section-head"><div><div class="kicker">Small shelf, not doomscroll</div><h2>Archive</h2></div>'
         '<p>Compact comic/PDF cards. Open a reader only when you choose it.</p></div>'
@@ -695,6 +1160,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         for item in source_items(comic)
     )
     pdf_download = f'<p><a class="mini-btn primary" href="{esc(comic["pdf"])}">Download the PDF</a></p>' if comic.get("pdf") else ""
+    comic_json_escaped = json.dumps(comic).replace("<", "\\u003c")
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">{head}</head>'
         f'<body class="reader-mode" data-page-type="reader" data-comic-slug="{esc(comic["slug"])}" data-person="{esc(comic["person"])}" data-title="{esc(comic["title"])}">'
@@ -708,10 +1174,15 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<button class="option-btn active" id="layout-btn-vertical" onclick="setLayout(\'vertical\')" title="Continuous scroll layout">Scroll</button>'
         '<button class="option-btn" id="layout-btn-spread" onclick="setLayout(\'spread\')" title="Dual page spread layout">Book</button>'
         '<button class="option-btn" id="layout-btn-slide" onclick="setLayout(\'slide\')" title="Slideshow layout">Slide</button></div>'
+        '<div class="option-group" aria-label="Text size adjuster">'
+        '<button class="option-btn" onclick="adjustTextSize(-1)" title="Decrease text size">A-</button>'
+        '<button class="option-btn" onclick="adjustTextSize(1)" title="Increase text size">A+</button></div>'
+        '<button class="reader-btn" id="zenBtn" type="button" onclick="toggleZenMode()">🔇 Zen Mode</button>'
         f'{fullscreen_button}{pdf_button}{contact_button}{support_button("reader-btn")}</div></nav>'
         '<div class="reader-progress-container"><div class="reader-progress-bar" id="readerProgressBar"></div></div>'
         f'<div class="sr-only"><h1>{esc(comic["person"])} - {esc(comic["title"])}</h1></div>'
-        f'<main id="read" class="reader-pages layout-vertical" aria-label="Fullscreen scrollable comic pages">{pages}</main>'
+        f'<main id="read" class="reader-pages layout-vertical" aria-label="Fullscreen scrollable comic pages">{pages}<aside class="reader-sidebar" id="readerSidebar"></aside></main>'
+        '<div class="slide-dots-container" id="slideDotsContainer"></div>'
         '<div class="slide-nav-overlay slide-nav-prev" id="slideNavPrev" onclick="navigateSlide(-1)" aria-label="Previous page">←</div>'
         '<div class="slide-nav-overlay slide-nav-next" id="slideNavNext" onclick="navigateSlide(1)" aria-label="Next page">→</div>'
         '<footer class="reader-footer">'
@@ -726,7 +1197,18 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         f'<ul class="source-list">{source_links}</ul>'
         '<h2>Download PDF</h2>'
         f'{pdf_download}'
-        f'</section>{next_teaser}</footer>{support_modal()}<script>{reader_script()}</script></body></html>'
+        f'</section>{next_teaser}</footer>'
+        '<button class="hotkeys-helper-btn" type="button" onclick="toggleHotkeysPanel()" title="Keyboard shortcuts">⌨️</button>'
+        '<div class="hotkeys-hud-panel" id="hotkeysPanel" hidden>'
+        '<h4>Keyboard Shortcuts</h4>'
+        '<div class="hotkey-row"><span class="hotkey-key">←</span> <span class="hotkey-action">Prev slide</span></div>'
+        '<div class="hotkey-row"><span class="hotkey-key">→</span> <span class="hotkey-action">Next slide</span></div>'
+        '<div class="hotkey-row"><span class="hotkey-key">T</span> <span class="hotkey-action">Cycle theme</span></div>'
+        '<div class="hotkey-row"><span class="hotkey-key">L</span> <span class="hotkey-action">Cycle layout</span></div>'
+        '<div class="hotkey-row"><span class="hotkey-key">Z</span> <span class="hotkey-action">Toggle sound</span></div>'
+        '<div class="hotkey-row"><span class="hotkey-key">F</span> <span class="hotkey-action">Fullscreen</span></div>'
+        '<button class="mini-btn ghost" type="button" onclick="toggleHotkeysPanel()" style="width:100%; margin-top:10px; font-size:9px;">Close</button>'
+        f'</div>{support_modal()}<script>window.comicData = {comic_json_escaped};</script><script>{reader_script()}</script></body></html>'
     )
 
 
@@ -743,16 +1225,32 @@ def render_about(comics: list[dict[str, Any]]) -> str:
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
         f'<meta name="viewport" content="width=device-width, initial-scale=1">{head}</head>'
-        '<body data-page-type="about"><main class="wrap section about-page">'
-        '<div class="kicker">Editorial method</div><h1>About Memento Mori Obituary Comics</h1>'
+        '<body data-page-type="about"><div class="bg-particles" id="particles-js"></div>'
+        '<main class="wrap section about-page">'
+        '<div class="about-header-section">'
+        '<div class="kicker">Editorial method</div>'
+        '<h1>About Memento Mori Obituary Comics</h1>'
+        '</div>'
+        '<div class="about-grid">'
+        '<div class="about-column">'
         '<p>Memento Mori Obituary Comics is a static visual archive of short biographical comics about people who faced death, illness, violence, exile, or loss and still made work that survived them.</p>'
+        '<div class="about-card">'
         '<h2>How subjects are selected</h2>'
         '<p>Each subject needs a clear mortality pressure point and a body of work or thought that changed after, survived beyond, or was clarified by that encounter.</p>'
+        '</div>'
+        '<div class="about-card">'
         '<h2>Source standards</h2>'
         '<p>Each comic page lists sources in crawlable HTML. The preferred source trail is a mix of reference works, museums, primary collections, and reputable editorial accounts.</p>'
+        '</div>'
+        '</div>'
+        '<div class="about-column">'
+        '<div class="about-card">'
         '<h2>Format</h2>'
         '<p>The reader preserves the comic as images and PDF, while the page also includes text summaries, story notes, and structured data so search engines and AI systems can understand the work without relying on image OCR.</p>'
-        '<p><a class="btn primary" href="/">Back to archive</a></p>'
+        '</div>'
+        '<p style="text-align: center; margin-top: 20px;"><a class="btn primary" href="/">Back to archive</a></p>'
+        '</div>'
+        '</div>'
         '</main><footer>Clean comics, verified lives, no motivational slop.</footer></body></html>'
     )
 
