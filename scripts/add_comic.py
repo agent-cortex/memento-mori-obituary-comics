@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE_URL = "https://memento-mori-obituary-comics.vercel.app"
 SITE_NAME = "Memento Mori Obituary Comics"
 SITE_DESCRIPTION = "Daily obituary comics about people who faced death and made their work anyway."
+SUPPORT_ZEC_ADDRESS = "u1cyxqx2za9c7g2h7tjz0nn7rdf5fgykmqgw4eke7fvfa9pd7lynjkqfeq4hzd3tkys4pvku5xnmmwclm77jv9ljkhdefrvzc6pgehc63rcnmylqlxt0fmz55t6wdp6dyk5w2hzx06hs93xun5smexvwn04ju4ppy54gx477ftequajh0t"
 PUBLISHER = {
     "@type": "Organization",
     "name": SITE_NAME,
@@ -79,6 +80,66 @@ def analytics_head() -> str:
 def json_script(data: Any) -> str:
     payload = json.dumps(data, indent=2, ensure_ascii=False).replace("<", "\\u003c")
     return f'<script type="application/ld+json">{payload}</script>'
+
+
+def support_button(css_class: str = "btn") -> str:
+    return f'<button class="{css_class} support-open-btn" type="button" onclick="openSupportModal()">Support</button>'
+
+
+def support_modal() -> str:
+    return (
+        '<div class="support-modal" id="supportModal" hidden>'
+        '<div class="support-dialog" role="dialog" aria-modal="true" aria-labelledby="supportTitle">'
+        '<button class="support-close" type="button" aria-label="Close support modal" onclick="closeSupportModal()">×</button>'
+        '<div class="kicker">Support development</div>'
+        '<h2 id="supportTitle">Support development</h2>'
+        '<p>Help keep new obituary comics, source work, and reader tooling moving. Send ZEC to this shielded address:</p>'
+        f'<code class="support-address" id="supportZecAddress">{esc(SUPPORT_ZEC_ADDRESS)}</code>'
+        '<div class="support-actions">'
+        '<button class="mini-btn primary" type="button" onclick="copySupportAddress()">Copy ZEC address</button>'
+        '<button class="mini-btn ghost" type="button" onclick="closeSupportModal()">Close</button>'
+        '</div>'
+        '<p class="support-copy-status" id="supportCopyStatus" aria-live="polite"></p>'
+        '</div></div>'
+    )
+
+
+def support_script() -> str:
+    return f"""
+const supportZecAddress = "{SUPPORT_ZEC_ADDRESS}";
+function openSupportModal() {{
+  const modal = document.getElementById('supportModal');
+  if (!modal) return;
+  modal.hidden = false;
+  document.body.classList.add('support-modal-open');
+  const status = document.getElementById('supportCopyStatus');
+  if (status) status.textContent = '';
+  const copyBtn = modal.querySelector('.support-actions .primary');
+  setTimeout(() => copyBtn && copyBtn.focus(), 0);
+}}
+function closeSupportModal() {{
+  const modal = document.getElementById('supportModal');
+  if (!modal) return;
+  modal.hidden = true;
+  document.body.classList.remove('support-modal-open');
+}}
+async function copySupportAddress() {{
+  const status = document.getElementById('supportCopyStatus');
+  try {{
+    await navigator.clipboard.writeText(supportZecAddress);
+    if (status) status.textContent = 'ZEC address copied.';
+  }} catch (error) {{
+    if (status) status.textContent = supportZecAddress;
+  }}
+}}
+document.addEventListener('keydown', (event) => {{
+  if (event.key === 'Escape') closeSupportModal();
+}});
+document.addEventListener('click', (event) => {{
+  const modal = document.getElementById('supportModal');
+  if (modal && event.target === modal) closeSupportModal();
+}});
+"""
 
 
 def meta_head(
@@ -425,7 +486,7 @@ function cycleQuote() {
   }
   loop();
 })();
-"""
+""" + support_script()
 
 
 def reader_script() -> str:
@@ -532,7 +593,7 @@ const savedLayout = localStorage.getItem('memento-layout') || 'vertical';
 setTimeout(() => {
   setLayout(savedLayout);
 }, 20);
-"""
+""" + support_script()
 
 
 def render_index(comics: list[dict[str, Any]]) -> str:
@@ -585,11 +646,11 @@ def render_index(comics: list[dict[str, Any]]) -> str:
         '<p>Lives that met death early, then used borrowed time to make something that outlived them.</p>'
         '<div class="rule-container"><div class="rule-line"></div><div class="rule-icon">⏳</div><div class="rule-line"></div></div>'
         '<div class="quote-widget" id="quoteWidget" onclick="cycleQuote()"><p class="quote-text" id="quoteText">"You could leave life right now. Let that determine what you do and say and think."</p><p class="quote-author" id="quoteAuthor">Marcus Aurelius</p><div class="quote-tip">Reflect further</div></div>'
-        f'<div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a><a class="btn" href="/about/">About</a></div>'
+        f'<div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a><a class="btn" href="/about/">About</a>{support_button()}</div>'
         '</div></header><main class="wrap section" id="archive"><div class="section-head"><div><div class="kicker">Small shelf, not doomscroll</div><h2>Archive</h2></div>'
         '<p>Compact comic/PDF cards. Open a reader only when you choose it.</p></div>'
         f'<div class="archive-grid">{archive}</div></main>'
-        f'<footer>Built for the morning death-reminder ritual. Clean comics, verified lives, no motivational slop. <a href="/about/">Editorial method</a>.</footer><script>{home_script()}</script></body></html>'
+        f'<footer>Built for the morning death-reminder ritual. Clean comics, verified lives, no motivational slop. <a href="/about/">Editorial method</a>.</footer>{support_modal()}<script>{home_script()}</script></body></html>'
     )
 
 
@@ -647,7 +708,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<button class="option-btn active" id="layout-btn-vertical" onclick="setLayout(\'vertical\')" title="Continuous scroll layout">Scroll</button>'
         '<button class="option-btn" id="layout-btn-spread" onclick="setLayout(\'spread\')" title="Dual page spread layout">Book</button>'
         '<button class="option-btn" id="layout-btn-slide" onclick="setLayout(\'slide\')" title="Slideshow layout">Slide</button></div>'
-        f'{fullscreen_button}{pdf_button}{contact_button}</div></nav>'
+        f'{fullscreen_button}{pdf_button}{contact_button}{support_button("reader-btn")}</div></nav>'
         '<div class="reader-progress-container"><div class="reader-progress-bar" id="readerProgressBar"></div></div>'
         f'<div class="sr-only"><h1>{esc(comic["person"])} - {esc(comic["title"])}</h1></div>'
         f'<main id="read" class="reader-pages layout-vertical" aria-label="Fullscreen scrollable comic pages">{pages}</main>'
@@ -665,7 +726,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         f'<ul class="source-list">{source_links}</ul>'
         '<h2>Download PDF</h2>'
         f'{pdf_download}'
-        f'</section>{next_teaser}</footer><script>{reader_script()}</script></body></html>'
+        f'</section>{next_teaser}</footer>{support_modal()}<script>{reader_script()}</script></body></html>'
     )
 
 

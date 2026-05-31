@@ -4,6 +4,9 @@ import unittest
 from scripts import add_comic
 
 
+ZEC_ADDRESS = "u1cyxqx2za9c7g2h7tjz0nn7rdf5fgykmqgw4eke7fvfa9pd7lynjkqfeq4hzd3tkys4pvku5xnmmwclm77jv9ljkhdefrvzc6pgehc63rcnmylqlxt0fmz55t6wdp6dyk5w2hzx06hs93xun5smexvwn04ju4ppy54gx477ftequajh0t"
+
+
 SAMPLE_COMIC = {
     "slug": "sample-comic",
     "title": "Borrowed Light",
@@ -39,6 +42,10 @@ class SeoRenderingTests(unittest.TestCase):
         self.assertIn('type="application/ld+json"', html)
         self.assertIn('"@type": "ItemList"', html)
         self.assertIn('/about/', html)
+        self.assertIn('openSupportModal()', html)
+        self.assertIn('Support development', html)
+        self.assertIn(ZEC_ADDRESS, html)
+        self.assertIn('copySupportAddress()', html)
 
     def test_comic_page_includes_semantic_headings_schema_and_crawlable_sources(self):
         html = add_comic.render_comic(SAMPLE_COMIC)
@@ -52,6 +59,10 @@ class SeoRenderingTests(unittest.TestCase):
         self.assertIn('"@type": "CreativeWork"', html)
         self.assertIn('"@type": "BreadcrumbList"', html)
         self.assertIn('<link rel="canonical" href="https://memento-mori-obituary-comics.vercel.app/comics/sample-comic/">', html)
+        self.assertIn('openSupportModal()', html)
+        self.assertIn('Support development', html)
+        self.assertIn(ZEC_ADDRESS, html)
+        self.assertIn('copySupportAddress()', html)
 
     def test_public_discovery_files_reference_canonical_pages(self):
         comics = [SAMPLE_COMIC]
