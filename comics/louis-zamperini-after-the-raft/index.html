@@ -58,6 +58,8 @@ if(btn&&document.fullscreenEnabled){
 })();
 
 let lastScrollY = window.scrollY;
+let audioCtx = null;
+let zenActive = false;
 const toolbar = document.getElementById('readerToolbar');
 window.addEventListener('scroll', () => {
   if (!toolbar) return;
@@ -245,12 +247,10 @@ document.addEventListener('touchend', e => {
 }, { passive: true });
 
 // Meditative Ambient Sound Synthesizer (Web Audio API)
-let audioCtx = null;
 let focusOscs = [];
 let focusGain = null;
 let lfoOsc = null;
 let lfoGain = null;
-let zenActive = false;
 
 function initZenAudio() {
   if (audioCtx) return;
