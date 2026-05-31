@@ -8,7 +8,13 @@
   const title = body?.dataset.title || document.title || '';
   const sent = new Set();
 
+  function hasPrivacySignal() {
+    const dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+    return window.globalPrivacyControl === true || dnt === '1' || dnt === 'yes';
+  }
+
   function initMixpanel() {
+    if (hasPrivacySignal()) return false;
     if (typeof window.mixpanel?.init !== 'function') return false;
     if (window.__mementoMixpanelInitialized) return true;
     window.mixpanel.init(MIXPANEL_TOKEN, {
@@ -16,10 +22,12 @@
       persistence: 'localStorage',
       debug: false,
       ignore_dnt: false,
+      ip: false,
     });
     window.mixpanel.register({
       site: 'memento_mori_obituary_comics',
       page_type: pageType,
+      value_moment_event: 'reader_finished',
     });
     window.__mementoMixpanelInitialized = true;
     return true;
@@ -47,6 +55,7 @@
   }
 
   function sendMixpanelFallback(name, payload) {
+    if (hasPrivacySignal()) return;
     const event = {
       event: name,
       properties: {
@@ -59,7 +68,7 @@
         time: Math.floor(Date.now() / 1000),
       },
     };
-    const url = `${MIXPANEL_API_HOST}/track/?data=${encodeURIComponent(base64Json(event))}&ip=1`;
+    const url = `${MIXPANEL_API_HOST}/track/?data=${encodeURIComponent(base64Json(event))}&ip=0`;
     const beacon = new Image();
     beacon.src = url;
   }

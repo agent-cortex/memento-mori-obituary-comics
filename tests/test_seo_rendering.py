@@ -55,6 +55,10 @@ class SeoRenderingTests(unittest.TestCase):
         self.assertIn("api-eu.mixpanel.com", script)
         self.assertIn("mixpanel.init", script)
         self.assertIn("mixpanel.track(name, payload)", script)
+        self.assertIn("ip: false", script)
+        self.assertIn("globalPrivacyControl", script)
+        self.assertIn("&ip=0", script)
+        self.assertIn("value_moment_event: 'reader_finished'", script)
         self.assertNotIn("reflectionText", script)
 
     def test_comic_page_includes_semantic_headings_schema_and_crawlable_sources(self):
