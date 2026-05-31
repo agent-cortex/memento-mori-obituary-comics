@@ -22,4 +22,4 @@ Disallow: /
 User-agent: Bytespider
 Disallow: /
 
-Sitemap: https://memento-mori-obituary-comics.vercel.app/sitemap.xml
+Sitemap: https://obit.agentcortex.space/sitemap.xml

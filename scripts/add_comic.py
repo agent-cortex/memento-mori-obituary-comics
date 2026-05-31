@@ -20,7 +20,7 @@ from typing import Any
 from xml.sax.saxutils import escape as xml_escape
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE_URL = "https://memento-mori-obituary-comics.vercel.app"
+SITE_URL = "https://obit.agentcortex.space"
 SITE_NAME = "Memento Mori Obituary Comics"
 SITE_DESCRIPTION = "Daily obituary comics about people who faced death and made their work anyway."
 SUPPORT_ZEC_ADDRESS = "u1cyxqx2za9c7g2h7tjz0nn7rdf5fgykmqgw4eke7fvfa9pd7lynjkqfeq4hzd3tkys4pvku5xnmmwclm77jv9ljkhdefrvzc6pgehc63rcnmylqlxt0fmz55t6wdp6dyk5w2hzx06hs93xun5smexvwn04ju4ppy54gx477ftequajh0t"
@@ -32,6 +32,7 @@ PUBLISHER = {
 IMAGE_OPTIMIZATION_WIDTHS = [384, 640, 768, 1080, 1440, 1920]
 IMAGE_OPTIMIZATION_QUALITY = 75
 ARCHIVE_IMAGE_SIZES = "(min-width: 900px) 25vw, 100vw"
+LATEST_IMAGE_SIZES = "(min-width: 481px) 82px, 64px"
 READER_IMAGE_SIZES = "(min-width: 900px) 80vw, 100vw"
 NEXT_IMAGE_SIZES = "(min-width: 900px) 240px, 45vw"
 
@@ -135,7 +136,8 @@ def json_script(data: Any) -> str:
 
 
 def support_button(css_class: str = "btn") -> str:
-    return f'<button class="{css_class} support-open-btn" type="button" onclick="openSupportModal()">Support</button>'
+    svg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><path d="M12 21a9 9 0 1 1 9-9 9 9 0 0 1-9 9zm0-11.5a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 12 9.5zm0 4.5v3"></path></svg>'
+    return f'<button class="{css_class} support-open-btn" type="button" onclick="openSupportModal()">{svg}Support</button>'
 
 
 def support_modal() -> str:
@@ -538,6 +540,8 @@ setTimeout(() => {
 (function() {
   const container = document.getElementById('particles-js');
   if (!container) return;
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
   const canvas = document.createElement('canvas');
   canvas.style.width = '100%';
   canvas.style.height = '100%';
@@ -747,7 +751,8 @@ window.addEventListener('mousemove', (e) => {
   if (e.clientY < 40 && toolbar) {
     toolbar.classList.remove('toolbar-hidden');
   }
-})function setTheme(theme) {
+});
+function setTheme(theme) {
   document.body.classList.remove('theme-sepia', 'theme-stark');
   if (theme === 'sepia') document.body.classList.add('theme-sepia');
   if (theme === 'stark') document.body.classList.add('theme-stark');
@@ -1130,9 +1135,28 @@ def render_index(comics: list[dict[str, Any]]) -> str:
             f"{pdf_button}"
             "</div></div></article>"
         )
+    latest_feature = ""
     latest_button = ""
     if latest:
-        latest_button = f'<a class="btn primary" href="/comics/{esc(latest["slug"])}/#read">Read latest</a>'
+        latest_href = f'/comics/{esc(latest["slug"])}/#read'
+        latest_button = f'<a class="btn primary" href="{latest_href}">Read latest</a>'
+        latest_cover_src = latest["pages"][0] if latest.get("pages") else ""
+        if latest_cover_src:
+            latest_cover = optimized_image_path(latest, latest_cover_src)
+            latest_image_extra = optimized_image_attrs(latest, latest_cover_src, LATEST_IMAGE_SIZES)
+            latest_feature = (
+                f'<a class="latest-specimen" href="{latest_href}" aria-label="Read latest obituary comic: {esc(latest["person"])}">'
+                '<span class="latest-specimen-thumb">'
+                f'<img src="{esc(latest_cover)}" alt="{esc(latest["person"])} obituary comic cover"{latest_image_extra} loading="eager" fetchpriority="high">'
+                '</span>'
+                '<span class="latest-specimen-copy">'
+                '<span class="latest-specimen-eyebrow">Latest issue</span>'
+                f'<span class="latest-specimen-title">{esc(latest["person"])}</span>'
+                f'<span class="latest-specimen-meta">{esc(latest.get("published_at", ""))} · {esc(latest.get("years", ""))}</span>'
+                '</span>'
+                '<span class="latest-specimen-arrow" aria-hidden="true">→</span>'
+                '</a>'
+            )
     archive = "".join(cards) if cards else '<div class="empty">No comics published yet.</div>'
     head = meta_head(
         f"{SITE_NAME} - Daily Biographical Comics About Mortality and Work",
@@ -1142,15 +1166,24 @@ def render_index(comics: list[dict[str, Any]]) -> str:
         "website",
         home_schema(comics),
     )
+    hourglass_svg = '<svg class="icon-hourglass" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: middle; margin-right: 6px;"><path d="M5 2h14"></path><path d="M5 22h14"></path><path d="M19 2v4c0 1.38-1.13 2.5-2.5 3L12 12l4.5 3c1.37.5 2.5 1.62 2.5 3v4"></path><path d="M5 2v4c0 1.38 1.13 2.5 2.5 3L12 12l-4.5 3C6.13 18.5 5 19.62 5 21v1"></path></svg>'
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{head}</head>'
         '<body data-page-type="archive"><div class="bg-particles" id="particles-js"></div><header class="hero"><div class="hero-content wrap">'
         '<div class="hourglass-loader" aria-hidden="true" title="Spin hourglass" onclick="triggerHourglassSpin(this)"></div><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1>'
         '<p>Lives that met death early, then used borrowed time to make something that outlived them.</p>'
-        '<div class="rule-container"><div class="rule-line"></div><div class="rule-icon">⏳</div><div class="rule-line"></div></div>'
-        '<div class="quote-widget" id="quoteWidget" onclick="cycleQuote()"><p class="quote-text" id="quoteText">"You could leave life right now. Let that determine what you do and say and think."</p><p class="quote-author" id="quoteAuthor">Marcus Aurelius</p><div class="quote-tip">Reflect further</div></div>'
+        f'<div class="rule-container"><div class="rule-line"></div><div class="rule-icon">{hourglass_svg}</div><div class="rule-line"></div></div>'
+        f'{latest_feature}'
+        f'<div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a></div>'
+        '<div class="hero-secondary-links"><a href="/about/">Editorial method</a><button type="button" class="hero-link support-open-btn" onclick="openSupportModal()">Support</button></div>'
+        '</div></header><main class="wrap section" id="archive"><div class="section-head"><div><div class="kicker">Small shelf, not doomscroll</div><h2>Archive</h2></div>'
+        '<p>Compact comic/PDF cards. Open a reader only when you choose it.</p></div>'
+        f'<div class="archive-grid">{archive}</div></main>'
+        '<section class="wrap section homepage-rituals" aria-label="Reader rituals">'
+        '<div class="section-head"><div><div class="kicker">Optional ritual</div><h2>Before You Read</h2></div><p>For readers who want the slower morning ritual after they have seen the archive.</p></div>'
+        '<button class="quote-widget" id="quoteWidget" onclick="cycleQuote()" type="button" aria-label="Cycle philosophical quote"><p class="quote-text" id="quoteText">"You could leave life right now. Let that determine what you do and say and think."</p><p class="quote-author" id="quoteAuthor">Marcus Aurelius</p><div class="quote-tip">Reflect further</div></button>'
         '<div class="reflection-widget" id="reflectionWidget">'
-        '<h3 class="reflection-title">⏳ Daily Reflection Log</h3>'
+        f'<h3 class="reflection-title">{hourglass_svg}Daily Reflection Log</h3>'
         '<p class="reflection-prompt">Reflect on mortality for today. What will you do with your borrowed time?</p>'
         '<div class="reflection-input-container">'
         '<textarea class="reflection-textarea" id="reflectionTextarea" placeholder="Write your single-sentence reflection here..."></textarea>'
@@ -1159,7 +1192,7 @@ def render_index(comics: list[dict[str, Any]]) -> str:
         '<div class="reflection-log-list" id="reflectionLogList" hidden></div>'
         '</div>'
         '<div class="breathing-widget" id="breathingWidget">'
-        '<h3 class="breathing-widget-header">⏳ Mindful Breathing Ritual</h3>'
+        f'<h3 class="breathing-widget-header">{hourglass_svg}Mindful Breathing Ritual</h3>'
         '<p class="breathing-prompt">Take a moment of quiet focus before reading. Center yourself with 4-7-8 breathing.</p>'
         '<div class="breathing-circle-container">'
         '<div class="breathing-circle-bg"></div>'
@@ -1171,10 +1204,7 @@ def render_index(comics: list[dict[str, Any]]) -> str:
         '<button class="mini-btn primary" type="button" id="breathingBtn" onclick="toggleBreathingRitual()">Start Ritual</button>'
         '</div>'
         '</div>'
-        f'<div class="btns">{latest_button}<a class="btn" href="#archive">Browse archive</a><a class="btn" href="/about/">About</a>{support_button()}</div>'
-        '</div></header><main class="wrap section" id="archive"><div class="section-head"><div><div class="kicker">Small shelf, not doomscroll</div><h2>Archive</h2></div>'
-        '<p>Compact comic/PDF cards. Open a reader only when you choose it.</p></div>'
-        f'<div class="archive-grid">{archive}</div></main>'
+        '</section>'
         f'<footer>Built for the morning death-reminder ritual. Clean comics, verified lives, no motivational slop. <a href="/about/">Editorial method</a>.</footer>{support_modal()}<script>{home_script()}</script></body></html>'
     )
 
@@ -1195,17 +1225,41 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         )
     pages = "".join(figures)
     sources_html = "".join(f'<span class="source-chip">{esc(item["name"])}</span>' for item in source_items(comic))
-    pdf_button = f'<a class="reader-btn primary" href="{esc(media_asset_path(comic, comic["pdf"]))}">PDF</a>' if comic.get("pdf") else ""
-    contact_button = f'<a class="reader-btn" href="{esc(media_asset_path(comic, comic["contact_sheet"]))}">Contact</a>' if comic.get("contact_sheet") else ""
-    fullscreen_button = '<button class="reader-btn" id="fullscreenBtn" type="button">Fullscreen</button>'
+    
+    back_svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:6px; vertical-align: middle;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>'
+    pdf_svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>'
+    contact_svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>'
+    fullscreen_svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>'
+    more_svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle><circle cx="5" cy="12" r="1.5"></circle></svg>'
+    vertical_svg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="3" x2="12" y2="21"></line></svg>'
+    spread_svg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>'
+    slide_svg = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><path d="M12 17v4"></path><path d="M8 21h8"></path></svg>'
+    zen_svg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:4px; vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path></svg>'
+
+    pdf_button = f'<a class="reader-btn" href="{esc(media_asset_path(comic, comic["pdf"]))}">{pdf_svg}PDF</a>' if comic.get("pdf") else ""
+    contact_button = f'<a class="reader-btn" href="{esc(media_asset_path(comic, comic["contact_sheet"]))}">{contact_svg}Contact</a>' if comic.get("contact_sheet") else ""
+    fullscreen_button = f'<button class="reader-btn" id="fullscreenBtn" type="button">{fullscreen_svg}Fullscreen</button>'
+    
+    next_continue = ""
     next_teaser = ""
     if next_comic:
+        next_href = f'/comics/{esc(next_comic["slug"])}/#read'
+        next_continue = (
+            '<div class="reader-continue-strip" aria-label="Continue reading">'
+            '<div class="reader-continue-copy">'
+            '<span class="reader-continue-kicker">Read next</span>'
+            f'<strong>{esc(next_comic["person"])}</strong>'
+            f'<p>{esc(next_comic.get("dek", ""))}</p>'
+            '</div>'
+            f'<a class="mini-btn primary" href="{next_href}">Read next</a>'
+            '</div>'
+        )
         next_cover_src = next_comic["pages"][0] if next_comic.get("pages") else ""
         next_cover = optimized_image_path(next_comic, next_cover_src) if next_cover_src else ""
         next_image_extra = optimized_image_attrs(next_comic, next_cover_src, NEXT_IMAGE_SIZES) if next_cover_src else ""
         next_teaser = (
             '<div class="next-comic-teaser"><div class="next-kicker">Up Next</div>'
-            f'<a href="/comics/{esc(next_comic["slug"])}/#read" class="next-comic-link">'
+            f'<a href="{next_href}" class="next-comic-link">'
             f'<div class="next-cover"><img src="{esc(next_cover)}" alt="{esc(next_comic["person"])} cover"{next_image_extra} loading="lazy"></div>'
             f'<div class="next-info"><h4>{esc(next_comic["person"])}</h4><p>{esc(next_comic.get("dek", ""))}</p></div>'
             '</a></div>'
@@ -1225,23 +1279,23 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">{head}</head>'
         f'<body class="reader-mode" data-page-type="reader" data-comic-slug="{esc(comic["slug"])}" data-person="{esc(comic["person"])}" data-title="{esc(comic["title"])}">'
-        '<nav class="reader-toolbar" aria-label="Reader controls" id="readerToolbar"><a class="reader-btn reader-back" href="/">← Archive</a>'
+        f'<nav class="reader-toolbar" aria-label="Reader controls" id="readerToolbar"><a class="reader-btn reader-back" href="/">{back_svg}Archive</a>'
         f'<div class="reader-title">{esc(comic["person"])} · {esc(comic["title"])}</div>'
         '<div class="reader-actions">'
         '<div class="option-group reader-layout-group main-toolbar-only" aria-label="Layout selector">'
-        '<button class="option-btn layout-btn-vertical active" id="layout-btn-vertical" onclick="setLayout(\'vertical\')" title="Continuous scroll layout">Scroll</button>'
-        '<button class="option-btn layout-btn-spread" id="layout-btn-spread" onclick="setLayout(\'spread\')" title="Dual page spread layout">Book</button>'
-        '<button class="option-btn layout-btn-slide" id="layout-btn-slide" onclick="setLayout(\'slide\')" title="Slideshow layout">Slide</button>'
+        f'<button class="option-btn layout-btn-vertical active" id="layout-btn-vertical" onclick="setLayout(\'vertical\')" title="Continuous scroll layout">{vertical_svg}Scroll</button>'
+        f'<button class="option-btn layout-btn-spread" id="layout-btn-spread" onclick="setLayout(\'spread\')" title="Dual page spread layout">{spread_svg}Book</button>'
+        f'<button class="option-btn layout-btn-slide" id="layout-btn-slide" onclick="setLayout(\'slide\')" title="Slideshow layout">{slide_svg}Slide</button>'
         '</div>'
         f'{pdf_button}'
         '<details class="reader-more">'
-        '<summary class="reader-btn reader-more-summary">More</summary>'
+        f'<summary class="reader-btn reader-more-summary">{more_svg}More</summary>'
         '<div class="reader-more-menu">'
         '<div class="reader-menu-label mobile-only">Layout</div>'
         '<div class="option-group reader-layout-group mobile-only" aria-label="Layout selector">'
-        '<button class="option-btn layout-btn-vertical active" onclick="setLayout(\'vertical\')" title="Continuous scroll layout">Scroll</button>'
-        '<button class="option-btn layout-btn-spread" onclick="setLayout(\'spread\')" title="Dual page spread layout">Book</button>'
-        '<button class="option-btn layout-btn-slide" onclick="setLayout(\'slide\')" title="Slideshow layout">Slide</button>'
+        f'<button class="option-btn layout-btn-vertical active" onclick="setLayout(\'vertical\')" title="Continuous scroll layout">{vertical_svg}Scroll</button>'
+        f'<button class="option-btn layout-btn-spread" onclick="setLayout(\'spread\')" title="Dual page spread layout">{spread_svg}Book</button>'
+        f'<button class="option-btn layout-btn-slide" onclick="setLayout(\'slide\')" title="Slideshow layout">{slide_svg}Slide</button>'
         '</div>'
         '<div class="reader-menu-label">Theme</div>'
         '<div class="option-group reader-theme-group" aria-label="Theme selector">'
@@ -1253,7 +1307,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<div class="reader-menu-row">'
         '<button class="reader-btn" type="button" onclick="adjustTextSize(-1)" title="Decrease text size">A-</button>'
         '<button class="reader-btn" type="button" onclick="adjustTextSize(1)" title="Increase text size">A+</button>'
-        '<button class="reader-btn" id="zenBtn" type="button" onclick="toggleZenMode()">Zen</button>'
+        f'<button class="reader-btn" id="zenBtn" type="button" onclick="toggleZenMode()">{zen_svg}Zen</button>'
         '</div>'
         '<div class="reader-menu-row">'
         f'{fullscreen_button}{contact_button}{support_button("reader-btn")}'
@@ -1263,12 +1317,12 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '</div></nav>'
         '<div class="reader-progress-container"><div class="reader-progress-bar" id="readerProgressBar"></div></div>'
         f'<div class="sr-only"><h1>{esc(comic["person"])} - {esc(comic["title"])}</h1></div>'
-        f'<main id="read" class="reader-pages layout-vertical" aria-label="Fullscreen scrollable comic pages">{pages}<aside class="reader-sidebar" id="readerSidebar"></aside></main>'
+        f'<main id="read" class="reader-pages layout-vertical" aria-label="Fullscreen scrollable comic pages">{pages}{next_continue}<aside class="reader-sidebar" id="readerSidebar"></aside></main>'
         '<div class="slide-dots-container" id="slideDotsContainer"></div>'
         '<div class="slide-nav-overlay slide-nav-prev" id="slideNavPrev" onclick="navigateSlide(-1)" aria-label="Previous page">←</div>'
         '<div class="slide-nav-overlay slide-nav-next" id="slideNavNext" onclick="navigateSlide(1)" aria-label="Next page">→</div>'
         '<footer class="reader-footer">'
-        f'<div class="epilogue-card"><div class="epilogue-quote">“{esc(comic.get("closing_line", ""))}”</div><div class="epilogue-sources">{sources_html}</div></div>'
+        f'<div class="epilogue-card"><div class="epilogue-decor"><svg class="icon-hourglass" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h14"></path><path d="M5 22h14"></path><path d="M19 2v4c0 1.38-1.13 2.5-2.5 3L12 12l4.5 3c1.37.5 2.5 1.62 2.5 3v4"></path><path d="M5 2v4c0 1.38 1.13 2.5 2.5 3L12 12l-4.5 3C6.13 18.5 5 19.62 5 21v1"></path></svg></div><div class="epilogue-quote">“{esc(comic.get("closing_line", ""))}”</div><div class="epilogue-sources">{sources_html}</div></div>'
         '<section class="reader-context" aria-label="Comic notes and sources">'
         f'<p class="reader-source-line">{esc(comic.get("closing_line", ""))}</p>'
         '<h2>Citable Summary</h2>'
@@ -1280,7 +1334,7 @@ def render_comic(comic: dict[str, Any], next_comic: dict[str, Any] | None = None
         '<h2>Download PDF</h2>'
         f'{pdf_download}'
         f'</section>{next_teaser}</footer>'
-        '<button class="hotkeys-helper-btn" type="button" onclick="toggleHotkeysPanel()" title="Keyboard shortcuts">⌨️</button>'
+        f'<button class="hotkeys-helper-btn" type="button" onclick="toggleHotkeysPanel()" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align: middle;"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line><line x1="10" y1="12" x2="14" y2="12"></line></svg></button>'
         '<div class="hotkeys-hud-panel" id="hotkeysPanel" hidden>'
         '<h4>Keyboard Shortcuts</h4>'
         '<div class="hotkey-row"><span class="hotkey-key">←</span> <span class="hotkey-action">Prev slide</span></div>'
