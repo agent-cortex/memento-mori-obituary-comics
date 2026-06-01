@@ -4,6 +4,17 @@ A static archive for daily obituary comics about deceased people who faced death
 
 Production site: https://finalnotes.page/
 
+Repository: https://github.com/megabyte0x/memento-mori-obituary-comics
+
+## Maintainer surface
+
+This project is maintained as a small open-source publishing system, not just a pile of HTML. The repo includes:
+
+- static archive pages and SEO metadata generation for daily comic issues
+- Vercel Blob-backed private media storage with stable public `/media/...` URLs
+- an x402-paid `GET /api/latest-pdf` endpoint for agent-accessible PDF delivery
+- regression tests for blob helpers, x402/latest-PDF behavior, upload tooling, and SEO rendering
+
 Each comic gets a durable permalink:
 
 ```text

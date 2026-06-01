@@ -1,6 +1,23 @@
 {
   "name": "memento-mori-obituary-comics",
   "private": true,
+  "description": "Static obituary-comics archive with a Vercel Blob media layer and x402-paid latest-PDF endpoint.",
+  "homepage": "https://finalnotes.page/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megabyte0x/memento-mori-obituary-comics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/megabyte0x/memento-mori-obituary-comics/issues"
+  },
+  "keywords": [
+    "static-site",
+    "digital-archive",
+    "comics",
+    "vercel",
+    "x402",
+    "agentic-web"
+  ],
   "type": "module",
   "scripts": {
     "blob:dry-run": "node scripts/upload_comics_to_blob.js --dry-run",
