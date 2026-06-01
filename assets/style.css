@@ -248,6 +248,12 @@ h1 {
   align-items: center;
   margin-bottom: 24px;
 }
+.newsletter-brand-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 22px;
+}
 .hero-logo {
   width: min(150px, 35vw);
   height: auto;
@@ -255,22 +261,36 @@ h1 {
   /* Elegant double drop-shadow: gold glow + sharp depth shadow */
   filter: drop-shadow(0 0 10px rgba(223, 177, 91, 0.12)) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
 }
+.newsletter-brand-logo {
+  width: min(132px, 32vw);
+  height: auto;
+  transition: var(--transition);
+  filter: drop-shadow(0 0 10px rgba(223, 177, 91, 0.12)) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+}
 .hero-logo:hover {
   transform: translateY(-6px) scale(1.04);
   filter: drop-shadow(0 0 20px rgba(223, 177, 91, 0.38)) drop-shadow(0 12px 36px rgba(0, 0, 0, 0.75));
 }
+.newsletter-brand-logo:hover {
+  transform: translateY(-5px) scale(1.04);
+  filter: drop-shadow(0 0 20px rgba(223, 177, 91, 0.38)) drop-shadow(0 12px 36px rgba(0, 0, 0, 0.75));
+}
 /* In light/sepia theme, adjust gold and shadow color */
-.theme-sepia .hero-logo {
+.theme-sepia .hero-logo,
+.theme-sepia .newsletter-brand-logo {
   filter: drop-shadow(0 0 8px rgba(146, 64, 14, 0.15)) drop-shadow(0 4px 16px rgba(40, 33, 23, 0.18));
 }
-.theme-sepia .hero-logo:hover {
+.theme-sepia .hero-logo:hover,
+.theme-sepia .newsletter-brand-logo:hover {
   filter: drop-shadow(0 0 16px rgba(146, 64, 14, 0.35)) drop-shadow(0 8px 24px rgba(40, 33, 23, 0.28));
 }
 /* In stark theme, white glow */
-.theme-stark .hero-logo {
+.theme-stark .hero-logo,
+.theme-stark .newsletter-brand-logo {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15)) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.7));
 }
-.theme-stark .hero-logo:hover {
+.theme-stark .hero-logo:hover,
+.theme-stark .newsletter-brand-logo:hover {
   filter: drop-shadow(0 0 22px rgba(255, 255, 255, 0.38)) drop-shadow(0 12px 36px rgba(0, 0, 0, 0.85));
 }
 

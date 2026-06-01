@@ -27,6 +27,10 @@ SITE_DESCRIPTION = "Daily obituary comics about people who faced death and made 
 SUPPORT_ZEC_ADDRESS = "u1cyxqx2za9c7g2h7tjz0nn7rdf5fgykmqgw4eke7fvfa9pd7lynjkqfeq4hzd3tkys4pvku5xnmmwclm77jv9ljkhdefrvzc6pgehc63rcnmylqlxt0fmz55t6wdp6dyk5w2hzx06hs93xun5smexvwn04ju4ppy54gx477ftequajh0t"
 NEWSLETTER_NAME = "Borrowed Time Dispatch"
 SUBSTACK_URL = "https://finalnotes.substack.com"
+BRAND_LOGO_PATH = "/assets/logo.png"
+BRAND_LOGO_ALT = "Final Notes logo"
+BRAND_LOGO_WIDTH = 1024
+BRAND_LOGO_HEIGHT = 1024
 PUBLISHER = {
     "@type": "Organization",
     "name": SITE_NAME,
@@ -209,6 +213,15 @@ def newsletter_signup(css_class: str = "newsletter-signup") -> str:
         '</div>'
         f'{newsletter_form()}'
         '</section>'
+    )
+
+
+def brand_logo(container_class: str, image_class: str) -> str:
+    return (
+        f'<div class="{esc(container_class)}">'
+        f'<img class="{esc(image_class)}" src="{BRAND_LOGO_PATH}" alt="{BRAND_LOGO_ALT}" '
+        f'width="{BRAND_LOGO_WIDTH}" height="{BRAND_LOGO_HEIGHT}" decoding="async">'
+        '</div>'
     )
 
 
@@ -1330,6 +1343,7 @@ def render_index(comics: list[dict[str, Any]]) -> str:
     return (
         f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{head}</head>'
         '<body data-page-type="archive"><div class="bg-particles" id="particles-js"></div><header class="hero"><div class="hero-content wrap">'
+        f'{brand_logo("hero-logo-container", "hero-logo")}'
         '<div class="hourglass-loader" aria-hidden="true" title="Spin hourglass" onclick="triggerHourglassSpin(this)"></div><div class="kicker">Daily memento mori</div><h1>Obituary Comics</h1>'
         '<p>Lives that met death early, then used borrowed time to make something that outlived them.</p>'
         f'<div class="rule-container"><div class="rule-line"></div><div class="rule-icon">{hourglass_svg}</div><div class="rule-line"></div></div>'
@@ -1509,6 +1523,7 @@ def render_newsletter(comics: list[dict[str, Any]]) -> str:
         '<body data-page-type="newsletter"><div class="bg-particles" id="particles-js"></div>'
         '<main class="wrap section newsletter-page">'
         '<div class="newsletter-hero">'
+        f'{brand_logo("newsletter-brand-logo-container", "newsletter-brand-logo")}'
         '<div class="kicker">Newsletter</div>'
         f'<h1>{esc(NEWSLETTER_NAME)}</h1>'
         '<p>Get the next obituary comic by email, plus short source notes and one useful reflection for the week.</p>'

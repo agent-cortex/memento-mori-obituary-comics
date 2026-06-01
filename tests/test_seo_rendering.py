@@ -103,6 +103,21 @@ class SeoRenderingTests(unittest.TestCase):
         self.assertLess(newsletter_index, rituals_index)
         self.assertLess(archive_index, rituals_index)
 
+    def test_brand_logo_and_favicon_assets_are_generated_for_final_notes_pages(self):
+        home_html = add_comic.render_index([SAMPLE_COMIC])
+        newsletter_html = add_comic.render_newsletter([SAMPLE_COMIC])
+
+        for html in (home_html, newsletter_html):
+            self.assertIn('<link rel="icon" type="image/x-icon" href="/favicon.ico">', html)
+            self.assertIn('<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">', html)
+            self.assertIn('<link rel="apple-touch-icon" href="/apple-touch-icon.png">', html)
+            self.assertIn('src="/assets/logo.png"', html)
+            self.assertIn('alt="Final Notes logo"', html)
+            self.assertIn('width="1024" height="1024"', html)
+
+        self.assertIn('class="hero-logo"', home_html)
+        self.assertIn('class="newsletter-brand-logo"', newsletter_html)
+
     def test_custom_analytics_forwards_events_to_mixpanel_eu(self):
         script = (add_comic.ROOT / "assets" / "analytics.js").read_text(encoding="utf-8")
 
