@@ -1,0 +1,62 @@
+{
+  "slug": "henri-matisse-second-life",
+  "title": "Henri Matisse: The Second Life",
+  "person": "Henri Matisse",
+  "years": "1869–1954",
+  "dek": "French modernist painter who turned illness into a final language of color and scissors.",
+  "mortality_event": "Near-fatal 1941 surgery for duodenal cancer in Lyon, with complications and long confinement afterward.",
+  "published_at": "2026-06-02",
+  "pages": [
+    "pages/01-henri-matisse-second-life.jpg",
+    "pages/02-henri-matisse-second-life.jpg",
+    "pages/03-henri-matisse-second-life.jpg",
+    "pages/04-henri-matisse-second-life.jpg",
+    "pages/05-henri-matisse-second-life.jpg",
+    "pages/06-henri-matisse-second-life.jpg",
+    "pages/07-henri-matisse-second-life.jpg",
+    "pages/08-henri-matisse-second-life.jpg"
+  ],
+  "page_dimensions": {
+    "pages/01-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/02-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/03-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/04-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/05-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/06-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/07-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ],
+    "pages/08-henri-matisse-second-life.jpg": [
+      1080,
+      1620
+    ]
+  },
+  "pdf": "henri-matisse-second-life.pdf",
+  "contact_sheet": "contact-sheet.jpg",
+  "sources": [
+    "Musée Matisse Nice",
+    "Encyclopaedia Britannica",
+    "Centre Pompidou",
+    "Saint Louis Art Museum"
+  ],
+  "closing_line": "The reprieve was one moment. The work was the rest of his life."
+}
