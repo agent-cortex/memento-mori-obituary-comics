@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createApp } from "../api/latest-pdf.js";
+import { createApp } from "../lib/latest-pdf.js";
 
 const PAY_TO = "0x000000000000000000000000000000000000dEaD";
 

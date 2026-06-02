@@ -1,8 +1,8 @@
 # Memento Mori Obituary Comics
 
-A static archive for daily obituary comics about deceased people who faced death and made significant work afterward.
+A Next.js archive for daily obituary comics about deceased people who faced death and made significant work afterward.
 
-Live site: https://obit.agentcortex.space/
+Live site: https://finalnotes.page/
 
 Fallback Vercel URL: https://memento-mori-obituary-comics.vercel.app/
 
@@ -12,22 +12,49 @@ Each comic gets a durable permalink:
 /comics/<slug>/
 ```
 
+## Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Useful checks:
+
+```bash
+pnpm test
+pnpm build
+```
+
+The app uses the Next.js App Router. Route and UI ownership is:
+
+- `app/page.jsx` for the archive homepage.
+- `app/comics/[slug]/page.jsx` and `components/reader-shell.jsx` for the reader.
+- `app/about/page.jsx` for editorial method.
+- `app/api/latest-pdf/route.js` for the paid agent PDF endpoint.
+- `app/robots.js`, `app/sitemap.js`, and `app/llms.txt/route.js` for discovery files.
+- `app/globals.css` for design tokens and component styling.
+
 ## Add a generated comic
+
+Comic metadata lives in `comics.json`. Served images and PDFs live under `public/comics/<slug>/`.
 
 ```bash
 python scripts/add_comic.py /path/to/generated-output \
   --slug dostoyevsky-borrowed-time \
   --person "Fyodor Mikhailovich Dostoyevsky" \
   --title "Borrowed Time" \
-  --years "1821–1881" \
+  --years "1821-1881" \
   --dek "Russian novelist. Survivor of a staged execution." \
   --event "1849 staged execution / mock firing squad" \
   --sources "Britannica; The Marginalian; Public Domain Review; Literary Hub"
-
-./scripts/deploy_latest.sh /comics/dostoyevsky-borrowed-time/ "publish: Dostoyevsky comic"
 ```
 
-The site is intentionally boring infrastructure: static HTML, static images, static PDFs. No database. No auth. No build step.
+Refresh and validate existing public media without generating static HTML:
+
+```bash
+python scripts/add_comic.py --render-only
+```
 
 ## Paid agent PDF endpoint
 

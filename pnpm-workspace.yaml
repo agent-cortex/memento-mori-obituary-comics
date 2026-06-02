@@ -1,2 +1,3 @@
 allowBuilds:
   '@coinbase/x402': true
+  sharp: true

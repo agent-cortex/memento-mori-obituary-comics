@@ -5,7 +5,7 @@ import test from "node:test";
 import {
   findLatestComicWithPdf,
   resolveComicPdfPath,
-} from "../api/latest-pdf.helpers.js";
+} from "../lib/latest-pdf.js";
 
 test("findLatestComicWithPdf returns the newest comic with a PDF", () => {
   const comics = [
@@ -47,5 +47,5 @@ test("resolveComicPdfPath returns the expected in-comic PDF path", () => {
     "/repo",
   );
 
-  assert.equal(resolved, path.join("/repo", "comics", "safe", "comic.pdf"));
+  assert.equal(resolved, path.join("/repo", "public", "comics", "safe", "comic.pdf"));
 });

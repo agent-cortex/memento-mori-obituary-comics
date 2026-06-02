@@ -1,0 +1,54 @@
+"use client";
+
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { SUPPORT_ZEC_ADDRESS } from "@/lib/site";
+
+export function SupportDialog({ triggerClass = "nav", triggerLabel = "Support" }) {
+  const [copyStatus, setCopyStatus] = useState("");
+
+  async function copyAddress() {
+    try {
+      await navigator.clipboard.writeText(SUPPORT_ZEC_ADDRESS);
+      setCopyStatus("ZEC address copied.");
+    } catch (_error) {
+      setCopyStatus(SUPPORT_ZEC_ADDRESS);
+    }
+  }
+
+  return (
+    <Dialog onOpenChange={() => setCopyStatus("")}>
+      <DialogTrigger asChild>
+        <Button type="button" variant={triggerClass}>
+          {triggerLabel}
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogClose className="support-close" aria-label="Close support modal">
+          x
+        </DialogClose>
+        <div className="kicker">Support development</div>
+        <DialogTitle>Support development</DialogTitle>
+        <DialogDescription>Help keep new obituary comics, source work, and reader tooling moving. Send ZEC to this shielded address:</DialogDescription>
+        <code className="support-address" id="supportZecAddress">
+          {SUPPORT_ZEC_ADDRESS}
+        </code>
+        <div className="support-actions">
+          <Button variant="miniPrimary" type="button" onClick={copyAddress}>
+            Copy ZEC address
+          </Button>
+          <DialogClose asChild>
+            <Button variant="miniGhost" type="button">
+              Close
+            </Button>
+          </DialogClose>
+        </div>
+        <p className="support-copy-status" aria-live="polite">
+          {copyStatus}
+        </p>
+      </DialogContent>
+    </Dialog>
+  );
+}
