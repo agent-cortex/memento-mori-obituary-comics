@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { trackActivity } from "@/components/mixpanel-analytics";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { SUPPORT_ZEC_ADDRESS } from "@/lib/site";
@@ -9,17 +10,24 @@ import { SUPPORT_ZEC_ADDRESS } from "@/lib/site";
 export function SupportDialog({ triggerClass = "nav", triggerLabel = "Support" }) {
   const [copyStatus, setCopyStatus] = useState("");
 
+  function handleOpenChange(open) {
+    setCopyStatus("");
+    if (open) trackActivity("support_dialog_opened", { trigger_surface: triggerClass });
+  }
+
   async function copyAddress() {
     try {
       await navigator.clipboard.writeText(SUPPORT_ZEC_ADDRESS);
       setCopyStatus("ZEC address copied.");
+      trackActivity("support_zec_copied", { trigger_surface: triggerClass, copy_result: "clipboard" });
     } catch (_error) {
       setCopyStatus(SUPPORT_ZEC_ADDRESS);
+      trackActivity("support_zec_copied", { trigger_surface: triggerClass, copy_result: "fallback_text" });
     }
   }
 
   return (
-    <Dialog onOpenChange={() => setCopyStatus("")}>
+    <Dialog onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button type="button" variant={triggerClass}>
           {triggerLabel}

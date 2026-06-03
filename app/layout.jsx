@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/app/globals.css";
 
+import { MixpanelAnalytics } from "@/components/mixpanel-analytics";
 import { comicImageMetadata, getLatestComic } from "@/lib/comics";
 import {
   SITE_CATEGORY,
@@ -63,6 +64,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-scroll-behavior="smooth">
       <body>
         {children}
+        <MixpanelAnalytics />
         <Analytics />
         <SpeedInsights />
       </body>

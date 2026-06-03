@@ -2,9 +2,10 @@
 
 import { useId, useState } from "react";
 
+import { trackActivity } from "@/components/mixpanel-analytics";
 import { SUBSTACK_FORM_ACTION } from "@/lib/site";
 
-export function SubstackForm() {
+export function SubstackForm({ source = "inline", comicSlug = "" }) {
   const generatedId = useId().replaceAll(":", "");
   const emailId = `newsletter-email-${generatedId}`;
   const statusId = `newsletter-status-${generatedId}`;
@@ -19,12 +20,14 @@ export function SubstackForm() {
     if (!input || !input.checkValidity()) {
       event.preventDefault();
       setStatus("Enter a valid email address.");
+      trackActivity("newsletter_form_validation_failed", { source, comic_slug: comicSlug });
       input?.reportValidity();
       return;
     }
 
     setStatus("Sending your note to Substack...");
     setIsSending(true);
+    trackActivity("newsletter_form_submitted", { source, comic_slug: comicSlug });
 
     window.setTimeout(() => {
       setStatus("Check your inbox for the Substack confirmation.");
@@ -57,6 +60,8 @@ export function SubstackForm() {
 }
 
 export function SubstackSubscribe({ page = false }) {
+  const source = page ? "newsletter_page" : "home_inline";
+
   return (
     <section className={page ? "newsletter-panel newsletter-panel-page" : "newsletter-signup"} aria-labelledby={page ? "newsletter-page-heading" : "newsletter-heading"}>
       {!page ? (
@@ -66,7 +71,7 @@ export function SubstackSubscribe({ page = false }) {
           <p>Get the next obituary comic by email.</p>
         </div>
       ) : null}
-      <SubstackForm />
+      <SubstackForm source={source} />
     </section>
   );
 }

@@ -9,7 +9,7 @@ export function LatestPanel({ comic }) {
   const size = imageSize(comic, firstImage);
 
   return (
-    <Link className="latest-panel" href={`/comics/${comic.slug}/#read`} aria-label={`Read the latest obituary comic about ${comic.person}`}>
+    <Link className="latest-panel" href={`/comics/${comic.slug}/#read`} aria-label={`Read the latest obituary comic about ${comic.person}`} data-comic-slug={comic.slug}>
       <div className="latest-panel-label">Latest issue</div>
       <div className="latest-panel-grid">
         <div className="latest-panel-cover">

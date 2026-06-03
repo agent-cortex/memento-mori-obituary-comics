@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { ComicSubscribeDialog } from "@/components/comic-subscribe-dialog";
+import { trackActivity } from "@/components/mixpanel-analytics";
 import { SupportDialog } from "@/components/support-dialog";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -18,7 +19,18 @@ export function ReaderShell({ comic, nextComic }) {
   const [textSize, setTextSize] = useState("md");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [settingsLoaded, setSettingsLoaded] = useState(false);
+  const currentSlideRef = useRef(0);
   const pages = comic.pages || [];
+
+  useEffect(() => {
+    trackActivity("comic_reader_loaded", {
+      comic_slug: comic.slug,
+      person: comic.person,
+      page_count: pages.length,
+      has_pdf: Boolean(comic.pdf),
+      source_count: sourceItems(comic).length,
+    });
+  }, [comic.pdf, comic.person, comic.slug, pages.length]);
 
   useEffect(() => {
     try {
@@ -39,15 +51,19 @@ export function ReaderShell({ comic, nextComic }) {
   }, [layout, settingsLoaded, theme, textSize]);
 
   useEffect(() => {
+    currentSlideRef.current = currentSlide;
+  }, [currentSlide]);
+
+  useEffect(() => {
     function onKeyDown(event) {
       if (event.target?.matches?.("input, textarea")) return;
       if (layout !== "slide") return;
-      if (event.key === "ArrowLeft") setCurrentSlide((index) => (index - 1 + pages.length) % pages.length);
-      if (event.key === "ArrowRight") setCurrentSlide((index) => (index + 1) % pages.length);
+      if (event.key === "ArrowLeft") advanceSlide("previous", "keyboard");
+      if (event.key === "ArrowRight") advanceSlide("next", "keyboard");
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [layout, pages.length]);
+  }, [comic.slug, layout, pages.length]);
 
   const bodyClass = useMemo(() => ["reader-mode", theme !== "obsidian" ? `theme-${theme}` : "", `text-size-adjust-${textSize}`].filter(Boolean).join(" "), [theme, textSize]);
   const progress = layout === "slide" && pages.length ? ((currentSlide + 1) / pages.length) * 100 : 0;
@@ -62,8 +78,46 @@ export function ReaderShell({ comic, nextComic }) {
 
   function toggleFullscreen() {
     if (!document.fullscreenEnabled) return;
+    trackActivity("reader_fullscreen_requested", {
+      comic_slug: comic.slug,
+      fullscreen_action: document.fullscreenElement ? "exit" : "enter",
+    });
     if (document.fullscreenElement) document.exitFullscreen();
     else document.documentElement.requestFullscreen();
+  }
+
+  function setReaderLayout(value, source) {
+    if (!value || value === layout) return;
+    setLayout(value);
+    trackActivity("reader_setting_changed", { comic_slug: comic.slug, setting: "layout", value, source });
+  }
+
+  function setReaderTheme(value) {
+    if (!value || value === theme) return;
+    setTheme(value);
+    trackActivity("reader_setting_changed", { comic_slug: comic.slug, setting: "theme", value, source: "reader_menu" });
+  }
+
+  function setReaderTextSize(value) {
+    if (!value || value === textSize) return;
+    setTextSize(value);
+    trackActivity("reader_setting_changed", { comic_slug: comic.slug, setting: "text_size", value, source: "reader_menu" });
+  }
+
+  function advanceSlide(direction, source = "button") {
+    if (!pages.length) return;
+    const index = currentSlideRef.current;
+    const nextIndex = direction === "previous" ? (index - 1 + pages.length) % pages.length : (index + 1) % pages.length;
+    currentSlideRef.current = nextIndex;
+    setCurrentSlide(nextIndex);
+    trackActivity("reader_slide_changed", {
+      comic_slug: comic.slug,
+      direction,
+      source,
+      from_page: index + 1,
+      to_page: nextIndex + 1,
+      page_count: pages.length,
+    });
   }
 
   return (
@@ -76,7 +130,7 @@ export function ReaderShell({ comic, nextComic }) {
           {comic.person} · {comic.title}
         </div>
         <div className="reader-actions">
-          <ToggleGroup className="option-group reader-layout-group main-toolbar-only" type="single" value={layout} onValueChange={(value) => value && setLayout(value)}>
+          <ToggleGroup className="option-group reader-layout-group main-toolbar-only" type="single" value={layout} onValueChange={(value) => setReaderLayout(value, "toolbar")}>
             <ToggleGroupItem value="vertical">Scroll</ToggleGroupItem>
             <ToggleGroupItem value="spread">Book</ToggleGroupItem>
             <ToggleGroupItem value="slide">Slide</ToggleGroupItem>
@@ -90,19 +144,19 @@ export function ReaderShell({ comic, nextComic }) {
             <summary className="reader-btn reader-more-summary">More</summary>
             <div className="reader-more-menu">
               <div className="reader-menu-label mobile-only">Layout</div>
-              <ToggleGroup className="option-group reader-layout-group mobile-only" type="single" value={layout} onValueChange={(value) => value && setLayout(value)}>
+              <ToggleGroup className="option-group reader-layout-group mobile-only" type="single" value={layout} onValueChange={(value) => setReaderLayout(value, "reader_menu")}>
                 <ToggleGroupItem value="vertical">Scroll</ToggleGroupItem>
                 <ToggleGroupItem value="spread">Book</ToggleGroupItem>
                 <ToggleGroupItem value="slide">Slide</ToggleGroupItem>
               </ToggleGroup>
               <div className="reader-menu-label">Theme</div>
-              <ToggleGroup className="option-group reader-theme-group" type="single" value={theme} onValueChange={(value) => value && setTheme(value)}>
+              <ToggleGroup className="option-group reader-theme-group" type="single" value={theme} onValueChange={setReaderTheme}>
                 <ToggleGroupItem value="obsidian">Obsidian</ToggleGroupItem>
                 <ToggleGroupItem value="sepia">Sepia</ToggleGroupItem>
                 <ToggleGroupItem value="stark">OLED</ToggleGroupItem>
               </ToggleGroup>
               <div className="reader-menu-label">Reading</div>
-              <ToggleGroup className="option-group reader-theme-group" type="single" value={textSize} onValueChange={(value) => value && setTextSize(value)}>
+              <ToggleGroup className="option-group reader-theme-group" type="single" value={textSize} onValueChange={setReaderTextSize}>
                 <ToggleGroupItem value="sm">A-</ToggleGroupItem>
                 <ToggleGroupItem value="md">A</ToggleGroupItem>
                 <ToggleGroupItem value="lg">A+</ToggleGroupItem>
@@ -157,10 +211,10 @@ export function ReaderShell({ comic, nextComic }) {
 
       {layout === "slide" ? (
         <>
-          <button className="slide-nav-overlay slide-nav-prev" type="button" onClick={() => setCurrentSlide((index) => (index - 1 + pages.length) % pages.length)} aria-label="Previous page">
+          <button className="slide-nav-overlay slide-nav-prev" type="button" onClick={() => advanceSlide("previous")} aria-label="Previous page">
             ←
           </button>
-          <button className="slide-nav-overlay slide-nav-next" type="button" onClick={() => setCurrentSlide((index) => (index + 1) % pages.length)} aria-label="Next page">
+          <button className="slide-nav-overlay slide-nav-next" type="button" onClick={() => advanceSlide("next")} aria-label="Next page">
             →
           </button>
         </>

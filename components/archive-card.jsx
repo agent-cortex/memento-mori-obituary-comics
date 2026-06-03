@@ -10,7 +10,7 @@ export function ArchiveCard({ comic, priority = false }) {
   const size = imageSize(comic, image);
 
   return (
-    <article className="archive-card">
+    <article className="archive-card" data-comic-slug={comic.slug}>
       <Link className="archive-cover" href={`/comics/${comic.slug}/`} aria-label={`Open ${comic.person} obituary comic`}>
         <Image
           src={cover}
