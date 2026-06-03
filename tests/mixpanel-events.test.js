@@ -43,7 +43,7 @@ test("mixpanelTrackRequestBody serializes events in the accepted /track shape", 
     },
   });
 
-  const parsed = JSON.parse(body);
+  const parsed = JSON.parse(new URLSearchParams(body).get("data"));
   assert.ok(Array.isArray(parsed));
   assert.equal(parsed.length, 1);
   assert.equal(parsed[0].event, "page_viewed");

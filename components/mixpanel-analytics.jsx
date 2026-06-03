@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { MIXPANEL_SCROLL_DEPTHS, comicSlugFromPath, mixpanelTrackRequestBody, pageTrackingProperties } from "@/lib/mixpanel-events";
 import { SITE_NAME } from "@/lib/site";
@@ -29,6 +29,8 @@ export function trackActivity(event, properties = {}) {
 
 export function MixpanelAnalytics() {
   const pathname = usePathname() || "/";
+  const searchParams = useSearchParams();
+  const search = searchParams?.toString() || "";
   const trackerRef = useRef(null);
   const lastPageKeyRef = useRef("");
   const reachedDepthsRef = useRef(new Set());
@@ -88,8 +90,7 @@ export function MixpanelAnalytics() {
   useEffect(() => {
     if (!MIXPANEL_TOKEN || !trackerRef.current) return;
 
-    const search = window.location.search || "";
-    const pageKey = `${pathname}${search}`;
+    const pageKey = `${pathname}?${search}`;
     if (lastPageKeyRef.current === pageKey) return;
 
     lastPageKeyRef.current = pageKey;
@@ -99,7 +100,7 @@ export function MixpanelAnalytics() {
       ...pageTrackingProperties(pathname, search),
       page_title: document.title,
     });
-  }, [pathname]);
+  }, [pathname, search]);
 
   useEffect(() => {
     if (!MIXPANEL_TOKEN || !trackerRef.current) return undefined;
@@ -157,7 +158,7 @@ function createBrowserTracker() {
       const url = `${apiHost}/track?ip=1`;
 
       if (navigator.sendBeacon) {
-        const sent = navigator.sendBeacon(url, new Blob([body], { type: "application/json" }));
+        const sent = navigator.sendBeacon(url, new Blob([body], { type: "application/x-www-form-urlencoded" }));
         if (sent) return;
       }
 
@@ -165,7 +166,7 @@ function createBrowserTracker() {
         method: "POST",
         mode: "cors",
         keepalive: true,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
       }).catch((error) => {
         if (MIXPANEL_DEBUG) console.warn("Mixpanel tracking failed", error);
