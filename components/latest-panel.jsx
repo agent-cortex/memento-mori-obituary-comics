@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { firstImagePath, imageSize } from "@/lib/comic-presenters";
 
@@ -12,7 +13,15 @@ export function LatestPanel({ comic }) {
       <div className="latest-panel-label">Latest issue</div>
       <div className="latest-panel-grid">
         <div className="latest-panel-cover">
-          <img src={firstImagePath(comic)} alt={`${comic.person} obituary comic cover`} width={size.width} height={size.height} loading="eager" fetchPriority="high" />
+          <Image
+            src={firstImagePath(comic)}
+            alt={`${comic.person} obituary comic cover`}
+            width={size.width}
+            height={size.height}
+            sizes="(max-width: 900px) 100vw, 50vw"
+            preload
+            fetchPriority="high"
+          />
         </div>
         <div className="latest-panel-copy">
           <div className="latest-panel-date">{comic.published_at}</div>

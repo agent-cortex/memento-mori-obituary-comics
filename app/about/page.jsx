@@ -2,18 +2,30 @@ import Link from "next/link";
 
 import { SiteNav } from "@/components/site-nav";
 import { Button } from "@/components/ui/button";
-import { firstImageUrl, getLatestComic } from "@/lib/comics";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { comicImageMetadata, getLatestComic } from "@/lib/comics";
+import { publisherSchema, SITE_LANGUAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+
+const latestComic = getLatestComic();
+const description = "Editorial method, source standards, and publishing notes for Memento Mori Obituary Comics.";
+const images = comicImageMetadata(latestComic);
 
 export const metadata = {
-  title: `About | ${SITE_NAME}`,
-  description: "Editorial method, source standards, and publishing notes for Memento Mori Obituary Comics.",
+  title: "Editorial Method",
+  description,
   alternates: {
     canonical: "/about/",
   },
   openGraph: {
-    title: `About | ${SITE_NAME}`,
-    images: [firstImageUrl(getLatestComic())],
+    type: "website",
+    title: `Editorial Method | ${SITE_NAME}`,
+    description,
+    url: "/about/",
+    images,
+  },
+  twitter: {
+    title: `Editorial Method | ${SITE_NAME}`,
+    description,
+    images,
   },
 };
 
@@ -21,17 +33,15 @@ export default function AboutPage() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      publisherSchema(),
       {
         "@type": "AboutPage",
         "@id": `${SITE_URL}/about/#about`,
         name: "About Memento Mori Obituary Comics",
         url: `${SITE_URL}/about/`,
-        description: "Editorial method and source standards for Memento Mori Obituary Comics.",
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: `${SITE_URL}/`,
-        },
+        description,
+        inLanguage: SITE_LANGUAGE,
+        publisher: { "@id": `${SITE_URL}/#organization` },
       },
     ],
   };
@@ -61,6 +71,10 @@ export default function AboutPage() {
             <div className="about-card">
               <h2>Format</h2>
               <p>The reader preserves the comic as images and PDF, while the page also includes text summaries, story notes, and structured data so search engines and AI systems can understand the work without relying on image OCR.</p>
+            </div>
+            <div className="about-card">
+              <h2>Publisher</h2>
+              <p>The archive is maintained as a small open-source publishing system for durable comic permalinks, crawlable source notes, and stable media delivery.</p>
             </div>
             <p className="about-back">
               <Button asChild variant="primary">

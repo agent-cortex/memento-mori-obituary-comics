@@ -2,9 +2,21 @@
 
 A Next.js archive for daily obituary comics about deceased people who faced death and made significant work afterward.
 
-Live site: https://finalnotes.page/
+Production site: https://finalnotes.page/
 
 Fallback Vercel URL: https://memento-mori-obituary-comics.vercel.app/
+
+Repository: https://github.com/megabyte0x/memento-mori-obituary-comics
+
+## Maintainer surface
+
+This project is maintained as a small open-source publishing system. The repo includes:
+
+- a Next.js App Router archive and comic reader
+- Vercel Blob-backed private media storage with stable public `/media/...` URLs
+- Next image optimization for Blob-backed comic JPG/PNG covers and pages
+- an x402-paid `GET /api/latest-pdf` endpoint for agent-accessible PDF delivery
+- regression tests for Blob delivery, x402/latest-PDF behavior, upload tooling, and comic data
 
 Each comic gets a durable permalink:
 
@@ -65,6 +77,8 @@ pnpm run blob:upload -- --slug <slug> --require-assets
 ```
 
 `blob:upload` requires `BLOB_READ_WRITE_TOKEN` in `.env.local` or the deployment environment. Blob objects are written with stable keys such as `comics/<slug>/pages/01-<slug>.jpg`, `access: "private"`, and no random suffix.
+
+For Vercel CLI compatibility, use the checked-in deploy script or run ad-hoc Vercel commands through `pnpm dlx vercel@latest ...` rather than relying on an old global `vercel` binary.
 
 ## Paid agent PDF endpoint
 

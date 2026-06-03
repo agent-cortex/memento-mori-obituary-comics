@@ -2,12 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { ComicSubscribeDialog } from "@/components/comic-subscribe-dialog";
 import { SupportDialog } from "@/components/support-dialog";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { citableSummary, firstImagePath, imageSize, mediaPath, pageSummary, sourceItems, storyNotes } from "@/lib/comic-presenters";
+import { citableSummary, comicDescription, firstImagePath, imageSize, mediaPath, pageSummary, sourceItems, storyNotes } from "@/lib/comic-presenters";
 
 const READER_STORAGE = "memento_reader_settings_v1";
 
@@ -138,12 +139,14 @@ export function ReaderShell({ comic, nextComic }) {
           const active = layout === "slide" && index === currentSlide;
           return (
             <figure className={`reader-page${active ? " active" : ""}`} id={`page-${String(index + 1).padStart(2, "0")}`} key={src}>
-              <img
+              <Image
                 src={mediaPath(comic, src)}
                 alt={`Page ${index + 1} of ${comic.person}: ${comic.title}${summary ? ` - ${summary}` : ""}`}
                 width={size.width}
                 height={size.height}
-                loading={index === 0 ? "eager" : "lazy"}
+                sizes="(max-width: 900px) 100vw, 900px"
+                preload={index === 0}
+                loading={index === 0 ? undefined : "lazy"}
                 fetchPriority={index === 0 ? "high" : undefined}
               />
               <figcaption>{summary || `Page ${index + 1}`}</figcaption>
@@ -176,14 +179,20 @@ function ReaderFooter({ comic, nextComic }) {
         <div className="epilogue-quote">“{comic.closing_line || ""}”</div>
         <div className="epilogue-sources">
           {sources.map((source) => (
-            <span className="source-chip" key={source.name}>
-              {source.name}
-            </span>
+            source.url ? (
+              <a className="source-chip" href={source.url} rel="noopener noreferrer" target="_blank" key={source.name}>
+                {source.name}
+              </a>
+            ) : (
+              <span className="source-chip" key={source.name}>
+                {source.name}
+              </span>
+            )
           ))}
         </div>
       </div>
       <section className="reader-context" aria-label="Comic notes and sources">
-        <p className="reader-source-line">{comic.closing_line}</p>
+        <p className="reader-source-line">{comicDescription(comic)}</p>
         <h2>Citable Summary</h2>
         <ul className="summary-list">
           {citableSummary(comic).map((item) => (
@@ -225,7 +234,14 @@ function ReaderFooter({ comic, nextComic }) {
           <div className="next-kicker">Up Next</div>
           <Link href={`/comics/${nextComic.slug}/#read`} className="next-comic-link">
             <div className="next-cover">
-              <img src={firstImagePath(nextComic)} alt={`${nextComic.person} cover`} width={imageSize(nextComic, nextComic.pages?.[0] || "").width} height={imageSize(nextComic, nextComic.pages?.[0] || "").height} loading="lazy" />
+              <Image
+                src={firstImagePath(nextComic)}
+                alt={`${nextComic.person} cover`}
+                width={imageSize(nextComic, nextComic.pages?.[0] || "").width}
+                height={imageSize(nextComic, nextComic.pages?.[0] || "").height}
+                sizes="(max-width: 760px) 45vw, 220px"
+                loading="lazy"
+              />
             </div>
             <div className="next-info">
               <h4>{nextComic.person}</h4>

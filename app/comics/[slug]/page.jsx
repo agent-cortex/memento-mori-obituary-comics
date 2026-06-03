@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 
 import { ReaderShell } from "@/components/reader-shell";
-import { comicDescription, comicSchema, firstImageUrl, getComic, getComics, getNextComic } from "@/lib/comics";
+import { comicDescription, comicImageMetadata, comicKeywords, comicSchema, getComic, getComics, getNextComic } from "@/lib/comics";
 import { SITE_NAME } from "@/lib/site";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getComics().map((comic) => ({ slug: comic.slug }));
@@ -14,9 +16,12 @@ export async function generateMetadata({ params }) {
   if (!comic) return {};
   const title = `${comic.person} Obituary Comic - ${comic.title}`;
   const description = comicDescription(comic);
+  const images = comicImageMetadata(comic);
   return {
     title,
     description,
+    keywords: comicKeywords(comic),
+    authors: [{ name: SITE_NAME }],
     alternates: {
       canonical: `/comics/${comic.slug}/`,
     },
@@ -25,13 +30,18 @@ export async function generateMetadata({ params }) {
       title: `${title} | ${SITE_NAME}`,
       description,
       url: `/comics/${comic.slug}/`,
-      images: [firstImageUrl(comic)],
+      publishedTime: comic.published_at,
+      modifiedTime: comic.updated_at || comic.published_at,
+      authors: [SITE_NAME],
+      section: "Obituary Comics",
+      tags: comicKeywords(comic),
+      images,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [firstImageUrl(comic)],
+      images,
     },
   };
 }

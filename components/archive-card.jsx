@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { firstImagePath, imageSize, mediaPath } from "@/lib/comic-presenters";
@@ -11,12 +12,14 @@ export function ArchiveCard({ comic, priority = false }) {
   return (
     <article className="archive-card">
       <Link className="archive-cover" href={`/comics/${comic.slug}/`} aria-label={`Open ${comic.person} obituary comic`}>
-        <img
+        <Image
           src={cover}
           alt={`${comic.person} obituary comic cover`}
           width={size.width}
           height={size.height}
-          loading={priority ? "eager" : "lazy"}
+          sizes="(max-width: 900px) 100vw, 33vw"
+          preload={priority}
+          loading={priority ? undefined : "lazy"}
           fetchPriority={priority ? "high" : undefined}
         />
       </Link>

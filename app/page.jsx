@@ -6,15 +6,29 @@ import { RitualTools } from "@/components/ritual-tools";
 import { SiteNav } from "@/components/site-nav";
 import { SubstackSubscribe } from "@/components/substack-subscribe";
 import { Button } from "@/components/ui/button";
-import { getComics, getLatestComic, homeSchema } from "@/lib/comics";
-import { firstImageUrl } from "@/lib/comics";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import { comicImageMetadata, getComics, getLatestComic, homeSchema } from "@/lib/comics";
+import { SITE_DESCRIPTION, SITE_KEYWORDS, SITE_TITLE } from "@/lib/site";
+
+const latestComic = getLatestComic();
+const homeImages = comicImageMetadata(latestComic);
 
 export const metadata = {
-  title: `${SITE_NAME} - Daily Biographical Comics About Mortality and Work`,
+  title: SITE_TITLE,
   description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    images: [firstImageUrl(getLatestComic())],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    images: homeImages,
+  },
+  twitter: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: homeImages,
   },
 };
 
@@ -36,7 +50,7 @@ export default function HomePage() {
               <i aria-hidden="true" />
               <span />
             </div>
-            <p>Lives that met death early, then used borrowed time to make something that outlived them.</p>
+            <p>Obituary comics are source-backed visual biographies about people who met death, illness, exile, violence, or loss and made work that outlived them.</p>
             <div className="btns">
               {latest ? (
                 <Button asChild variant="primary">
@@ -64,6 +78,19 @@ export default function HomePage() {
           {comics.length ? comics.map((comic, index) => <ArchiveCard comic={comic} priority={index === 0} key={comic.slug} />) : <div className="empty">No comics published yet.</div>}
         </div>
       </main>
+
+      <section className="wrap section definition-section" aria-labelledby="what-are-obituary-comics">
+        <div className="section-head">
+          <div>
+            <div className="kicker">Definition</div>
+            <h2 id="what-are-obituary-comics">What Are Obituary Comics?</h2>
+          </div>
+          <p>Short visual biographies built for readers and crawlers.</p>
+        </div>
+        <p>
+          Memento Mori Obituary Comics publishes compact, source-backed stories about artists, thinkers, athletes, and witnesses whose work was shaped by a direct encounter with mortality. Each entry keeps the comic pages as the primary reading experience, then adds crawlable summaries, dated context, source links, PDF access, and structured data so search engines and AI systems can understand the subject without relying on image OCR.
+        </p>
+      </section>
 
       <SubstackSubscribe />
 

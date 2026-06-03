@@ -3,19 +3,30 @@ import Link from "next/link";
 import { SiteNav } from "@/components/site-nav";
 import { SubstackSubscribe } from "@/components/substack-subscribe";
 import { Button } from "@/components/ui/button";
-import { firstImageUrl, getLatestComic } from "@/lib/comics";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { comicImageMetadata, getLatestComic } from "@/lib/comics";
+import { publisherSchema, SITE_LANGUAGE, SITE_NAME, SITE_URL, SUBSTACK_URL } from "@/lib/site";
+
+const latestComic = getLatestComic();
+const description = "A Substack dispatch for new obituary comics, source notes, and weekly memento mori reading.";
+const images = comicImageMetadata(latestComic);
 
 export const metadata = {
   title: "Borrowed Time Dispatch",
-  description: "A Substack dispatch for new obituary comics, source notes, and weekly memento mori reading.",
+  description,
   alternates: {
     canonical: "/newsletter/",
   },
   openGraph: {
+    type: "website",
     title: `Borrowed Time Dispatch | ${SITE_NAME}`,
-    description: "A Substack dispatch for new obituary comics, source notes, and weekly memento mori reading.",
-    images: [firstImageUrl(getLatestComic())],
+    description,
+    url: "/newsletter/",
+    images,
+  },
+  twitter: {
+    title: `Borrowed Time Dispatch | ${SITE_NAME}`,
+    description,
+    images,
   },
 };
 
@@ -23,17 +34,16 @@ export default function NewsletterPage() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      publisherSchema(),
       {
         "@type": "WebPage",
         "@id": `${SITE_URL}/newsletter/#newsletter`,
         name: "Borrowed Time Dispatch",
         url: `${SITE_URL}/newsletter/`,
-        description: "Substack newsletter for new Memento Mori Obituary Comics.",
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: `${SITE_URL}/`,
-        },
+        description,
+        inLanguage: SITE_LANGUAGE,
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        sameAs: SUBSTACK_URL,
       },
     ],
   };

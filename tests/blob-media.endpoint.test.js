@@ -31,13 +31,39 @@ test("GET /media/comics/:path serves private Blob content through cacheable site
   assert.equal(response.headers.get("content-type"), "image/jpeg");
   assert.equal(response.headers.get("content-length"), "11");
   assert.equal(response.headers.get("etag"), "blob-etag");
-  assert.equal(response.headers.get("cache-control"), "public, max-age=31536000, s-maxage=31536000, immutable");
+  assert.equal(response.headers.get("cache-control"), "public, max-age=31536000, immutable");
+  assert.equal(response.headers.get("cdn-cache-control"), "public, max-age=31536000, s-maxage=31536000, immutable");
+  assert.equal(response.headers.get("vercel-cdn-cache-control"), "public, max-age=31536000, s-maxage=31536000, immutable");
   assert.deepEqual(calls, [
     {
       blobPath: "comics/sample/pages/01.jpg",
       options: { access: "private", ifNoneMatch: "old-etag" },
     },
   ]);
+});
+
+test("HEAD /media/comics/:path returns cacheable metadata without a body", async () => {
+  const app = createApp({
+    blobClient: {
+      async get() {
+        return {
+          stream: new Blob(["image-bytes"]).stream(),
+          blob: {
+            contentType: "image/jpeg",
+            etag: "blob-etag",
+            size: 11,
+          },
+        };
+      },
+    },
+  });
+
+  const response = await app.fetch(new Request("https://example.com/media/comics/sample/pages/01.jpg", { method: "HEAD" }));
+
+  assert.equal(response.status, 200);
+  assert.equal(response.body, null);
+  assert.equal(response.headers.get("content-length"), "11");
+  assert.equal(response.headers.get("cache-control"), "public, max-age=31536000, immutable");
 });
 
 test("GET /media/comics/:path rejects unsafe paths before Blob access", async () => {
