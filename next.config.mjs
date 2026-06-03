@@ -2,7 +2,7 @@
 const nextConfig = {
   trailingSlash: true,
   outputFileTracingIncludes: {
-    "/api/latest-pdf": ["./comics.json", "./public/comics/**/*"],
+    "/api/latest-pdf": ["./comics.json"],
   },
   turbopack: {
     root: process.cwd(),

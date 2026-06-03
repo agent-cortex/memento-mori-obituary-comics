@@ -1,10 +1,9 @@
 import assert from "node:assert/strict";
-import path from "node:path";
 import test from "node:test";
 
 import {
   findLatestComicWithPdf,
-  resolveComicPdfPath,
+  resolveComicPdfBlobPath,
 } from "../lib/latest-pdf.js";
 
 test("findLatestComicWithPdf returns the newest comic with a PDF", () => {
@@ -34,18 +33,15 @@ test("findLatestComicWithPdf skips comics without PDF metadata", () => {
   assert.equal(findLatestComicWithPdf(comics).slug, "older-with-pdf");
 });
 
-test("resolveComicPdfPath rejects traversal PDF names", () => {
+test("resolveComicPdfBlobPath rejects traversal PDF names", () => {
   assert.throws(
-    () => resolveComicPdfPath({ slug: "safe", pdf: "../secret.pdf" }, process.cwd()),
+    () => resolveComicPdfBlobPath({ slug: "safe", pdf: "../secret.pdf" }),
     /Unsafe PDF filename/,
   );
 });
 
-test("resolveComicPdfPath returns the expected in-comic PDF path", () => {
-  const resolved = resolveComicPdfPath(
-    { slug: "safe", pdf: "comic.pdf" },
-    "/repo",
-  );
+test("resolveComicPdfBlobPath returns the expected private Blob path", () => {
+  const resolved = resolveComicPdfBlobPath({ slug: "safe", pdf: "comic.pdf" });
 
-  assert.equal(resolved, path.join("/repo", "public", "comics", "safe", "comic.pdf"));
+  assert.equal(resolved, "comics/safe/comic.pdf");
 });

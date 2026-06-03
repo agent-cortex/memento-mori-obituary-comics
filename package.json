@@ -6,7 +6,9 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "blob:dry-run": "node scripts/upload_comics_to_blob.js --dry-run",
+    "blob:upload": "node scripts/upload_comics_to_blob.js"
   },
   "dependencies": {
     "@coinbase/x402": "2.1.0",

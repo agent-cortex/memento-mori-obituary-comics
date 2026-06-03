@@ -30,6 +30,7 @@ The app uses the Next.js App Router. Route and UI ownership is:
 
 - `app/page.jsx` for the archive homepage.
 - `app/comics/[slug]/page.jsx` and `components/reader-shell.jsx` for the reader.
+- `app/media/[...path]/route.js` for private Vercel Blob media delivery through stable `/media/comics/...` URLs.
 - `app/about/page.jsx` for editorial method.
 - `app/api/latest-pdf/route.js` for the paid agent PDF endpoint.
 - `app/robots.js`, `app/sitemap.js`, and `app/llms.txt/route.js` for discovery files.
@@ -37,7 +38,7 @@ The app uses the Next.js App Router. Route and UI ownership is:
 
 ## Add a generated comic
 
-Comic metadata lives in `comics.json`. Served images and PDFs live under `public/comics/<slug>/`.
+Comic metadata lives in `comics.json`. New generated images and PDFs are staged under `public/comics/<slug>/`, then uploaded to private Vercel Blob storage. The rendered site serves media from `/media/comics/<slug>/...`; it does not link directly to `/public`.
 
 ```bash
 python scripts/add_comic.py /path/to/generated-output \
@@ -56,6 +57,15 @@ Refresh and validate existing public media without generating static HTML:
 python scripts/add_comic.py --render-only
 ```
 
+Upload staged media into the private Blob store:
+
+```bash
+pnpm run blob:dry-run -- --slug <slug> --require-assets
+pnpm run blob:upload -- --slug <slug> --require-assets
+```
+
+`blob:upload` requires `BLOB_READ_WRITE_TOKEN` in `.env.local` or the deployment environment. Blob objects are written with stable keys such as `comics/<slug>/pages/01-<slug>.jpg`, `access: "private"`, and no random suffix.
+
 ## Paid agent PDF endpoint
 
 Agents can request the latest comic PDF at:
@@ -72,4 +82,5 @@ Production deployments must set:
 X402_PAY_TO=0xYourReceivingWallet
 CDP_API_KEY_ID=your-cdp-key-id
 CDP_API_KEY_SECRET=your-cdp-key-secret
+BLOB_READ_WRITE_TOKEN=vercel_blob_rw_...
 ```

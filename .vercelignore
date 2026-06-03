@@ -1,13 +1,6 @@
-.vercel
-.next
-.env.local
-.DS_Store
-node_modules
-/tmp
-__pycache__
-*.pyc
 .env
-.env*.local
+.env.local
+node_modules
 /public/comics/**/*.jpg
 /public/comics/**/*.jpeg
 /public/comics/**/*.png
