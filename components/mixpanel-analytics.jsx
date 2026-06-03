@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
-import { MIXPANEL_SCROLL_DEPTHS, comicSlugFromPath, pageTrackingProperties } from "@/lib/mixpanel-events";
+import { MIXPANEL_SCROLL_DEPTHS, comicSlugFromPath, mixpanelTrackRequestBody, pageTrackingProperties } from "@/lib/mixpanel-events";
 import { SITE_NAME } from "@/lib/site";
 
 const MIXPANEL_TOKEN = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN?.trim() || "";
@@ -13,10 +13,18 @@ const TRACK_EVENT = "finalnotes:track";
 const DISTINCT_ID_KEY = "finalnotes_mixpanel_distinct_id";
 const SESSION_ID_KEY = "finalnotes_mixpanel_session_id";
 const SESSION_STARTED_KEY = "finalnotes_mixpanel_session_started_at";
+const TRACK_QUEUE_KEY = "__finalNotesTrackQueue";
+const TRACK_READY_KEY = "__finalNotesTrackReady";
 
 export function trackActivity(event, properties = {}) {
   if (typeof window === "undefined" || !event) return;
-  window.dispatchEvent(new CustomEvent(TRACK_EVENT, { detail: { event, properties } }));
+  const detail = { event, properties };
+  if (!window[TRACK_READY_KEY]) {
+    window[TRACK_QUEUE_KEY] = window[TRACK_QUEUE_KEY] || [];
+    window[TRACK_QUEUE_KEY].push(detail);
+    return;
+  }
+  window.dispatchEvent(new CustomEvent(TRACK_EVENT, { detail }));
 }
 
 export function MixpanelAnalytics() {
@@ -61,9 +69,17 @@ export function MixpanelAnalytics() {
     }
 
     window.addEventListener(TRACK_EVENT, onCustomEvent);
+    window[TRACK_READY_KEY] = true;
+
+    for (const detail of window[TRACK_QUEUE_KEY] || []) {
+      if (detail.event) track(detail.event, detail.properties || {});
+    }
+    window[TRACK_QUEUE_KEY] = [];
+
     document.addEventListener("click", onClick, { capture: true });
 
     return () => {
+      window[TRACK_READY_KEY] = false;
       window.removeEventListener(TRACK_EVENT, onCustomEvent);
       document.removeEventListener("click", onClick, { capture: true });
     };
@@ -137,7 +153,7 @@ function createBrowserTracker() {
         },
       };
 
-      const body = JSON.stringify(payload);
+      const body = mixpanelTrackRequestBody(payload);
       const url = `${apiHost}/track?ip=1`;
 
       if (navigator.sendBeacon) {

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { MIXPANEL_EVENT_NAMES, MIXPANEL_SCROLL_DEPTHS, attributionProperties, comicSlugFromPath, pageTrackingProperties, pageTypeFromPath } from "../lib/mixpanel-events.js";
+import { MIXPANEL_EVENT_NAMES, MIXPANEL_SCROLL_DEPTHS, attributionProperties, comicSlugFromPath, mixpanelTrackRequestBody, pageTrackingProperties, pageTypeFromPath } from "../lib/mixpanel-events.js";
 
 test("Mixpanel event taxonomy covers core site activity", () => {
   assert.deepEqual(MIXPANEL_SCROLL_DEPTHS, [25, 50, 75, 90]);
@@ -32,4 +32,20 @@ test("pageTrackingProperties extracts comic slug and UTM attribution", () => {
     comic_slug: "primo-levi",
     utm_campaign: "launch",
   });
+});
+
+test("mixpanelTrackRequestBody serializes events in the accepted /track shape", () => {
+  const body = mixpanelTrackRequestBody({
+    event: "page_viewed",
+    properties: {
+      token: "test-token",
+      distinct_id: "test-user",
+    },
+  });
+
+  const parsed = JSON.parse(body);
+  assert.ok(Array.isArray(parsed));
+  assert.equal(parsed.length, 1);
+  assert.equal(parsed[0].event, "page_viewed");
+  assert.equal(parsed[0].properties.token, "test-token");
 });
