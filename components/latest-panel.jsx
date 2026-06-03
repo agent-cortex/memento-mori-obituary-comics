@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { compactText, firstImagePath, imageSize, sourceNames } from "@/lib/comic-presenters";
+import { firstImagePath, imageSize } from "@/lib/comic-presenters";
 
 export function LatestPanel({ comic }) {
   if (!comic) return null;
@@ -20,14 +20,6 @@ export function LatestPanel({ comic }) {
           <div className="latest-panel-title">{comic.title}</div>
           <div className="latest-panel-years">{comic.years}</div>
           <p>{comic.dek}</p>
-          <div className="latest-panel-note">
-            <span>Sources</span>
-            {compactText(sourceNames(comic), 90)}
-          </div>
-          <div className="latest-panel-note">
-            <span>Mortality</span>
-            {compactText(comic.mortality_event || "", 132)}
-          </div>
         </div>
       </div>
     </Link>

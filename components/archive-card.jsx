@@ -26,13 +26,6 @@ export function ArchiveCard({ comic, priority = false }) {
         </div>
         <h3>{comic.person}</h3>
         <p>{comic.dek}</p>
-        {comic.mortality_event ? (
-          <div className="mortality-badge">
-            <span>
-              <em>{comic.mortality_event}</em>
-            </span>
-          </div>
-        ) : null}
         <div className="archive-actions">
           <Button asChild variant="miniPrimary">
             <Link href={`/comics/${comic.slug}/#read`}>Read</Link>

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
+import { ComicSubscribeDialog } from "@/components/comic-subscribe-dialog";
 import { SupportDialog } from "@/components/support-dialog";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -218,6 +219,7 @@ function ReaderFooter({ comic, nextComic }) {
           </>
         ) : null}
       </section>
+      <ComicSubscribeDialog comic={comic} />
       {nextComic ? (
         <div className="next-comic-teaser">
           <div className="next-kicker">Up Next</div>
