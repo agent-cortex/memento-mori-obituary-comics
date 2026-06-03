@@ -50,20 +50,20 @@ The app uses the Next.js App Router. Route and UI ownership is:
 
 ## Add a generated comic
 
-Comic metadata lives in `comics.json`. New generated images and PDFs are staged under `public/comics/<slug>/`, then uploaded to private Vercel Blob storage. The rendered site serves media from `/media/comics/<slug>/...`; it does not link directly to `/public`.
+Comic metadata lives in `comics.json`, with per-comic source metadata under `comics/<slug>/comic.json`. New generated images and PDFs are staged under `comics/<slug>/`, ignored by git, then uploaded to private Vercel Blob storage. The rendered site serves media from `/media/comics/<slug>/...`; it does not link directly to local binaries.
 
 ```bash
 python scripts/add_comic.py /path/to/generated-output \
-  --slug dostoyevsky-borrowed-time \
-  --person "Fyodor Mikhailovich Dostoyevsky" \
-  --title "Borrowed Time" \
-  --years "1821-1881" \
-  --dek "Russian novelist. Survivor of a staged execution." \
-  --event "1849 staged execution / mock firing squad" \
-  --sources "Britannica; The Marginalian; Public Domain Review; Literary Hub"
+  --slug new-comic-slug \
+  --person "Name" \
+  --title "Title" \
+  --years "1900-2000" \
+  --dek "Short description" \
+  --event "Mortality event" \
+  --sources "Source A; Source B"
 ```
 
-Refresh and validate existing public media without generating static HTML:
+Validate metadata without generating static HTML:
 
 ```bash
 python scripts/add_comic.py --render-only
@@ -77,6 +77,30 @@ pnpm run blob:upload -- --slug <slug> --require-assets
 ```
 
 `blob:upload` requires `BLOB_READ_WRITE_TOKEN` in `.env.local` or the deployment environment. Blob objects are written with stable keys such as `comics/<slug>/pages/01-<slug>.jpg`, `access: "private"`, and no random suffix.
+
+On this machine, older ignored binaries may still exist locally. If you omit `--slug`, `blob:dry-run` scans every local JPG/PNG/PDF under `comics/`; on a fresh clone that usually means only newly generated local assets.
+
+## Substack newsletter
+
+The public newsletter surface is `Borrowed Time Dispatch` at:
+
+```text
+/newsletter/
+```
+
+The connected Substack publication is:
+
+```text
+https://finalnotes.substack.com
+```
+
+Launch copy and first-issue materials live in:
+
+```text
+docs/newsletter/substack-publication-profile.md
+docs/newsletter/substack-launch-checklist.md
+docs/newsletter/issue-001-borrowed-time-dispatch.md
+```
 
 For Vercel CLI compatibility, use the checked-in deploy script or run ad-hoc Vercel commands through `pnpm dlx vercel@latest ...` rather than relying on an old global `vercel` binary.
 

@@ -1,5 +1,249 @@
 [
   {
+    "slug": "primo-levi",
+    "title": "The Chemist Who Witnessed",
+    "person": "Primo Levi",
+    "years": "1919–1987",
+    "dek": "Italian Jewish chemist, Auschwitz survivor, and writer who turned survival into literature",
+    "mortality_event": "Survived Auschwitz III-Monowitz (1944–45) before writing If This Is a Man and The Periodic Table",
+    "published_at": "2026-06-03",
+    "pages": [
+      "pages/01-primo-levi.jpg",
+      "pages/02-primo-levi.jpg",
+      "pages/03-primo-levi.jpg",
+      "pages/04-primo-levi.jpg",
+      "pages/05-primo-levi.jpg",
+      "pages/06-primo-levi.jpg",
+      "pages/07-primo-levi.jpg",
+      "pages/08-primo-levi.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/02-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/03-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/04-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/05-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/06-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/07-primo-levi.jpg": [
+        768,
+        1408
+      ],
+      "pages/08-primo-levi.jpg": [
+        768,
+        1408
+      ]
+    },
+    "pdf": null,
+    "contact_sheet": "contact-sheet.jpg",
+    "sources": [
+      "Wikipedia",
+      "NYT Archive Obituary",
+      "Boston Review",
+      "Primo Levi Center",
+      "LA Times",
+      "NY Review of Books"
+    ],
+    "closing_line": "The reprieve was one moment. The work was the rest of his life."
+  },
+  {
+    "slug": "henri-matisse-second-life",
+    "title": "Henri Matisse: The Second Life",
+    "person": "Henri Matisse",
+    "years": "1869–1954",
+    "dek": "French modernist painter who turned illness into a final language of color and scissors.",
+    "mortality_event": "Near-fatal 1941 surgery for duodenal cancer in Lyon, with complications and long confinement afterward.",
+    "published_at": "2026-06-02",
+    "pages": [
+      "pages/01-henri-matisse-second-life.jpg",
+      "pages/02-henri-matisse-second-life.jpg",
+      "pages/03-henri-matisse-second-life.jpg",
+      "pages/04-henri-matisse-second-life.jpg",
+      "pages/05-henri-matisse-second-life.jpg",
+      "pages/06-henri-matisse-second-life.jpg",
+      "pages/07-henri-matisse-second-life.jpg",
+      "pages/08-henri-matisse-second-life.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/02-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/03-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/04-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/05-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/06-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/07-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ],
+      "pages/08-henri-matisse-second-life.jpg": [
+        1080,
+        1620
+      ]
+    },
+    "pdf": "henri-matisse-second-life.pdf",
+    "contact_sheet": "contact-sheet.jpg",
+    "sources": [
+      "Musée Matisse Nice",
+      "Encyclopaedia Britannica",
+      "Centre Pompidou",
+      "Saint Louis Art Museum"
+    ],
+    "closing_line": "The reprieve was one moment. The work was the rest of his life."
+  },
+  {
+    "slug": "harriet-tubman-road-back",
+    "title": "Harriet Tubman: The Road Back",
+    "person": "Harriet Tubman",
+    "years": "c.1822–1913",
+    "dek": "Underground Railroad conductor, abolitionist, Union scout, and suffragist.",
+    "mortality_event": "Survived a severe head injury from an iron weight while enslaved, then escaped and repeatedly returned to rescue others.",
+    "published_at": "2026-06-01",
+    "pages": [
+      "pages/01-harriet-tubman-road-back.jpg",
+      "pages/02-harriet-tubman-road-back.jpg",
+      "pages/03-harriet-tubman-road-back.jpg",
+      "pages/04-harriet-tubman-road-back.jpg",
+      "pages/05-harriet-tubman-road-back.jpg",
+      "pages/06-harriet-tubman-road-back.jpg",
+      "pages/07-harriet-tubman-road-back.jpg",
+      "pages/08-harriet-tubman-road-back.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/02-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/03-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/04-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/05-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/06-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/07-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ],
+      "pages/08-harriet-tubman-road-back.jpg": [
+        1080,
+        1620
+      ]
+    },
+    "pdf": "harriet-tubman-road-back.pdf",
+    "contact_sheet": "contact-sheet.jpg",
+    "sources": [
+      "National Park Service",
+      "Encyclopaedia Britannica",
+      "National Women’s History Museum",
+      "National Park Service — Harriet Tubman National Historical Park"
+    ],
+    "closing_line": "The reprieve was one moment. The work was the rest of his life."
+  },
+  {
+    "slug": "stephen-hawking-time-under-shadow",
+    "title": "Time Under Shadow",
+    "person": "Stephen William Hawking",
+    "years": "1942–2018",
+    "dek": "Theoretical physicist and public explainer who kept thinking about black holes, time, and the universe after a terminal diagnosis tried to close the future.",
+    "mortality_event": "Diagnosed with motor neurone disease around his 21st birthday and given roughly two years to live before decades of later work on singularities, black holes, and public science.",
+    "published_at": "2026-05-31",
+    "pages": [
+      "pages/01-stephen-hawking-time-under-shadow.jpg",
+      "pages/02-stephen-hawking-time-under-shadow.jpg",
+      "pages/03-stephen-hawking-time-under-shadow.jpg",
+      "pages/04-stephen-hawking-time-under-shadow.jpg",
+      "pages/05-stephen-hawking-time-under-shadow.jpg",
+      "pages/06-stephen-hawking-time-under-shadow.jpg",
+      "pages/07-stephen-hawking-time-under-shadow.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ],
+      "pages/02-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ],
+      "pages/03-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ],
+      "pages/04-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ],
+      "pages/05-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ],
+      "pages/06-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ],
+      "pages/07-stephen-hawking-time-under-shadow.jpg": [
+        1440,
+        1920
+      ]
+    },
+    "pdf": "stephen-hawking-time-under-shadow.pdf",
+    "contact_sheet": "contact-sheet.jpg",
+    "sources": [
+      "Hawking Estate",
+      "Encyclopaedia Britannica",
+      "Space.com"
+    ],
+    "closing_line": "The reprieve was one moment. The work was the rest of his life."
+  },
+  {
     "slug": "louis-zamperini-after-the-raft",
     "title": "After the Raft",
     "person": "Louis Zamperini",

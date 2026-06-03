@@ -16,8 +16,8 @@ if [ -z "$slug" ] || [ "$slug" = "$comic_path" ] || [[ "$slug" == *"/"* ]]; then
   exit 2
 fi
 
-if [ ! -d "public/comics/$slug" ]; then
-  echo "comic media directory not found: public/comics/$slug" >&2
+if [ ! -d "comics/$slug" ]; then
+  echo "comic directory not found: comics/$slug" >&2
   exit 2
 fi
 
@@ -31,7 +31,7 @@ pnpm build
 
 if ! git diff --quiet || [ -n "$(git status --porcelain)" ]; then
   git add app components lib scripts README.md vercel.json next.config.mjs .github .gitignore .vercelignore \
-    tests docs package.json pnpm-lock.yaml pnpm-workspace.yaml comics.json public/comics
+    tests docs package.json pnpm-lock.yaml pnpm-workspace.yaml comics.json comics
   git commit -m "$commit_message"
   git push origin main
 fi

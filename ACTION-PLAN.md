@@ -1,6 +1,6 @@
 # SEO Action Plan
 
-Target: https://memento-mori-obituary-comics.vercel.app/
+Target: https://finalnotes.page/
 Audit date: 2026-05-31
 
 ## Implementation Status
@@ -25,7 +25,7 @@ Still open:
 ## Critical
 
 1. Add `robots.txt`. Completed.
-   - Include `Sitemap: https://memento-mori-obituary-comics.vercel.app/sitemap.xml`.
+   - Include `Sitemap: https://finalnotes.page/sitemap.xml`.
    - Explicitly allow normal search crawlers unless there is a reason not to.
    - Decide whether AI crawlers such as GPTBot, ClaudeBot, PerplexityBot, and Google-Extended should be allowed.
 
@@ -35,7 +35,7 @@ Still open:
    - Use `lastmod` from `published_at` or file update dates.
 
 3. Add canonical tags. Completed.
-   - Homepage: `https://memento-mori-obituary-comics.vercel.app/`
+   - Homepage: `https://finalnotes.page/`
    - Comic pages: full trailing-slash reader URLs.
 
 ## High

@@ -1,0 +1,56 @@
+{
+  "slug": "stephen-hawking-time-under-shadow",
+  "title": "Time Under Shadow",
+  "person": "Stephen William Hawking",
+  "years": "1942–2018",
+  "dek": "Theoretical physicist and public explainer who kept thinking about black holes, time, and the universe after a terminal diagnosis tried to close the future.",
+  "mortality_event": "Diagnosed with motor neurone disease around his 21st birthday and given roughly two years to live before decades of later work on singularities, black holes, and public science.",
+  "published_at": "2026-05-31",
+  "pages": [
+    "pages/01-stephen-hawking-time-under-shadow.jpg",
+    "pages/02-stephen-hawking-time-under-shadow.jpg",
+    "pages/03-stephen-hawking-time-under-shadow.jpg",
+    "pages/04-stephen-hawking-time-under-shadow.jpg",
+    "pages/05-stephen-hawking-time-under-shadow.jpg",
+    "pages/06-stephen-hawking-time-under-shadow.jpg",
+    "pages/07-stephen-hawking-time-under-shadow.jpg"
+  ],
+  "page_dimensions": {
+    "pages/01-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ],
+    "pages/02-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ],
+    "pages/03-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ],
+    "pages/04-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ],
+    "pages/05-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ],
+    "pages/06-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ],
+    "pages/07-stephen-hawking-time-under-shadow.jpg": [
+      1440,
+      1920
+    ]
+  },
+  "pdf": "stephen-hawking-time-under-shadow.pdf",
+  "contact_sheet": "contact-sheet.jpg",
+  "sources": [
+    "Hawking Estate",
+    "Encyclopaedia Britannica",
+    "Space.com"
+  ],
+  "closing_line": "The reprieve was one moment. The work was the rest of his life."
+}

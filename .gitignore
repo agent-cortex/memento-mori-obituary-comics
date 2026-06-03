@@ -3,11 +3,16 @@
 .env.local
 .DS_Store
 node_modules
+.pnpm-store
 /tmp
 __pycache__
 *.pyc
 .env
-.env*.local
+.env*
+/comics/**/*.jpg
+/comics/**/*.jpeg
+/comics/**/*.png
+/comics/**/*.pdf
 /public/comics/**/*.jpg
 /public/comics/**/*.jpeg
 /public/comics/**/*.png

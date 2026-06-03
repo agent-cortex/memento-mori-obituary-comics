@@ -1,7 +1,7 @@
 # SEO Audit Report: Memento Mori Obituary Comics
 
 Audit date: 2026-05-31
-Target: https://memento-mori-obituary-comics.vercel.app/
+Target: https://finalnotes.page/
 
 Post-audit implementation note: this report records the live-site audit findings observed before fixes. The local checkout now includes an implementation pass for the critical and high-priority SEO items; see `ACTION-PLAN.md` for current completion status.
 
@@ -48,7 +48,7 @@ Public discovery files:
 
 Search visibility check:
 
-`site:memento-mori-obituary-comics.vercel.app` did not surface the deployed site in the tested search result set. This is not definitive proof of non-indexing, but it matches the missing sitemap and young domain risk profile.
+`site:finalnotes.page` did not surface the deployed site in the tested search result set. This is not definitive proof of non-indexing, but it matches the missing sitemap and young domain risk profile.
 
 ## Technical SEO
 

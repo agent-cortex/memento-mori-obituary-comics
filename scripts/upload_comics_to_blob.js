@@ -45,13 +45,12 @@ function isUploadableComicAsset(filePath) {
 
 export function comicAssetBlobPath(rootDir, filePath) {
   const relativePath = toPosixPath(path.relative(rootDir, filePath));
-  const publicPrefix = "public/comics/";
 
-  if (!relativePath.startsWith(publicPrefix) || relativePath.includes("../")) {
-    throw new Error(`Comic asset must be inside ${path.join(rootDir, "public", "comics")}`);
+  if (!relativePath.startsWith("comics/") || relativePath.includes("../")) {
+    throw new Error(`Comic asset must be inside ${path.join(rootDir, "comics")}`);
   }
 
-  return `comics/${relativePath.slice(publicPrefix.length)}`;
+  return relativePath;
 }
 
 async function walkFiles(dir) {
@@ -72,12 +71,12 @@ async function walkFiles(dir) {
 }
 
 export async function collectComicAssets(rootDir = ROOT_DIR, { slug = null } = {}) {
-  const comicsDir = path.join(rootDir, "public", "comics");
+  const comicsDir = path.join(rootDir, "comics");
   const scanDir = slug ? path.join(comicsDir, slug) : comicsDir;
 
   if (!existsSync(scanDir)) {
     throw new Error(slug
-      ? `Comic slug not found: ${path.join("public", "comics", slug)}`
+      ? `Comic slug not found: ${path.join("comics", slug)}`
       : `Comics directory not found: ${comicsDir}`);
   }
 
@@ -103,7 +102,6 @@ export async function uploadComicAssets({
   allowOverwrite = true,
   blobClient = { put: putBlob },
   dryRun = false,
-  logger = console,
   requireAssets = false,
   rootDir = ROOT_DIR,
   slug = null,
@@ -118,7 +116,7 @@ export async function uploadComicAssets({
 
   for (const asset of assets) {
     if (dryRun) {
-      logger.log(`[dry-run] ${asset.blobPath} (${asset.contentType}, ${asset.size} bytes)`);
+      console.log(`[dry-run] ${asset.blobPath} (${asset.contentType}, ${asset.size} bytes)`);
       continue;
     }
 
@@ -129,7 +127,7 @@ export async function uploadComicAssets({
       cacheControlMaxAge: ONE_YEAR,
       contentType: asset.contentType,
     });
-    logger.log(`[uploaded] ${asset.blobPath}`);
+    console.log(`[uploaded] ${asset.blobPath}`);
   }
 
   return assets;

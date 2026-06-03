@@ -1,0 +1,64 @@
+{
+  "slug": "primo-levi",
+  "title": "The Chemist Who Witnessed",
+  "person": "Primo Levi",
+  "years": "1919–1987",
+  "dek": "Italian Jewish chemist, Auschwitz survivor, and writer who turned survival into literature",
+  "mortality_event": "Survived Auschwitz III-Monowitz (1944–45) before writing If This Is a Man and The Periodic Table",
+  "published_at": "2026-06-03",
+  "pages": [
+    "pages/01-primo-levi.jpg",
+    "pages/02-primo-levi.jpg",
+    "pages/03-primo-levi.jpg",
+    "pages/04-primo-levi.jpg",
+    "pages/05-primo-levi.jpg",
+    "pages/06-primo-levi.jpg",
+    "pages/07-primo-levi.jpg",
+    "pages/08-primo-levi.jpg"
+  ],
+  "page_dimensions": {
+    "pages/01-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/02-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/03-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/04-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/05-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/06-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/07-primo-levi.jpg": [
+      768,
+      1408
+    ],
+    "pages/08-primo-levi.jpg": [
+      768,
+      1408
+    ]
+  },
+  "pdf": null,
+  "contact_sheet": "contact-sheet.jpg",
+  "sources": [
+    "Wikipedia",
+    "NYT Archive Obituary",
+    "Boston Review",
+    "Primo Levi Center",
+    "LA Times",
+    "NY Review of Books"
+  ],
+  "closing_line": "The reprieve was one moment. The work was the rest of his life."
+}

@@ -1,6 +1,11 @@
 .env
 .env.local
 node_modules
+.next
+/comics/**/*.jpg
+/comics/**/*.jpeg
+/comics/**/*.png
+/comics/**/*.pdf
 /public/comics/**/*.jpg
 /public/comics/**/*.jpeg
 /public/comics/**/*.png

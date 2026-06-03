@@ -66,10 +66,30 @@ test("HEAD /media/comics/:path returns cacheable metadata without a body", async
   assert.equal(response.headers.get("cache-control"), "public, max-age=31536000, immutable");
 });
 
-test("GET /media/comics/:path rejects unsafe paths before Blob access", async () => {
+test("GET /media/comics/:path forwards Blob 304 responses", async () => {
   const app = createApp({
     blobClient: {
       async get() {
+        return {
+          statusCode: 304,
+          blob: { etag: "same-etag", size: 0 },
+        };
+      },
+    },
+  });
+
+  const response = await app.fetch(new Request("https://example.com/media/comics/sample/pages/01.jpg"));
+
+  assert.equal(response.status, 304);
+  assert.equal(response.headers.get("etag"), "same-etag");
+});
+
+test("GET /media/comics/:path rejects unsafe paths before Blob access", async () => {
+  let called = false;
+  const app = createApp({
+    blobClient: {
+      async get() {
+        called = true;
         throw new Error("should not read Blob");
       },
     },
@@ -78,6 +98,7 @@ test("GET /media/comics/:path rejects unsafe paths before Blob access", async ()
   const response = await app.fetch(new Request("https://example.com/media/comics/sample/%2e%2e/secret.jpg"));
 
   assert.equal(response.status, 400);
+  assert.equal(called, false);
 });
 
 test("HEAD export is available for media probes", () => {

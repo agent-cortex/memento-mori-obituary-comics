@@ -2,8 +2,9 @@
 """Add or refresh an obituary comic for the Next.js app.
 
 The Next app renders pages from comics.json and serves comic media from
-public/comics/<slug>/. This script updates those inputs; it does not generate
-HTML, robots.txt, sitemap.xml, or llms.txt.
+private Vercel Blob storage through /media/comics/<slug>/... URLs. This script
+updates metadata and stages local binaries under comics/<slug>/ for upload; it
+does not generate HTML, robots.txt, sitemap.xml, or llms.txt.
 """
 from __future__ import annotations
 
@@ -18,8 +19,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 COMICS_JSON = ROOT / "comics.json"
-PUBLIC_COMICS = ROOT / "public" / "comics"
-LEGACY_COMICS = ROOT / "comics"
+COMICS_DIR = ROOT / "comics"
 
 IMAGE_EXTENSIONS = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"}
 PDF_EXTENSION = ".pdf"
@@ -39,6 +39,15 @@ def load_comics() -> list[dict[str, Any]]:
 def save_comics(comics: list[dict[str, Any]]) -> None:
     ordered = sorted(comics, key=lambda comic: comic.get("published_at", ""), reverse=True)
     COMICS_JSON.write_text(json.dumps(ordered, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def save_comic_file(comic: dict[str, Any]) -> None:
+    slug = comic.get("slug")
+    if not slug:
+        return
+    comic_dir = COMICS_DIR / slug
+    comic_dir.mkdir(parents=True, exist_ok=True)
+    (comic_dir / "comic.json").write_text(json.dumps(comic, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def parse_sources(value: str | None) -> list[str | dict[str, str]]:
@@ -154,7 +163,7 @@ def build_comic(args: argparse.Namespace, existing: dict[str, Any] | None) -> di
         raise SystemExit(f"source directory does not exist: {source_dir}")
 
     slug = args.slug or slugify(args.person or source_dir.name)
-    target_dir = PUBLIC_COMICS / slug
+    target_dir = COMICS_DIR / slug
     if target_dir.exists():
         shutil.rmtree(target_dir)
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -217,31 +226,22 @@ def build_comic(args: argparse.Namespace, existing: dict[str, Any] | None) -> di
     return comic
 
 
-def sync_public_media(comics: list[dict[str, Any]]) -> int:
-    copied = 0
+def validate_metadata(comics: list[dict[str, Any]]) -> None:
+    errors: list[str] = []
     for comic in comics:
-        slug = comic.get("slug")
+        slug = comic.get("slug", "")
         if not slug:
-            continue
-        legacy_dir = LEGACY_COMICS / slug
-        if not legacy_dir.exists():
-            continue
-
-        relative_paths = list(comic.get("pages") or [])
-        relative_paths.extend([value for value in [comic.get("pdf"), comic.get("contact_sheet")] if value])
-        for relative in relative_paths:
-            source = legacy_dir / relative
-            target = PUBLIC_COMICS / slug / relative
-            if source.exists() and not target.exists():
-                copy_file(source, target)
-                copied += 1
-
-        legacy_reel = legacy_dir / "reel"
-        target_reel = PUBLIC_COMICS / slug / "reel"
-        if legacy_reel.exists() and not target_reel.exists():
-            shutil.copytree(legacy_reel, target_reel)
-            copied += 1
-    return copied
+            errors.append("comic is missing slug")
+        if not comic.get("person"):
+            errors.append(f"{slug or 'comic'} is missing person")
+        if not comic.get("title"):
+            errors.append(f"{slug or 'comic'} is missing title")
+        if not comic.get("published_at"):
+            errors.append(f"{slug or 'comic'} is missing published_at")
+        if not comic.get("pages"):
+            errors.append(f"{slug or 'comic'} is missing pages")
+    if errors:
+        raise SystemExit("invalid comic metadata:\n" + "\n".join(errors))
 
 
 def validate_media(comics: list[dict[str, Any]]) -> None:
@@ -251,17 +251,17 @@ def validate_media(comics: list[dict[str, Any]]) -> None:
         for relative in list(comic.get("pages") or []) + [comic.get("pdf"), comic.get("contact_sheet")]:
             if not relative:
                 continue
-            path = PUBLIC_COMICS / slug / relative
+            path = COMICS_DIR / slug / relative
             if not path.exists():
                 missing.append(path.relative_to(ROOT).as_posix())
     if missing:
-        raise SystemExit("missing public comic media:\n" + "\n".join(missing))
+        raise SystemExit("missing staged comic media:\n" + "\n".join(missing))
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Add or refresh a comic for the Next.js app")
     parser.add_argument("source_dir", nargs="?", help="generated comic directory containing a pages/ folder")
-    parser.add_argument("--render-only", action="store_true", help="sync/validate public media without generating static HTML")
+    parser.add_argument("--render-only", action="store_true", help="validate metadata without generating static HTML")
     parser.add_argument("--slug")
     parser.add_argument("--person")
     parser.add_argument("--title")
@@ -276,9 +276,8 @@ def main() -> None:
 
     comics = load_comics()
     if args.render_only:
-        copied = sync_public_media(comics)
-        validate_media(comics)
-        print(f"validated {len(comics)} comics; copied {copied} missing media files")
+        validate_metadata(comics)
+        print(f"validated {len(comics)} comics")
         return
 
     if not args.source_dir:
@@ -289,8 +288,10 @@ def main() -> None:
     updated = build_comic(args, existing)
     comics = [comic for comic in comics if comic.get("slug") != slug]
     comics.insert(0, updated)
+    validate_metadata(comics)
+    validate_media([updated])
     save_comics(comics)
-    validate_media(comics)
+    save_comic_file(updated)
     print(f"/comics/{slug}/")
 
 

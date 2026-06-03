@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
+
+import { comicAssetBlobPath, comicMediaPath } from "../lib/media-paths.js";
 
 const ROOT = process.cwd();
 const comics = JSON.parse(readFileSync(path.join(ROOT, "comics.json"), "utf8"));
@@ -12,22 +14,33 @@ test("comic archive data is ordered newest first", () => {
   }
 });
 
-test("comic media referenced by data exists under public/comics", () => {
+test("comic data has required metadata and stable Blob-backed media paths", () => {
   for (const comic of comics) {
     assert.ok(comic.slug, "comic slug is required");
     assert.ok(comic.person, `${comic.slug} person is required`);
+    assert.ok(comic.title, `${comic.slug} title is required`);
+    assert.ok(comic.published_at, `${comic.slug} published_at is required`);
     assert.ok(Array.isArray(comic.pages) && comic.pages.length > 0, `${comic.slug} needs pages`);
 
     for (const page of comic.pages) {
-      assert.ok(existsSync(path.join(ROOT, "public", "comics", comic.slug, page)), `${comic.slug} missing page ${page}`);
+      assert.equal(
+        comicMediaPath(comic, page),
+        `/media/comics/${comic.slug}/${page}`,
+        `${comic.slug} page should map to the /media URL space`,
+      );
+      assert.equal(
+        comicAssetBlobPath(comic, page),
+        `comics/${comic.slug}/${page}`,
+        `${comic.slug} page should map to a private Blob key`,
+      );
     }
 
     if (comic.pdf) {
-      assert.ok(existsSync(path.join(ROOT, "public", "comics", comic.slug, comic.pdf)), `${comic.slug} missing PDF ${comic.pdf}`);
+      assert.equal(comicMediaPath(comic, comic.pdf), `/media/comics/${comic.slug}/${comic.pdf}`);
     }
 
     if (comic.contact_sheet) {
-      assert.ok(existsSync(path.join(ROOT, "public", "comics", comic.slug, comic.contact_sheet)), `${comic.slug} missing contact sheet ${comic.contact_sheet}`);
+      assert.equal(comicMediaPath(comic, comic.contact_sheet), `/media/comics/${comic.slug}/${comic.contact_sheet}`);
     }
   }
 });

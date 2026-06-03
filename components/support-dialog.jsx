@@ -31,6 +31,7 @@ export function SupportDialog({ triggerClass = "nav", triggerLabel = "Support" }
         </DialogClose>
         <div className="kicker">Support development</div>
         <DialogTitle>Support development</DialogTitle>
+        <img className="support-qr-image" src="/assets/zec-qr.png" alt="ZEC donation QR code" />
         <DialogDescription>Help keep new obituary comics, source work, and reader tooling moving. Send ZEC to this shielded address:</DialogDescription>
         <code className="support-address" id="supportZecAddress">
           {SUPPORT_ZEC_ADDRESS}
