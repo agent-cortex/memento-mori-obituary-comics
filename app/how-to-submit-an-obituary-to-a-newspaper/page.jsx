@@ -196,6 +196,9 @@ export default function NewspaperObituarySubmissionPage() {
                 <Link href="/obituary-vs-death-notice/">Notice explainer</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-cost/">Cost guide</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/life-story-obituary-template/">Template</Link>
               </Button>
               <Button asChild>
@@ -219,7 +222,7 @@ export default function NewspaperObituarySubmissionPage() {
               To submit an obituary to a newspaper, find the paper's Obituaries, Death Notices, Classifieds, or Place an Obituary page, then follow that publication's form, email, phone, or funeral-home submission process. Most newspapers need the obituary text, submitter contact details, requested publication date, payment approval, and a way to verify the death before publication.
             </p>
             <p>
-              The safest workflow is to check the newspaper's rules before writing the final version. Confirm the deadline, price, word or line limit, photo format, verification requirement, proofing process, and whether the funeral home should submit on the family's behalf.
+              The safest workflow is to check the newspaper's rules before writing the final version. Confirm the deadline, price, word or line limit, photo format, verification requirement, proofing process, and whether the funeral home should submit on the family's behalf. For quote questions before payment, use the <Link href="/obituary-cost/">obituary cost guide</Link>.
             </p>
           </section>
 
@@ -266,7 +269,7 @@ export default function NewspaperObituarySubmissionPage() {
             <div>
               <h2 id="best-link">Best Link Target For Newspaper Obituary Submission Pages</h2>
               <p>
-                Use this page for newspaper help pages, funeral-home planning pages, community-newspaper instructions, obituary cost explainers, and articles about how to place or submit an obituary. For the difference between a paid notice and a fuller life story, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>. For memorial contribution language before submission, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For safer wording before publication, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>. For suspicious obituary results after publication, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For a fuller draft, use the <Link href="/life-story-obituary-template/">life story obituary template</Link> and <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>.
+                Use this page for newspaper help pages, funeral-home planning pages, community-newspaper instructions, obituary cost explainers, and articles about how to place or submit an obituary. For line fees, photos, print-plus-online packages, and funeral-home cash advances, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For the difference between a paid notice and a fuller life story, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>. For memorial contribution language before submission, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For safer wording before publication, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>. For suspicious obituary results after publication, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For a fuller draft, use the <Link href="/life-story-obituary-template/">life story obituary template</Link> and <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>.
               </p>
             </div>
             <Link href="/how-to-submit-an-obituary-to-a-newspaper/">{absoluteUrl("/how-to-submit-an-obituary-to-a-newspaper/")}</Link>

@@ -205,6 +205,9 @@ export default function MemorialDonationWordingObituaryPage() {
               <Button asChild>
                 <Link href="/how-to-submit-an-obituary-to-a-newspaper/">Newspaper submission</Link>
               </Button>
+              <Button asChild>
+                <Link href="/obituary-cost/">Cost guide</Link>
+              </Button>
             </div>
           </header>
 
@@ -262,7 +265,7 @@ export default function MemorialDonationWordingObituaryPage() {
             <div>
               <h2 id="best-link">Best Link Target For Memorial Donation Wording Resources</h2>
               <p>
-                Use this page for funeral-home obituary guides, charity memorial-giving pages, hospice resources, etiquette articles, and family planning pages that mention in lieu of flowers wording or memorial contributions. For a full draft structure, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sensitive public details, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>. For newspaper placement, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>.
+                Use this page for funeral-home obituary guides, charity memorial-giving pages, hospice resources, etiquette articles, and family planning pages that mention in lieu of flowers wording or memorial contributions. For a full draft structure, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sensitive public details, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>. For newspaper placement, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For price, line-fee, and short-print-notice decisions, use the <Link href="/obituary-cost/">obituary cost guide</Link>.
               </p>
             </div>
             <Link href="/memorial-donation-wording-obituary/">{absoluteUrl("/memorial-donation-wording-obituary/")}</Link>

@@ -100,6 +100,12 @@ Use this file as the next execution list. Send manually, one by one, after check
 | 89 | American Heart Association | https://www.heart.org/en/about-us/contact-us or current donor-support path | `docs/seo/pitches/87-aha-memorial-donation-obituary-wording.md` | Supplemental obituary wording guide for honor and memorial gifts | https://www.finalnotes.page/memorial-donation-wording-obituary/ | Honor/memorial page lets donors dedicate a gift in memory of someone and send family notification. |
 | 90 | Alzheimer's Association | https://www.alz.org/help-support/resources/contact_us or chapter memorial-donation contact path | `docs/seo/pitches/88-alzheimers-memorial-donation-obituary-wording.md` | Companion wording guide for obituary memorial donations | https://www.finalnotes.page/memorial-donation-wording-obituary/ | Memorial donations page includes obituary verbiage, online/mail instructions, and funeral-home director contact details. |
 | 91 | Funeral.com | https://funeral.com/pages/contact-us or current editorial/contact path | `docs/seo/pitches/89-funeralcom-memorial-donation-wording.md` | Source-backed companion for memorial donation wording readers | https://www.finalnotes.page/memorial-donation-wording-obituary/ | Current memorial donation guide covers charity choice, sample obituary wording, funds, tracking, and thank-you notes. |
+| 92 | Legacy.com | https://www.legacy.com/contact/ or current help/editorial contact path | `docs/seo/pitches/90-legacy-obituary-cost-guide.md` | Supplemental obituary cost quote checklist | https://www.finalnotes.page/obituary-cost/ | High-authority cost explainer covers online vs newspaper obituary pricing, line fees, image placement fees, and shortening print notices. |
+| 93 | Funeral.com | https://funeral.com/pages/contact-us or current editorial/contact path | `docs/seo/pitches/91-funeralcom-obituary-cost-guide.md` | Companion guide for digital and newspaper obituary costs | https://www.finalnotes.page/obituary-cost/ | Current cost guide covers death notices, newspaper obituaries, digital memorials, photos, and publication choices. |
+| 94 | Trustworthy | https://www.trustworthy.com/contact or current editorial/contact path | `docs/seo/pitches/92-trustworthy-obituary-cost-guide.md` | Supplemental obituary cost checklist for families | https://www.finalnotes.page/obituary-cost/ | End-of-life planning article covers publication route, word count, photos, writing help, and newspaper run days. |
+| 95 | Funeral Consumers Alliance | fca@funerals.org | `docs/seo/pitches/93-funeral-consumers-alliance-obituary-cost.md` | Consumer resource for obituary notice costs | https://www.finalnotes.page/obituary-cost/ | National consumer organization fits price-transparency questions around funeral-home cash advances and third-party obituary notices. |
+| 96 | Funeral Cost Analyzer | contact@funeralcostanalyzer.com | `docs/seo/pitches/94-funeral-cost-analyzer-obituary-cost.md` | Obituary pricing companion resource | https://www.finalnotes.page/obituary-cost/ | Cost-oriented funeral planning site already surfaces in obituary-writing and funeral-cost SERPs. |
+| 97 | obituary.design | mail@obituary.design | `docs/seo/pitches/95-obituary-design-cost-guide.md` | Source-backed companion for obituary cost readers | https://www.finalnotes.page/obituary-cost/ | Current 2026 newspaper obituary cost comparison and obituary design/template resources make this a direct topical fit. |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | Human-written grief/lament reflection post only if invited | https://www.finalnotes.page/obituary-story-worksheet/ | Submission page is by invitation and rejects AI-generated content, so hold unless a human-written personal essay is invited. |
 
 ## Hold / Monitor
@@ -120,6 +126,7 @@ Use this file as the next execution list. Send manually, one by one, after check
   - Genealogy resource lists, public-library research guides, obituary search directories, family-history newsletters, and local-history society pages: `https://www.finalnotes.page/obituary-research-guide/`
   - Newspaper help pages, funeral-home resources, death-notice explainers, and library obituary-index pages: `https://www.finalnotes.page/obituary-vs-death-notice/`
   - Newspaper obituary submission, placement, proof-of-death, deadline, price, and photo-rule pages: `https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/`
+  - Obituary cost, newspaper pricing, line fees, photo fees, print-plus-online packages, and funeral-home cash advances: `https://www.finalnotes.page/obituary-cost/`
   - Memorial donation wording, in-lieu-of-flowers examples, charity-link safety, family-support language, and contribution wording: `https://www.finalnotes.page/memorial-donation-wording-obituary/`
   - Funeral-home planning pages, bereavement resources, eulogy-writing articles, memorial-program guides, and obituary/eulogy comparison pages: `https://www.finalnotes.page/obituary-vs-eulogy/`
   - Obituary privacy, identity-theft, consumer-safety, and bereavement scam-safety pages: `https://www.finalnotes.page/what-not-to-include-in-an-obituary/`
@@ -306,6 +313,17 @@ Send these after the newspaper submission batch. Use `/memorial-donation-wording
 4. American Heart Association: supplemental wording resource for families adding AHA honor/memorial gifts.
 5. Alzheimer's Association: companion for families comparing official obituary verbiage, memorial gift designation, and mailing/online instructions.
 6. Funeral.com: source-backed supplement with privacy, family-support, link-verification, and thank-you tracking checks.
+
+## Eighteenth Batch: Obituary Cost, Newspaper Pricing, and Paid Notice Budgeting
+
+Send these after the memorial donation wording batch. Use `/obituary-cost/` for funeral-cost articles, newspaper obituary pricing pages, funeral-home planning guides, consumer-advocacy resources, and family budgeting pages that explain paid obituaries, death notice costs, line fees, photo fees, or funeral-home cash advances:
+
+1. Legacy.com: neutral quote-checklist companion for readers comparing online and newspaper obituary pricing.
+2. Funeral.com: practical companion for readers comparing death notices, newspaper obituaries, digital memorials, photos, and publication choices.
+3. Trustworthy: supplemental family checklist before readers approve a newspaper or funeral-home quote.
+4. Funeral Consumers Alliance: consumer resource for obituary notices as third-party or cash-advance funeral items.
+5. Funeral Cost Analyzer: specific obituary-pricing companion for line fees, photo fees, and publication routes.
+6. obituary.design: companion for readers comparing newspaper pricing with short-print and full-online story decisions.
 
 ## Follow-Up Timing
 

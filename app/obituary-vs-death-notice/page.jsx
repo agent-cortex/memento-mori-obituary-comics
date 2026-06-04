@@ -188,6 +188,9 @@ export default function ObituaryVsDeathNoticePage() {
                 <Link href="/obituary-story-worksheet/">Worksheet</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-cost/">Cost guide</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/fake-obituary-sites/">Fake site checklist</Link>
               </Button>
               <Button asChild>
@@ -202,7 +205,7 @@ export default function ObituaryVsDeathNoticePage() {
               A death notice is usually a short public announcement: who died, when they died, and what service or memorial details people need. An obituary is usually a fuller life story: it still announces the death, but it also explains who the person was, what shaped their life, and why readers should remember them. A funeral notice is narrower still: it mainly tells people when and where to gather.
             </p>
             <p>
-              The labels are not perfectly consistent. Some newspapers call family-written paid notices obituaries. Some reserve obituary for articles written by staff. Before writing, check the publication's rules and decide whether the family needs speed, story, service logistics, or all three.
+              The labels are not perfectly consistent. Some newspapers call family-written paid notices obituaries. Some reserve obituary for articles written by staff. Before writing, check the publication's rules and decide whether the family needs speed, story, service logistics, cost control, or all four.
             </p>
           </section>
 
@@ -251,7 +254,7 @@ export default function ObituaryVsDeathNoticePage() {
             <div>
               <h2 id="best-link">Best Link Target For Death Notice Explainers</h2>
               <p>
-                Use this page for newspaper help pages, funeral-home resources, genealogy guides, library obituary indexes, and articles explaining the difference between an obituary, death notice, and funeral notice. For submission deadlines, proof of death, cost, photo, and funeral-home verification rules, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For obituary/eulogy comparison pages, use the <Link href="/obituary-vs-eulogy/">obituary vs eulogy explainer</Link>. For privacy and scam-safety guidance before publishing a public notice, use the <Link href="/what-not-to-include-in-an-obituary/">what not to include in an obituary checklist</Link>. For unfamiliar sites, copied notices, and fake donation links, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For drafting a fuller life story, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>. For source lookups and citations, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For reported examples, use the <Link href="/obituary-articles/">obituary articles page</Link>.
+                Use this page for newspaper help pages, funeral-home resources, genealogy guides, library obituary indexes, and articles explaining the difference between an obituary, death notice, and funeral notice. For paid notice price drivers, line fees, photo fees, and quote questions, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For submission deadlines, proof of death, photo, and funeral-home verification rules, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For obituary/eulogy comparison pages, use the <Link href="/obituary-vs-eulogy/">obituary vs eulogy explainer</Link>. For privacy and scam-safety guidance before publishing a public notice, use the <Link href="/what-not-to-include-in-an-obituary/">what not to include in an obituary checklist</Link>. For unfamiliar sites, copied notices, and fake donation links, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For drafting a fuller life story, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>. For source lookups and citations, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For reported examples, use the <Link href="/obituary-articles/">obituary articles page</Link>.
               </p>
             </div>
             <Link href="/obituary-vs-death-notice/">{absoluteUrl("/obituary-vs-death-notice/")}</Link>

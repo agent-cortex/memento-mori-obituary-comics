@@ -32,6 +32,7 @@ What-not-to-include and obituary privacy searches surfaced a consumer-safety lan
 Fake-obituary and obituary-piracy searches surfaced a related but distinct verification lane: Michigan AG, Consumer Protection BC, Bereavement Authority of Ontario, Funeralwise, Sophos CTU, and WKYT all cover copied obituaries, fake donation or gift links, AI-generated fake obituary pages, suspicious popups, and ways families can verify or report bad results. That supports using `https://www.finalnotes.page/fake-obituary-sites/` for consumer-protection notices, funeral-home scam warnings, cybersecurity explainers, media-literacy resources, and obituary-piracy references.
 Newspaper obituary submission searches surfaced a separate placement lane: Legacy, Everplans, The Gazette, The Dominion Post, Anchorage Daily News, and The Martha's Vineyard Times all explain how families submit or place an obituary, including proof of death, funeral-home verification, publication deadlines, payment, photo rules, and proofing. That supports using `https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/` for newspaper help pages, funeral-home planning pages, obituary cost explainers, placement guides, and submission-policy resources.
 Memorial donation and in-lieu-of-flowers searches surfaced another obituary-wording lane: Funeral Basics, Emily Post, American Cancer Society, American Heart Association, Alzheimer's Association, Funeral.com, Farewelling, and similar resources cover charity requests, memorial-gift designation, donation links, family notification, and thank-you tracking. That supports using `https://www.finalnotes.page/memorial-donation-wording-obituary/` for funeral-home obituary guides, charity memorial-giving pages, hospice resources, etiquette articles, and family planning pages.
+Obituary cost and newspaper obituary pricing searches surfaced a cost-transparency lane: Legacy, Funeral.com, Trustworthy, obituary.design, FTC Funeral Rule materials, and official newspaper rate cards all cover line fees, photo fees, publication route, print-plus-online packages, and funeral-home third-party/cash-advance handling. That supports using `https://www.finalnotes.page/obituary-cost/` for funeral-cost articles, newspaper obituary pricing pages, funeral-home planning guides, consumer-advocacy resources, and family budgeting pages.
 
 ## High-Fit Sources Found In This Pass
 
@@ -107,6 +108,12 @@ Memorial donation and in-lieu-of-flowers searches surfaced another obituary-word
 | American Heart Association | Honor/memorial page lets donors dedicate gifts in memory of a loved one and send family notification. | `/memorial-donation-wording-obituary/` | Pitch added |
 | Alzheimer's Association | Memorial donation page includes obituary verbiage, online/mail instructions, and funeral-home director details. | `/memorial-donation-wording-obituary/` | Pitch added |
 | Funeral.com | Memorial donation guide covers charity choice, sample obituary wording, memorial funds, tracking, and thank-you notes. | `/memorial-donation-wording-obituary/` | Pitch added |
+| Legacy.com | Current cost explainer covers online vs newspaper obituary pricing, line fees, image placement fees, and shorter print versions. | `/obituary-cost/` | Pitch added |
+| Funeral.com | Current digital and newspaper obituary cost guide covers death notices, newspaper obituaries, digital memorials, photos, and publication choices. | `/obituary-cost/` | Pitch added |
+| Trustworthy | End-of-life planning article covers publication route, word count, photos, writing help, and newspaper run days. | `/obituary-cost/` | Pitch added |
+| Funeral Consumers Alliance | Consumer organization focused on funeral-price transparency and planning decisions. | `/obituary-cost/` | Pitch added |
+| Funeral Cost Analyzer | Cost-oriented funeral planning resource surfaced in obituary-writing and funeral-cost SERPs. | `/obituary-cost/` | Pitch added |
+| obituary.design | Current 2026 newspaper obituary cost comparison and obituary design/template resources. | `/obituary-cost/` | Pitch added |
 
 ## Completion Rule
 
