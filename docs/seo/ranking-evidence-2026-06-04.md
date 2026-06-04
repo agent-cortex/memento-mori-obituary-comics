@@ -20,6 +20,8 @@ The ranking goal is not complete. Current web search samples did not surface can
 
 2026-06-05 post-deploy check: after `https://www.finalnotes.page/short-obituary-examples/` returned `200` on the canonical domain and appeared in live `sitemap.xml` and `/llms.txt`, sampled searches for `site:finalnotes.page "short obituary examples"`, `"finalnotes.page/short-obituary-examples"`, `"short obituary examples" "finalnotes"`, and `"short obituary template" "finalnotes"` returned no results in the sampled web search result set. This confirms deployment and crawl-surface availability, but not indexing or first-page ranking.
 
+2026-06-05 continuation check: searches for `free obituary generator`, `obituary generator`, `AI obituary generator`, `obituary creator`, and `obituary template generator` surfaced a distinct tool lane. Results were dominated by CreateMemorial, AI Written Obituary, aiwriter.ai, FuneralFolio, Gather, After, OBITUARe, Typli, Repixify, Rephrasely, memorial platforms, and funeral-home software/help pages. This supports adding `https://www.finalnotes.page/free-obituary-generator/` as a separate link target for private in-browser drafting, obituary creator resources, AI obituary writer comparisons, and draft-review workflows.
+
 ## Search Landscape Observed
 
 SERP samples for obituary-writing, examples, and worksheet queries are dominated by:
@@ -48,6 +50,7 @@ Obituary cost and newspaper obituary pricing searches surfaced a cost-transparen
 Obituary mistakes and correction searches surfaced a proofing lane: Legacy, ObituaryGuide, Best Care Cremation, All Veterans - All Families Cremations, Indiana Funeral Care, and Legacy Help Center cover common obituary mistakes, writing pitfalls, inaccurate obituaries, final review, private details, and link-use rules. That supports using `https://www.finalnotes.page/obituary-mistakes-to-avoid/` for funeral-home writing guides, obituary-proofing resources, newspaper obituary desks, memorial-site help articles, family planning pages, and resource lists about common obituary errors or corrections.
 Obituary wording and death-announcement searches surfaced a phrase-bank lane: Legacy, OfficialObituary, Ever Loved, Everplans, Dignity Memorial, US Urns Online, FuneralFolio, Funeral.com, and related funeral-resource pages cover opening lines, family lists, survived-by wording, preceded-in-death wording, service details, private-service language, death announcement wording, and difficult cause-of-death phrasing. That supports using `https://www.finalnotes.page/obituary-wording/` for obituary wording examples, death announcement wording, survived-by wording, preceded-in-death wording, service wording, and phrase-bank resource links.
 Short obituary and simple-template searches surfaced a concise-notice lane: Legacy, Memorials.com, FuneralFolio, Examples.com, Eduyush, QuickFuneral, obituary template PDFs, and funeral-program resources cover short notices, simple obituary structures, 40-150 word examples, and paid newspaper word-limit decisions. That supports using `https://www.finalnotes.page/short-obituary-examples/` for short obituary examples, short obituary templates, simple obituary examples, brief death notices, and newspaper word-limit resources.
+Free obituary generator and obituary creator searches surfaced a tool lane: CreateMemorial, AI Written Obituary, aiwriter.ai, FuneralFolio, Gather, After, OBITUARe, Typli, Repixify, Rephrasely, and memorial-platform results cover automated or AI-assisted obituary drafting. That supports using `https://www.finalnotes.page/free-obituary-generator/` for free obituary generator, obituary generator, obituary creator, AI obituary generator, obituary writer, and draft-builder resource links.
 
 ## High-Fit Sources Found In This Pass
 
@@ -153,6 +156,14 @@ Short obituary and simple-template searches surfaced a concise-notice lane: Lega
 | Examples.com | Dedicated short obituary examples page surfaced in sampled short/simple obituary searches. | `/short-obituary-examples/` | Pitch added |
 | Eduyush | Short obituary examples across newspaper, online memorial, and relationship-based formats. | `/short-obituary-examples/` | Pitch added |
 | QuickFuneral | Simple obituary examples and funeral-program template resources. | `/short-obituary-examples/` | Pitch added |
+| CreateMemorial | Current free obituary template generator result with template styles and generated draft flow. | `/free-obituary-generator/` | Pitch added |
+| AI Written Obituary | Current free AI obituary generator result focused on quick AI-written obituary drafts. | `/free-obituary-generator/` | Pitch added |
+| aiwriter.ai | AI obituary writer result with fields for name, age, city, life detail, survivors, and tone. | `/free-obituary-generator/` | Pitch added |
+| FuneralFolio | Online obituary writer and template result for families drafting obituary copy. | `/free-obituary-generator/` | Pitch added |
+| Gather | Funeral-home AI obituary builder result for staff and family workflows. | `/free-obituary-generator/` | Pitch added |
+| After | Memorial platform with AI-enhanced obituary writing and family collaboration positioning. | `/free-obituary-generator/` | Pitch added |
+| Tribute Archive | Obituary platform with AI obituary writer surface. | `/free-obituary-generator/` | Pitch added |
+| OfficialObituary | Obituary-writing resource with free generator and wording surfaces. | `/free-obituary-generator/` | Pitch added |
 
 ## Completion Rule
 

@@ -390,6 +390,19 @@ Send these after the obituary wording batch. Use `/short-obituary-examples/` for
 5. Eduyush: companion for readers comparing print, online memorial, and relationship-based short examples.
 6. QuickFuneral: short-obituary writing supplement for simple obituary and funeral-program template readers.
 
+## Twenty-Third Batch: Free Obituary Generator and Obituary Creator Resources
+
+Send these after the short obituary examples batch. Use `/free-obituary-generator/` for free obituary generator, obituary generator, obituary creator, AI obituary generator, free obituary writer, and obituary draft-builder resource links:
+
+1. CreateMemorial: privacy-first companion for readers using an obituary template generator.
+2. AI Written Obituary: conservative draft-builder alternative for readers comparing free AI obituary generators.
+3. aiwriter.ai: source-backed companion for AI obituary writer users who need checklist, wording, and examples after generation.
+4. FuneralFolio: private first-draft companion before readers use template, online writer, or memorial-program resources.
+5. Gather: family-facing resource funeral homes can cite before staff publication or case-management-assisted drafting.
+6. After: private first-draft resource before families collaborate on an online memorial page.
+7. Tribute Archive: supplemental review-first draft builder for AI obituary writer readers.
+8. OfficialObituary: companion for generator and wording readers who need privacy, fact-checking, and source-backed next steps.
+
 ## Follow-Up Timing
 
 - Day 7: follow up once if there is no response.

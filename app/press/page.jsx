@@ -104,6 +104,11 @@ const linkTargets = [
     note: "Best canonical link for short obituary examples, short obituary templates, simple obituary examples, brief death notices, and newspaper word-limit resources.",
   },
   {
+    label: "Free obituary generator",
+    href: "/free-obituary-generator/",
+    note: "Best canonical link for free obituary generator, obituary generator, obituary creator, AI obituary generator, obituary writer, and draft-builder resource links.",
+  },
+  {
     label: "Obituary wording examples",
     href: "/obituary-wording/",
     note: "Best canonical link for obituary wording examples, death announcement wording, family-list phrases, service wording, and phrase-bank resources.",

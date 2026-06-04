@@ -2605,6 +2605,9 @@ body::before {
 .examples-page .explainer-header-section h1 {
   max-width: 12ch;
 }
+.generator-page .explainer-header-section h1 {
+  max-width: 13ch;
+}
 .writing-guide-list {
   margin: 18px 0 0;
   padding-left: 24px;
@@ -2703,6 +2706,136 @@ body::before {
 .worksheet-link-box {
   margin-top: 24px;
 }
+.generator-tool {
+  margin: 34px 0 42px;
+  padding: clamp(22px, 4vw, 30px);
+  border: 1px solid rgba(223, 177, 91, 0.28);
+  border-radius: 8px;
+  background: rgba(244, 235, 214, 0.035);
+}
+.generator-tool-heading {
+  max-width: 780px;
+  margin-bottom: 24px;
+}
+.generator-tool-heading h2 {
+  margin: 6px 0 12px;
+  color: var(--gold);
+  font: 900 clamp(24px, 4vw, 38px)/1.05 var(--font-display);
+  text-transform: uppercase;
+}
+.generator-tool-heading p {
+  margin: 0;
+  color: #d8c9ae;
+  font: 16px/1.7 var(--font-sans);
+}
+.generator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+  gap: clamp(20px, 4vw, 32px);
+  align-items: start;
+}
+.generator-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.generator-field,
+.generator-check {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  color: var(--paper);
+  font: 800 12px/1.35 var(--font-sans);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.generator-field-wide,
+.generator-check {
+  grid-column: 1 / -1;
+}
+.generator-field input,
+.generator-field textarea,
+.generator-field select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(223, 177, 91, 0.24);
+  border-radius: 8px;
+  background: rgba(9, 8, 6, 0.58);
+  color: var(--paper);
+  font: 15px/1.55 var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.generator-field input,
+.generator-field select {
+  padding: 0 13px;
+}
+.generator-field textarea {
+  min-height: 80px;
+  padding: 12px 13px;
+  resize: vertical;
+}
+.generator-field input::placeholder,
+.generator-field textarea::placeholder {
+  color: rgba(216, 201, 174, 0.48);
+}
+.generator-field input:focus,
+.generator-field textarea:focus,
+.generator-field select:focus {
+  border-color: rgba(223, 177, 91, 0.82);
+  outline: 2px solid rgba(223, 177, 91, 0.16);
+  outline-offset: 2px;
+}
+.generator-check {
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  padding: 12px 0 0;
+  color: #d8c9ae;
+  font: 14px/1.55 var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.generator-check input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--gold);
+}
+.generator-preview {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid rgba(223, 177, 91, 0.22);
+  border-radius: 8px;
+  background: rgba(9, 8, 6, 0.46);
+}
+.generator-preview h3 {
+  margin: 6px 0 0;
+  color: var(--gold);
+  font: 900 22px/1.1 var(--font-display);
+  text-transform: uppercase;
+}
+.generator-preview output {
+  display: block;
+  min-height: 280px;
+  padding: 16px;
+  border: 1px solid rgba(244, 235, 214, 0.14);
+  border-radius: 8px;
+  color: #f4ebd6;
+  background: rgba(244, 235, 214, 0.035);
+  white-space: pre-wrap;
+  font: 16px/1.72 var(--font-serif);
+}
+.generator-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.generator-status {
+  margin: 0;
+  color: #d8c9ae;
+  font: 14px/1.55 var(--font-sans);
+}
 .educator-prompts {
   display: grid;
   grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
@@ -2742,6 +2875,7 @@ body::before {
   .stories-link-box,
   .explainer-principles,
   .worksheet-grid,
+  .generator-layout,
   .educator-prompts {
     grid-template-columns: 1fr;
   }
@@ -2752,6 +2886,18 @@ body::before {
   .press-subjects-head {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .generator-form {
+    grid-template-columns: 1fr;
+  }
+  .generator-tool {
+    padding: 18px;
+  }
+  .generator-preview {
+    padding: 16px;
   }
 }
 
@@ -2771,6 +2917,7 @@ body::before {
     padding: 0;
   }
   .worksheet-grid,
+  .generator-tool,
   .worksheet-box {
     border-color: #999;
     background: transparent;

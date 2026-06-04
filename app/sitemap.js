@@ -19,6 +19,7 @@ export default function sitemap() {
     { url: absoluteUrl("/obituary-checklist/"), lastModified: latest, changeFrequency: "monthly", priority: 0.869 },
     { url: absoluteUrl("/obituary-mistakes-to-avoid/"), lastModified: latest, changeFrequency: "monthly", priority: 0.866 },
     { url: absoluteUrl("/short-obituary-examples/"), lastModified: latest, changeFrequency: "monthly", priority: 0.866 },
+    { url: absoluteUrl("/free-obituary-generator/"), lastModified: latest, changeFrequency: "monthly", priority: 0.872 },
     { url: absoluteUrl("/obituary-wording/"), lastModified: latest, changeFrequency: "monthly", priority: 0.865 },
     { url: absoluteUrl("/memorial-donation-wording-obituary/"), lastModified: latest, changeFrequency: "monthly", priority: 0.861 },
     { url: absoluteUrl("/how-to-write-an-obituary-story/"), lastModified: latest, changeFrequency: "monthly", priority: 0.88 },

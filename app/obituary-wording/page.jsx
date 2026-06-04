@@ -198,6 +198,9 @@ export default function ObituaryWordingPage() {
             <p>{description}</p>
             <div className="stories-actions">
               <Button asChild variant="primary">
+                <Link href="/free-obituary-generator/">Generator</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/life-story-obituary-template/">Template</Link>
               </Button>
               <Button asChild>
@@ -281,7 +284,7 @@ export default function ObituaryWordingPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Wording Resources</h2>
               <p>
-                Use this page for obituary wording examples, death announcement wording, survived-by wording, preceded-in-death wording, family-list guidance, service wording, and general phrase-bank resources. For concise newspaper notices and brief death announcements, use the <Link href="/short-obituary-examples/">short obituary examples</Link>. For full obituary structures, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sample story patterns, use the <Link href="/obituary-examples/">obituary examples page</Link>. For in-lieu-of-flowers and memorial contribution language, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For a pre-publication fact check, use the <Link href="/obituary-checklist/">obituary checklist</Link>. For common wording and proofing errors, use the <Link href="/obituary-mistakes-to-avoid/">obituary mistakes checklist</Link>.
+                Use this page for obituary wording examples, death announcement wording, survived-by wording, preceded-in-death wording, family-list guidance, service wording, and general phrase-bank resources. For a private copyable draft, use the <Link href="/free-obituary-generator/">free obituary generator</Link>. For concise newspaper notices and brief death announcements, use the <Link href="/short-obituary-examples/">short obituary examples</Link>. For full obituary structures, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sample story patterns, use the <Link href="/obituary-examples/">obituary examples page</Link>. For in-lieu-of-flowers and memorial contribution language, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For a pre-publication fact check, use the <Link href="/obituary-checklist/">obituary checklist</Link>. For common wording and proofing errors, use the <Link href="/obituary-mistakes-to-avoid/">obituary mistakes checklist</Link>.
               </p>
             </div>
             <Link href="/obituary-wording/">{absoluteUrl("/obituary-wording/")}</Link>

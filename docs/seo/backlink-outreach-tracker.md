@@ -15,6 +15,7 @@ Primary link target for obituary cost, newspaper price, and paid notice budgetin
 Primary link target for obituary checklist, information gathering, and pre-publication planning keywords: https://www.finalnotes.page/obituary-checklist/
 Primary link target for obituary mistakes, proof review, and correction keywords: https://www.finalnotes.page/obituary-mistakes-to-avoid/
 Primary link target for obituary wording, phrases, and death announcement wording keywords: https://www.finalnotes.page/obituary-wording/
+Primary link target for free obituary generator, obituary creator, and AI obituary generator keywords: https://www.finalnotes.page/free-obituary-generator/
 Primary link target for memorial donation, in-lieu-of-flowers, and contribution wording keywords: https://www.finalnotes.page/memorial-donation-wording-obituary/
 Primary link target for obituary-writing and family-history how-to keywords: https://www.finalnotes.page/how-to-write-an-obituary-story/
 Primary link target for obituary prompts and legacy interview keywords: https://www.finalnotes.page/obituary-writing-prompts/
@@ -274,6 +275,14 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 |  | Examples.com | `docs/seo/pitches/117-examplescom-short-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Short obituary examples target |
 |  | Eduyush | `docs/seo/pitches/118-eduyush-short-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Short obituary examples target |
 |  | QuickFuneral | `docs/seo/pitches/119-quickfuneral-simple-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Simple obituary examples target |
+|  | CreateMemorial | `docs/seo/pitches/120-creatememorial-obituary-generator.md` | /free-obituary-generator/ |  |  |  |  | Free obituary template generator target |
+|  | AI Written Obituary | `docs/seo/pitches/121-aiwrittenobituary-free-obituary-generator.md` | /free-obituary-generator/ |  |  |  |  | Free AI obituary generator target |
+|  | aiwriter.ai | `docs/seo/pitches/122-aiwriter-ai-obituary-writer.md` | /free-obituary-generator/ |  |  |  |  | AI obituary writer target |
+|  | FuneralFolio | `docs/seo/pitches/123-funeralfolio-online-obituary-writer.md` | /free-obituary-generator/ |  |  |  |  | Online obituary writer target |
+|  | Gather | `docs/seo/pitches/124-gather-ai-obituary-builder.md` | /free-obituary-generator/ |  |  |  |  | Funeral-home AI obituary builder target |
+|  | After | `docs/seo/pitches/125-after-obituary-assistant.md` | /free-obituary-generator/ |  |  |  |  | Online memorial obituary assistant target |
+|  | Tribute Archive | `docs/seo/pitches/126-tribute-archive-ai-obituary-writer.md` | /free-obituary-generator/ |  |  |  |  | AI obituary writer platform target |
+|  | OfficialObituary | `docs/seo/pitches/127-officialobituary-free-obituary-generator.md` | /free-obituary-generator/ |  |  |  |  | Free obituary generator and wording target |
 |  | Chronic Joy | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | /obituary-story-worksheet/ | Hold unless invited |  |  |  | Human-written only |
 |  | Modern Loss | Hold until submissions reopen | /obituary-stories/ | No open calls on 2026-06-04 |  |  |  | Check weekly |
 

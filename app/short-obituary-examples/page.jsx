@@ -194,6 +194,9 @@ export default function ShortObituaryExamplesPage() {
             <p>{description}</p>
             <div className="stories-actions">
               <Button asChild variant="primary">
+                <Link href="/free-obituary-generator/">Generator</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/life-story-obituary-template/">Template</Link>
               </Button>
               <Button asChild>
@@ -275,7 +278,7 @@ export default function ShortObituaryExamplesPage() {
             <div>
               <h2 id="best-link">Best Link Target For Short Obituary Resources</h2>
               <p>
-                Use this page for short obituary examples, short obituary templates, simple obituary examples, brief death notices, newspaper word-limit resources, and funeral-home pages that help families write a concise notice. For phrase-bank language, use the <Link href="/obituary-wording/">obituary wording examples</Link>. For a full story structure, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For narrative examples, use the <Link href="/obituary-examples/">obituary examples page</Link>. For paid print decisions, use the <Link href="/obituary-cost/">obituary cost guide</Link>.
+                Use this page for short obituary examples, short obituary templates, simple obituary examples, brief death notices, newspaper word-limit resources, and funeral-home pages that help families write a concise notice. For a private draft builder, use the <Link href="/free-obituary-generator/">free obituary generator</Link>. For phrase-bank language, use the <Link href="/obituary-wording/">obituary wording examples</Link>. For a full story structure, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For narrative examples, use the <Link href="/obituary-examples/">obituary examples page</Link>. For paid print decisions, use the <Link href="/obituary-cost/">obituary cost guide</Link>.
               </p>
             </div>
             <Link href="/short-obituary-examples/">{absoluteUrl("/short-obituary-examples/")}</Link>
