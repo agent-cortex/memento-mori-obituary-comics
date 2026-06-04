@@ -2535,13 +2535,27 @@ body::before {
 .explainer-page {
   max-width: 980px;
 }
+.educator-page {
+  max-width: 1040px;
+}
 .explainer-header-section h1 {
   max-width: 11ch;
   margin-left: auto;
   margin-right: auto;
 }
+.educator-header-section h1 {
+  max-width: 13ch;
+  margin-left: auto;
+  margin-right: auto;
+}
 .explainer-header-section p {
   max-width: 740px;
+  margin: 0 auto;
+  color: #d8c9ae;
+  font: 17px/1.7 var(--font-sans);
+}
+.educator-header-section p {
+  max-width: 780px;
   margin: 0 auto;
   color: #d8c9ae;
   font: 17px/1.7 var(--font-sans);
@@ -2579,13 +2593,45 @@ body::before {
 .explainer-next {
   padding-top: 18px;
 }
+.educator-prompts {
+  display: grid;
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  gap: clamp(24px, 5vw, 42px);
+  margin: 32px 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.educator-prompts h2 {
+  margin: 6px 0 0;
+  color: var(--gold);
+  font: 900 clamp(22px, 4vw, 34px)/1.1 var(--font-display);
+  text-transform: uppercase;
+}
+.educator-prompts ol {
+  margin: 0;
+  padding-left: 24px;
+  color: #d8c9ae;
+  font: 16px/1.7 var(--font-sans);
+}
+.educator-prompts li + li {
+  margin-top: 12px;
+}
+.educator-latest {
+  margin-top: 28px;
+}
+.educator-latest a {
+  color: var(--gold);
+  font-weight: 800;
+}
 
 @media (max-width: 860px) {
   .press-highlight,
   .press-grid,
   .stories-intent-grid,
   .stories-link-box,
-  .explainer-principles {
+  .explainer-principles,
+  .educator-prompts {
     grid-template-columns: 1fr;
   }
   .press-highlight p,

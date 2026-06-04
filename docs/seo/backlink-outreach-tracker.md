@@ -4,6 +4,7 @@ Date: 2026-06-04
 Canonical host: https://www.finalnotes.page/
 Primary link target for obituary-story keywords: https://www.finalnotes.page/obituary-stories/
 Definition/explainer link target: https://www.finalnotes.page/what-are-obituary-comics/
+Educator/library link target: https://www.finalnotes.page/educators-libraries/
 
 This tracker is for editorial, review, resource, and guest-essay outreach only. Do not use paid link insertion, link exchanges, generic guest-post marketplaces, automated directories, or exact-match anchor pressure.
 
@@ -19,6 +20,10 @@ This tracker is for editorial, review, resource, and guest-essay outreach only. 
 | P2 | Comics Beat | https://www.comicsbeat.com/contact/ | News tip for a daily source-backed obituary-comics archive. | https://www.finalnotes.page/ | Memento Mori Obituary Comics |
 | P2 | The Nib | https://thenib.com/ | Original-comic pitch if submissions are open; link only if editorially allowed. | https://www.finalnotes.page/press/ | source-backed obituary comics |
 | P2 | Library graphic medicine guides | Search specific university/library guide owners before sending. | Resource inclusion for biography comics, grief comics, and graphic medicine lists. | https://www.finalnotes.page/obituary-stories/ | obituary stories and articles |
+| P2 | Bradley University Graphic Medicine guide | https://bradley.libguides.com/graphicmedicine/start | Resource inclusion for using and making comics around illness and health narratives. | https://www.finalnotes.page/educators-libraries/ | graphic medicine resources |
+| P2 | UCLA Comics and Graphic Novels guide | https://guides.library.ucla.edu/comics-studies | Resource suggestion for comics studies, citation, and visual biography examples. | https://www.finalnotes.page/educators-libraries/ | visual biography examples |
+| P2 | Darien Library Graphic Medicine | https://www.darienlibrary.org/graphic-medicine | Resource suggestion for grief comics and library discussion materials. | https://www.finalnotes.page/educators-libraries/ | grief comics discussion prompts |
+| P2 | University of Miami Graphic Medicine guide | https://guides.library.miami.edu/graphicmedicine | Resource suggestion for death, grief, and graphic medicine reading lists. | https://www.finalnotes.page/educators-libraries/ | obituary comics for educators |
 | P2 | Deathcare and grief Substacks | Identify one writer per pitch; avoid bulk sending. | Interview, guest note, or resource mention. | https://www.finalnotes.page/press/ | Memento Mori Obituary Comics |
 
 ## Send Log
@@ -30,6 +35,7 @@ This tracker is for editorial, review, resource, and guest-essay outreach only. 
 |  | SOLRAD | Pitch: Obituary comics as source-backed visual biography | /what-are-obituary-comics/ |  |  |  |  |  |
 |  | The Comics Journal | News/essay tip: obituary as comics form | /what-are-obituary-comics/ |  |  |  |  |  |
 |  | Graphic Medicine | Resource/review suggestion: visual obituaries and mortality comics | /obituary-stories/ |  |  |  |  |  |
+|  | Library guide owner | Resource inclusion: obituary comics for visual biography and grief comics | /educators-libraries/ |  |  |  |  |  |
 
 ## Pitch Drafts
 
@@ -84,6 +90,22 @@ Story index: https://www.finalnotes.page/obituary-stories/
 Explainer: https://www.finalnotes.page/what-are-obituary-comics/
 
 Would this be a fit for review consideration, a short news item, or an essay on obituary as a comics form?
+
+Best,
+[name]
+
+### Library or Course Resource Inclusion
+
+Subject: Resource suggestion for graphic medicine / grief comics
+
+Hi [name],
+
+I found your guide on [topic]. One resource that may fit is Memento Mori Obituary Comics, a source-backed visual biography archive built around obituary stories, grief comics, and graphic medicine-adjacent classroom use.
+
+The educator/library page includes discussion prompts, short reader links, citation notes, and guidance for using visual obituaries in class or reading groups:
+https://www.finalnotes.page/educators-libraries/
+
+It may fit sections on graphic medicine, comics studies, grief comics, life writing, visual biography, or library discussion materials.
 
 Best,
 [name]

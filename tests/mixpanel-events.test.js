@@ -17,6 +17,7 @@ test("pageTypeFromPath classifies public routes", () => {
   assert.equal(pageTypeFromPath("/"), "home");
   assert.equal(pageTypeFromPath("/obituary-stories/"), "obituary_stories");
   assert.equal(pageTypeFromPath("/what-are-obituary-comics/"), "obituary_comics_explainer");
+  assert.equal(pageTypeFromPath("/educators-libraries/"), "educators_libraries");
   assert.equal(pageTypeFromPath("/about/"), "about");
   assert.equal(pageTypeFromPath("/press/"), "press");
   assert.equal(pageTypeFromPath("/newsletter/?utm_source=x"), "newsletter");

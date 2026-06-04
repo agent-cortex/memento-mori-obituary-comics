@@ -103,12 +103,15 @@ export default function WhatAreObituaryComicsPage() {
               <Button asChild variant="primary">
                 <Link href="/obituary-stories/">Read obituary stories</Link>
               </Button>
-              {latest ? (
-                <Button asChild>
-                  <Link href={comicPath(latest)}>Latest comic</Link>
-                </Button>
-              ) : null}
-            </div>
+            {latest ? (
+              <Button asChild>
+                <Link href={comicPath(latest)}>Latest comic</Link>
+              </Button>
+            ) : null}
+            <Button asChild>
+              <Link href="/educators-libraries/">Educator resources</Link>
+            </Button>
+          </div>
           </header>
 
           <section className="explainer-body" aria-labelledby="definition">
@@ -151,6 +154,7 @@ export default function WhatAreObituaryComicsPage() {
               <h2 id="best-link">Best Link Target For This Explainer</h2>
               <p>
                 Use this page for essays, classroom resources, newsletter mentions, and article references that define the form. Use the story index for broader obituary-story roundups.
+                For course pages and library guides, use the <Link href="/educators-libraries/">educator and library resource page</Link>.
               </p>
             </div>
             <Link href="/what-are-obituary-comics/">{absoluteUrl("/what-are-obituary-comics/")}</Link>

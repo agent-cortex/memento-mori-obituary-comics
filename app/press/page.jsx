@@ -29,6 +29,11 @@ const storyAngles = [
 
 const linkTargets = [
   {
+    label: "Educators and libraries",
+    href: "/educators-libraries/",
+    note: "Best canonical link for LibGuides, classroom resources, graphic medicine guides, grief comics lists, and reading groups.",
+  },
+  {
     label: "What are obituary comics?",
     href: "/what-are-obituary-comics/",
     note: "Best canonical link for explainers, classroom resources, and articles defining visual obituaries.",
