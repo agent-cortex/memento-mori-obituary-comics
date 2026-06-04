@@ -22,8 +22,10 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "build": "node scripts/backfill_blob_from_public_media.js && next build --webpack",
     "start": "next start",
+    "blob:backfill": "node scripts/backfill_blob_from_public_media.js",
+    "blob:backfill:dry-run": "node scripts/backfill_blob_from_public_media.js --dry-run",
     "blob:dry-run": "node scripts/upload_comics_to_blob.js --dry-run",
     "blob:upload": "node scripts/upload_comics_to_blob.js",
     "test": "node --test tests/*.test.js"
