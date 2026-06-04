@@ -202,6 +202,9 @@ export default function ObituaryChecklistPage() {
                 <Link href="/obituary-cost/">Cost guide</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-mistakes-to-avoid/">Mistakes to avoid</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/how-to-submit-an-obituary-to-a-newspaper/">Newspaper submission</Link>
               </Button>
               <Button asChild>
@@ -255,7 +258,7 @@ export default function ObituaryChecklistPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Checklist Resources</h2>
               <p>
-                Use this page for funeral-home planning pages, end-of-life checklists, family resource hubs, memorial-planning articles, and obituary writing resources that need a clear pre-publication checklist. For a fuller writing process, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>. For a print-friendly notes page, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>. For price, line, photo, and quote questions, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For newspaper deadlines and proof rules, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For details to leave out, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>. For copyable structures, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sample story patterns, use the <Link href="/obituary-examples/">obituary examples page</Link>.
+                Use this page for funeral-home planning pages, end-of-life checklists, family resource hubs, memorial-planning articles, and obituary writing resources that need a clear pre-publication checklist. For a fuller writing process, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>. For a print-friendly notes page, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>. For price, line, photo, and quote questions, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For newspaper deadlines and proof rules, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For common proofing errors and corrections, use the <Link href="/obituary-mistakes-to-avoid/">obituary mistakes checklist</Link>. For details to leave out, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>. For copyable structures, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sample story patterns, use the <Link href="/obituary-examples/">obituary examples page</Link>.
               </p>
             </div>
             <Link href="/obituary-checklist/">{absoluteUrl("/obituary-checklist/")}</Link>

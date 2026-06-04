@@ -112,6 +112,12 @@ Use this file as the next execution list. Send manually, one by one, after check
 | 101 | Survivorship A to Z | https://survivorshipatoz.org/contact or current page contact path | `docs/seo/pitches/99-survivorshipatoz-obituary-checklist.md` | Resource suggestion for obituary planning readers | https://www.finalnotes.page/obituary-checklist/ | Pre-planning resource covers what to include and not include in an obituary. |
 | 102 | American Heritage Cemetery & Funeral Home | https://www.thehealingstartshere.com/contact-us or current funeral-home contact path | `docs/seo/pitches/100-american-heritage-obituary-checklist.md` | Supplemental obituary checklist for families | https://www.finalnotes.page/obituary-checklist/ | Funeral-home guide explains obituary writing as both public notice and life account. |
 | 103 | Checklist.com | https://checklist.com/contact or current site contact path | `docs/seo/pitches/101-checklistcom-obituary-checklist.md` | Obituary companion for funeral planning checklist readers | https://www.finalnotes.page/obituary-checklist/ | Broader funeral-planning checklist includes collecting personal information for an obituary. |
+| 104 | Legacy.com | https://www.legacy.com/contact/ or current help/editorial contact path | `docs/seo/pitches/102-legacy-obituary-mistakes.md` | Companion checklist for obituary mistakes and proof review | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | High-authority obituary platform with current guidance on common obituary writing mistakes. |
+| 105 | ObituaryGuide | https://www.obituaryguide.com/contact.php | `docs/seo/pitches/103-obituaryguide-mistakes-resource.md` | Resource suggestion for obituary-writing pitfalls | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | Obituary-writing pitfalls page and resource-link surface. |
+| 106 | Indiana Funeral Care | https://www.indianafuneralcare.com/contact-us or current site contact path | `docs/seo/pitches/104-indiana-funeral-care-obituary-corrections.md` | Companion checklist for inaccurate obituary readers | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | Direct article about inaccurate obituaries and post-publication errors. |
+| 107 | Best Care Cremation | https://www.bestcarecremation.com/contact-us/ or current site contact path | `docs/seo/pitches/105-best-care-cremation-obituary-mistakes.md` | Supplemental checklist for common obituary mistakes | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | Current guide on common obituary mistakes, fact checks, final review, and privacy. |
+| 108 | All Veterans - All Families Cremations | https://allvetscremations.com/contact-us/ or current site contact path | `docs/seo/pitches/106-allvets-obituary-mistakes.md` | Companion checklist for obituary-writing mistakes | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | Family-facing guide to mistakes to avoid when writing an obituary. |
+| 109 | Legacy Help Center | https://www.legacy.com/contact/ or current help/editorial contact path | `docs/seo/pitches/107-legacy-help-obituary-links.md` | Companion resource for obituary notices with links | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | Help article explains obituary links should supplement, not replace, complete notice content. |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | Human-written grief/lament reflection post only if invited | https://www.finalnotes.page/obituary-story-worksheet/ | Submission page is by invitation and rejects AI-generated content, so hold unless a human-written personal essay is invited. |
 
 ## Hold / Monitor
@@ -134,6 +140,7 @@ Use this file as the next execution list. Send manually, one by one, after check
   - Newspaper obituary submission, placement, proof-of-death, deadline, price, and photo-rule pages: `https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/`
   - Obituary cost, newspaper pricing, line fees, photo fees, print-plus-online packages, and funeral-home cash advances: `https://www.finalnotes.page/obituary-cost/`
   - Obituary checklists, obituary information gathering, family review, pre-publication planning, and funeral-planning checklist resources: `https://www.finalnotes.page/obituary-checklist/`
+  - Obituary mistakes, obituary errors, proof review, family corrections, missing details, and memorial-link misuse resources: `https://www.finalnotes.page/obituary-mistakes-to-avoid/`
   - Memorial donation wording, in-lieu-of-flowers examples, charity-link safety, family-support language, and contribution wording: `https://www.finalnotes.page/memorial-donation-wording-obituary/`
   - Funeral-home planning pages, bereavement resources, eulogy-writing articles, memorial-program guides, and obituary/eulogy comparison pages: `https://www.finalnotes.page/obituary-vs-eulogy/`
   - Obituary privacy, identity-theft, consumer-safety, and bereavement scam-safety pages: `https://www.finalnotes.page/what-not-to-include-in-an-obituary/`
@@ -342,6 +349,17 @@ Send these after the cost batch. Use `/obituary-checklist/` for obituary checkli
 4. Survivorship A to Z: family and caregiver resource for collecting obituary information before publication.
 5. American Heritage Cemetery & Funeral Home: family-facing checklist before readers contact the funeral home or newspaper.
 6. Checklist.com: focused obituary companion for the obituary-preparation step in funeral planning.
+
+## Twentieth Batch: Obituary Mistakes, Proof Review, and Corrections
+
+Send these after the checklist batch. Use `/obituary-mistakes-to-avoid/` for obituary mistakes, obituary errors, proof review, family corrections, missing details, memorial-link misuse, unsafe details, and correction workflows:
+
+1. Legacy.com: pre-submission proofing companion for common obituary writing mistakes.
+2. ObituaryGuide: practical final-review checklist for obituary-writing pitfalls readers.
+3. Indiana Funeral Care: companion for readers handling inaccurate obituaries and corrections.
+4. Best Care Cremation: supplemental family checklist for common obituary mistakes.
+5. All Veterans - All Families Cremations: companion for families approving a final obituary draft.
+6. Legacy Help Center: link-use and proofing companion for obituary notices with memorial links.
 
 ## Follow-Up Timing
 

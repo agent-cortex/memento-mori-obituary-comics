@@ -8,6 +8,8 @@ Goal: first-page visibility for relevant obituary searches, especially obituary 
 
 The ranking goal is not complete. Current web search samples did not surface canonical `finalnotes.page` pages for brand-plus-obituary or `site:finalnotes.page` obituary checks in the sampled result set. Treat first-page ranking as unproven until Google Search Console or a live Google result proves a target page appears on page one for a relevant obituary query.
 
+2026-06-05 continuation check: sampled web searches for `site:finalnotes.page "obituary stories"`, `site:finalnotes.page "obituary articles"`, `site:finalnotes.page "obituary checklist"`, and `"finalnotes.page/obituary-stories"` still did not surface canonical FinalNotes pages in the returned result set. Searches for `obituary mistakes to avoid`, `common obituary mistakes`, and related proofing/correction queries surfaced a distinct opportunity around fact review, missing service details, generic wording, privacy, memorial links, and post-publication corrections.
+
 ## Search Landscape Observed
 
 SERP samples for obituary-writing, examples, and worksheet queries are dominated by:
@@ -33,6 +35,7 @@ Fake-obituary and obituary-piracy searches surfaced a related but distinct verif
 Newspaper obituary submission searches surfaced a separate placement lane: Legacy, Everplans, The Gazette, The Dominion Post, Anchorage Daily News, and The Martha's Vineyard Times all explain how families submit or place an obituary, including proof of death, funeral-home verification, publication deadlines, payment, photo rules, and proofing. That supports using `https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/` for newspaper help pages, funeral-home planning pages, obituary cost explainers, placement guides, and submission-policy resources.
 Memorial donation and in-lieu-of-flowers searches surfaced another obituary-wording lane: Funeral Basics, Emily Post, American Cancer Society, American Heart Association, Alzheimer's Association, Funeral.com, Farewelling, and similar resources cover charity requests, memorial-gift designation, donation links, family notification, and thank-you tracking. That supports using `https://www.finalnotes.page/memorial-donation-wording-obituary/` for funeral-home obituary guides, charity memorial-giving pages, hospice resources, etiquette articles, and family planning pages.
 Obituary cost and newspaper obituary pricing searches surfaced a cost-transparency lane: Legacy, Funeral.com, Trustworthy, obituary.design, FTC Funeral Rule materials, and official newspaper rate cards all cover line fees, photo fees, publication route, print-plus-online packages, and funeral-home third-party/cash-advance handling. That supports using `https://www.finalnotes.page/obituary-cost/` for funeral-cost articles, newspaper obituary pricing pages, funeral-home planning guides, consumer-advocacy resources, and family budgeting pages.
+Obituary mistakes and correction searches surfaced a proofing lane: Legacy, ObituaryGuide, Best Care Cremation, All Veterans - All Families Cremations, Indiana Funeral Care, and Legacy Help Center cover common obituary mistakes, writing pitfalls, inaccurate obituaries, final review, private details, and link-use rules. That supports using `https://www.finalnotes.page/obituary-mistakes-to-avoid/` for funeral-home writing guides, obituary-proofing resources, newspaper obituary desks, memorial-site help articles, family planning pages, and resource lists about common obituary errors or corrections.
 
 ## High-Fit Sources Found In This Pass
 
@@ -120,6 +123,12 @@ Obituary cost and newspaper obituary pricing searches surfaced a cost-transparen
 | Survivorship A to Z | Pre-planning guidance on what to include and not include in an obituary. | `/obituary-checklist/` | Pitch added |
 | American Heritage Cemetery & Funeral Home | Funeral-home obituary-writing page that treats the obituary as both public notice and life account. | `/obituary-checklist/` | Pitch added |
 | Checklist.com | Funeral-planning checklist that includes collecting personal information for an obituary. | `/obituary-checklist/` | Pitch added |
+| Legacy.com | Obituary examples page includes current guidance on common obituary writing mistakes and core obituary elements. | `/obituary-mistakes-to-avoid/` | Pitch added |
+| ObituaryGuide | Obituary-writing pitfalls page directly targets formulaic wording and keeping focus on the life. | `/obituary-mistakes-to-avoid/` | Pitch added |
+| Indiana Funeral Care | Article about inaccurate obituaries and contacting publication channels after an error. | `/obituary-mistakes-to-avoid/` | Pitch added |
+| Best Care Cremation | Current guide on common obituary mistakes, fact checks, final review, and privacy details. | `/obituary-mistakes-to-avoid/` | Pitch added |
+| All Veterans - All Families Cremations | Family-facing guide to mistakes to avoid when writing an obituary. | `/obituary-mistakes-to-avoid/` | Pitch added |
+| Legacy Help Center | Help article explains that links should supplement the obituary, not replace complete core content. | `/obituary-mistakes-to-avoid/` | Pitch added |
 
 ## Completion Rule
 

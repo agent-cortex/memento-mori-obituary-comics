@@ -17,6 +17,7 @@ export default function sitemap() {
     { url: absoluteUrl("/how-to-submit-an-obituary-to-a-newspaper/"), lastModified: latest, changeFrequency: "monthly", priority: 0.863 },
     { url: absoluteUrl("/obituary-cost/"), lastModified: latest, changeFrequency: "monthly", priority: 0.867 },
     { url: absoluteUrl("/obituary-checklist/"), lastModified: latest, changeFrequency: "monthly", priority: 0.869 },
+    { url: absoluteUrl("/obituary-mistakes-to-avoid/"), lastModified: latest, changeFrequency: "monthly", priority: 0.866 },
     { url: absoluteUrl("/memorial-donation-wording-obituary/"), lastModified: latest, changeFrequency: "monthly", priority: 0.861 },
     { url: absoluteUrl("/how-to-write-an-obituary-story/"), lastModified: latest, changeFrequency: "monthly", priority: 0.88 },
     { url: absoluteUrl("/obituary-writing-prompts/"), lastModified: latest, changeFrequency: "monthly", priority: 0.87 },

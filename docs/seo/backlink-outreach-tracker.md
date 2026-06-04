@@ -13,6 +13,7 @@ Primary link target for fake obituary sites, obituary piracy, and scam-verificat
 Primary link target for newspaper obituary submission and placement keywords: https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/
 Primary link target for obituary cost, newspaper price, and paid notice budgeting keywords: https://www.finalnotes.page/obituary-cost/
 Primary link target for obituary checklist, information gathering, and pre-publication planning keywords: https://www.finalnotes.page/obituary-checklist/
+Primary link target for obituary mistakes, proof review, and correction keywords: https://www.finalnotes.page/obituary-mistakes-to-avoid/
 Primary link target for memorial donation, in-lieu-of-flowers, and contribution wording keywords: https://www.finalnotes.page/memorial-donation-wording-obituary/
 Primary link target for obituary-writing and family-history how-to keywords: https://www.finalnotes.page/how-to-write-an-obituary-story/
 Primary link target for obituary prompts and legacy interview keywords: https://www.finalnotes.page/obituary-writing-prompts/
@@ -136,6 +137,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 | P3 | Survivorship A to Z | https://survivorshipatoz.org/contact or current page contact path | Resource suggestion for what-to-include and what-to-leave-out planning readers. | https://www.finalnotes.page/obituary-checklist/ | obituary planning checklist |
 | P3 | American Heritage Cemetery & Funeral Home | https://www.thehealingstartshere.com/contact-us or current funeral-home contact path | Family-facing checklist before readers contact the funeral home or newspaper. | https://www.finalnotes.page/obituary-checklist/ | obituary checklist |
 | P3 | Checklist.com | https://checklist.com/contact or current site contact path | Focused obituary companion for funeral-planning checklist readers. | https://www.finalnotes.page/obituary-checklist/ | obituary information checklist |
+| P1 | Legacy.com | https://www.legacy.com/contact/ or current help/editorial contact path | Pre-submission proofing companion for common obituary writing mistakes. | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | obituary mistakes to avoid |
+| P2 | ObituaryGuide | https://www.obituaryguide.com/contact.php | Practical final-review checklist for obituary-writing pitfalls readers. | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | obituary mistakes checklist |
+| P2 | Indiana Funeral Care | https://www.indianafuneralcare.com/contact-us or current site contact path | Companion for inaccurate obituary and correction readers. | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | obituary mistakes and corrections |
+| P3 | Best Care Cremation | https://www.bestcarecremation.com/contact-us/ or current site contact path | Supplemental family checklist for common obituary mistakes. | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | common obituary mistakes |
+| P3 | All Veterans - All Families Cremations | https://allvetscremations.com/contact-us/ or current site contact path | Companion for families approving a final obituary draft. | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | mistakes to avoid when writing an obituary |
+| P2 | Legacy Help Center | https://www.legacy.com/contact/ or current help/editorial contact path | Link-use and proofing companion for obituary notices with memorial links. | https://www.finalnotes.page/obituary-mistakes-to-avoid/ | obituary proofing checklist |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | Human-written grief/lament post only if invited. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary reflection worksheet |
 
 ## Send Log
@@ -242,6 +249,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 |  | Survivorship A to Z | `docs/seo/pitches/99-survivorshipatoz-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Include/not-include planning target |
 |  | American Heritage Cemetery & Funeral Home | `docs/seo/pitches/100-american-heritage-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Funeral-home resource target |
 |  | Checklist.com | `docs/seo/pitches/101-checklistcom-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Funeral-planning checklist target |
+|  | Legacy.com | `docs/seo/pitches/102-legacy-obituary-mistakes.md` | /obituary-mistakes-to-avoid/ |  |  |  |  | Common obituary mistakes target |
+|  | ObituaryGuide | `docs/seo/pitches/103-obituaryguide-mistakes-resource.md` | /obituary-mistakes-to-avoid/ |  |  |  |  | Pitfalls resource target |
+|  | Indiana Funeral Care | `docs/seo/pitches/104-indiana-funeral-care-obituary-corrections.md` | /obituary-mistakes-to-avoid/ |  |  |  |  | Inaccurate obituary correction target |
+|  | Best Care Cremation | `docs/seo/pitches/105-best-care-cremation-obituary-mistakes.md` | /obituary-mistakes-to-avoid/ |  |  |  |  | Current common mistakes guide target |
+|  | All Veterans - All Families Cremations | `docs/seo/pitches/106-allvets-obituary-mistakes.md` | /obituary-mistakes-to-avoid/ |  |  |  |  | Obituary mistakes guide target |
+|  | Legacy Help Center | `docs/seo/pitches/107-legacy-help-obituary-links.md` | /obituary-mistakes-to-avoid/ |  |  |  |  | Obituary link guidance target |
 |  | Chronic Joy | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | /obituary-story-worksheet/ | Hold unless invited |  |  |  | Human-written only |
 |  | Modern Loss | Hold until submissions reopen | /obituary-stories/ | No open calls on 2026-06-04 |  |  |  | Check weekly |
 

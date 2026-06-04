@@ -203,6 +203,9 @@ export default function WhatNotToIncludeInAnObituaryPage() {
                 <Link href="/fake-obituary-sites/">Fake site checklist</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-mistakes-to-avoid/">Mistakes to avoid</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/memorial-donation-wording-obituary/">Donation wording</Link>
               </Button>
               <Button asChild>
@@ -265,7 +268,7 @@ export default function WhatNotToIncludeInAnObituaryPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Privacy And Scam-Safety Resources</h2>
               <p>
-                Use this page for funeral-home writing guides, consumer-safety pages, identity-theft explainers, estate-planning resources, hospice family guides, and articles about what not to include in an obituary. For charity requests, memorial contributions, and in-lieu-of-flowers links, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For fake memorial pages, copied death notices, obituary piracy, and donation-link checks, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For a fuller story draft, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>. For source lookup and citation work, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For short public announcements, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>.
+                Use this page for funeral-home writing guides, consumer-safety pages, identity-theft explainers, estate-planning resources, hospice family guides, and articles about what not to include in an obituary. For broader proofing mistakes, missed facts, and correction steps, use the <Link href="/obituary-mistakes-to-avoid/">obituary mistakes checklist</Link>. For charity requests, memorial contributions, and in-lieu-of-flowers links, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For fake memorial pages, copied death notices, obituary piracy, and donation-link checks, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For a fuller story draft, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>. For source lookup and citation work, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For short public announcements, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>.
               </p>
             </div>
             <Link href="/what-not-to-include-in-an-obituary/">{absoluteUrl("/what-not-to-include-in-an-obituary/")}</Link>
