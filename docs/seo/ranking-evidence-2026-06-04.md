@@ -14,6 +14,8 @@ The ranking goal is not complete. Current web search samples did not surface can
 
 2026-06-05 continuation check: searches for `obituary wording examples`, `obituary announcement wording`, `death announcement wording`, `survived by wording`, and `preceded in death wording` surfaced a distinct phrase-bank lane. This is separate from the existing `/obituary-examples/` and `/memorial-donation-wording-obituary/` targets because searchers need copyable opening lines, family-list wording, service wording, privacy-safe cause-of-death wording, and proof-review language.
 
+2026-06-05 post-deploy check: after `https://www.finalnotes.page/obituary-wording/` returned `200` on the canonical domain and appeared in live `sitemap.xml` and `/llms.txt`, sampled searches for `site:finalnotes.page "obituary wording"`, `"finalnotes.page/obituary-wording"`, `"obituary wording" "finalnotes"`, and `"death announcement wording" "finalnotes"` returned no results in the sampled web search result set. This confirms deployment and crawl-surface availability, but not indexing or first-page ranking.
+
 ## Search Landscape Observed
 
 SERP samples for obituary-writing, examples, and worksheet queries are dominated by:
