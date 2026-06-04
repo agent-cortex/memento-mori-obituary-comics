@@ -67,6 +67,17 @@ Primary goal: earn relevant editorial links that help the obituary comics archiv
 | Patchogue-Medford Library | Genealogy page includes obituary research guidance and a reference contact path. | Suggest the worksheet as an optional family-history writing resource after patrons locate obituary records. | `/obituary-story-worksheet/` |
 | Chronic Joy | Covers grief/lament and practical reflection posts, but submissions are invitation-only and reject AI-generated content. | Hold unless a human-written personal reflection is invited. | `/obituary-story-worksheet/` |
 
+## Tier 2B Consumer and Obituary Resource Hubs
+
+| Target | Why it fits | Ask | Target URL |
+| --- | --- | --- | --- |
+| ObituariesHelp | Has an obituary resources hub, advice articles, downloadable forms, and genealogy resources. | Suggest the worksheet as a free planning form that helps readers gather facts, scenes, records, and privacy notes before drafting. | `/obituary-story-worksheet/` |
+| Funeral Consumers Alliance | National consumer organization for funeral planning and consumer education. | Suggest the obituary story guide and worksheet as free, non-commercial planning resources for families. | `/how-to-write-an-obituary-story/` |
+| Funeral Consumers Alliance of Connecticut | Its funeral/memorial planning page explicitly covers writing an obituary and using specific examples to show personality. | Suggest the guide as a supplemental obituary-writing resource. | `/how-to-write-an-obituary-story/` |
+| Funeral Consumers Alliance of the Finger Lakes | Publishes obituary-writing guidelines with a practical factual checklist. | Suggest the worksheet as a supplemental checklist for evidence, scene, and privacy prompts. | `/obituary-story-worksheet/` |
+| Funeral Cost Analyzer | A current obituary-writing guide surfaced in SERP checks and lists a contact email. | Secondary resource suggestion for the worksheet as a preparation aid. | `/obituary-story-worksheet/` |
+| Brown's Cremation | Has an obituary-writing resource and a community partnerships/outside-link surface. | Lower-priority local resource suggestion for families writing obituaries. | `/obituary-story-worksheet/` |
+
 ## Tier 3 Obituary, Deathcare, and Genealogy Targets
 
 | Target | Why it fits | Ask | Target URL |
@@ -97,7 +108,8 @@ Primary goal: earn relevant editorial links that help the obituary comics archiv
 6. If the art is not generative AI, send Broken Frontier a review request with 2-3 interior pages. If it is generative AI, skip them.
 7. Use `/how-to-write-an-obituary-story/` as the primary link target for obituary-writing, deathcare, and genealogy how-to links; use `/obituary-story-worksheet/` for worksheet/resource-list asks; use `/obituary-stories/` for story roundups and `/what-are-obituary-comics/` for form definitions.
 8. Keep Modern Loss on hold until its Submittable page reopens; do not send to closed calls.
-9. Track every outreach in a spreadsheet: target, contact URL/email, date sent, pitch angle, linked URL, reply, live URL, anchor text, follow/nofollow, notes.
+9. Send the consumer/resource-hub batch after the worksheet batch: ObituariesHelp, Funeral Consumers Alliance, FCA Connecticut, FCA Finger Lakes, Funeral Cost Analyzer, and Brown's Cremation.
+10. Track every outreach in a spreadsheet: target, contact URL/email, date sent, pitch angle, linked URL, reply, live URL, anchor text, follow/nofollow, notes.
 
 ## Pitch Templates
 

@@ -30,6 +30,12 @@ Use this file as the next execution list. Send manually, one by one, after check
 | 19 | aCremation | https://www.acremation.com/contact-us/ | `docs/seo/pitches/16-acremation-obituary-worksheet-resource.md` | Resource suggestion for obituary planning page | https://www.finalnotes.page/obituary-story-worksheet/ | Their obituary guidelines and templates already serve families writing obituaries; worksheet is a natural companion. |
 | 20 | LAPL History & Genealogy | https://www.lapl.org/branches/central-library/departments/history-genealogy | `docs/seo/pitches/17-lapl-obituary-research-worksheet.md` | Resource suggestion for obituary research follow-up writing | https://www.finalnotes.page/obituary-story-worksheet/ | High-authority library/genealogy fit; frame as post-research writing aid after patrons find obituary records. |
 | 21 | Patchogue-Medford Library | https://pmlib.org/contact-form/ | `docs/seo/pitches/18-patchogue-medford-obituary-research-worksheet.md` | Resource suggestion for obituary research and family-history writing | https://www.finalnotes.page/obituary-story-worksheet/ | Their genealogy page includes obituary research guidance and a live library contact path. |
+| 22 | ObituariesHelp | https://obituarieshelp.org/contactus.html | `docs/seo/pitches/20-obituarieshelp-resource-hub.md` | Resource suggestion for obituary writing forms | https://www.finalnotes.page/obituary-story-worksheet/ | Their obituary resources hub includes writing resources, downloadable forms, and genealogy resources, making the worksheet a natural free-resource addition. |
+| 23 | Funeral Consumers Alliance | fca@funerals.org | `docs/seo/pitches/21-funeral-consumers-alliance-national-resource.md` | Free obituary-writing resource for funeral planning pages | https://www.finalnotes.page/how-to-write-an-obituary-story/ | National consumer-education authority with funeral-planning resources; best framed as a family planning aid rather than a backlink request. |
+| 24 | Funeral Consumers Alliance of Connecticut | info@funeralsct.org | `docs/seo/pitches/22-fca-connecticut-obituary-guide-resource.md` | Resource suggestion for obituary writing guidance | https://www.finalnotes.page/how-to-write-an-obituary-story/ | Their funeral/memorial planning page explicitly includes writing an obituary and using specific examples to show personality. |
+| 25 | Funeral Consumers Alliance of the Finger Lakes | info@fingerlakesfunerals.org | `docs/seo/pitches/23-fca-finger-lakes-obituary-worksheet.md` | Supplemental worksheet for obituary-writing guidelines | https://www.finalnotes.page/obituary-story-worksheet/ | Their obituary-writing guideline already uses a factual checklist; the worksheet adds evidence, story, and privacy prompts. |
+| 26 | Funeral Cost Analyzer | contact@funeralcostanalyzer.com | `docs/seo/pitches/24-funeral-cost-analyzer-obituary-guide-resource.md` | Resource suggestion for obituary writing guide | https://www.finalnotes.page/obituary-story-worksheet/ | Visible obituary-writing SERP competitor with a live contact email and related guide sections; useful as a secondary resource-link target. |
+| 27 | Brown's Cremation | https://www.brownscremationservice.com/contact-us | `docs/seo/pitches/25-browns-cremation-obituary-resource.md` | Resource suggestion for obituary-writing families | https://www.finalnotes.page/obituary-story-worksheet/ | Local funeral-home resource page with an obituary-writing guide and outside-link/community partnership surface. |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | Human-written grief/lament reflection post only if invited | https://www.finalnotes.page/obituary-story-worksheet/ | Submission page is by invitation and rejects AI-generated content, so hold unless a human-written personal essay is invited. |
 
 ## Hold / Monitor
@@ -89,6 +95,17 @@ Send these after the obituary/deathcare/genealogy batch. They are resource-inclu
 3. LAPL History & Genealogy: post-research writing resource suggestion.
 4. Patchogue-Medford Library: obituary research follow-up worksheet suggestion.
 5. Chronic Joy: hold unless there is a human-written invited submission.
+
+## Fifth Batch: Consumer and Obituary Resource Hubs
+
+Send these after the worksheet/resource-page batch. The first four are stronger non-commercial targets; the last two are secondary commercial/resource targets:
+
+1. ObituariesHelp: resource hub suggestion for the free worksheet.
+2. Funeral Consumers Alliance: national resource suggestion for the obituary story guide and worksheet.
+3. Funeral Consumers Alliance of Connecticut: obituary-writing guidance supplement.
+4. Funeral Consumers Alliance of the Finger Lakes: worksheet supplement for their factual checklist.
+5. Funeral Cost Analyzer: secondary resource suggestion for its obituary-writing guide.
+6. Brown's Cremation: lower-priority local funeral-home resource suggestion.
 
 ## Follow-Up Timing
 

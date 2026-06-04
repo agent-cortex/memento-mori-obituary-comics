@@ -40,6 +40,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 | P2 | aCremation | https://www.acremation.com/contact-us/ | Resource suggestion for obituary guidelines/templates companion. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary writing worksheet |
 | P2 | LAPL History & Genealogy | https://www.lapl.org/branches/central-library/departments/history-genealogy | Resource suggestion for patrons after obituary research. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary story worksheet |
 | P2 | Patchogue-Medford Library | https://pmlib.org/contact-form/ | Resource suggestion for obituary research and family-history writing. | https://www.finalnotes.page/obituary-story-worksheet/ | family-history obituary worksheet |
+| P2 | ObituariesHelp | https://obituarieshelp.org/contactus.html | Resource suggestion for obituary forms/resources hub. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary story worksheet |
+| P2 | Funeral Consumers Alliance | fca@funerals.org | National consumer resource suggestion for family obituary planning. | https://www.finalnotes.page/how-to-write-an-obituary-story/ | obituary story writing guide |
+| P2 | Funeral Consumers Alliance of Connecticut | info@funeralsct.org | Supplemental resource for funeral/memorial planning and obituary-writing page. | https://www.finalnotes.page/how-to-write-an-obituary-story/ | how to write an obituary story |
+| P2 | Funeral Consumers Alliance of the Finger Lakes | info@fingerlakesfunerals.org | Supplemental worksheet for obituary-writing guidelines. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary writing worksheet |
+| P3 | Funeral Cost Analyzer | contact@funeralcostanalyzer.com | Secondary resource suggestion for current obituary-writing guide. | https://www.finalnotes.page/obituary-story-worksheet/ | printable obituary worksheet |
+| P3 | Brown's Cremation | https://www.brownscremationservice.com/contact-us | Local funeral-home resource suggestion for families writing obituaries. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary story worksheet |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | Human-written grief/lament post only if invited. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary reflection worksheet |
 
 ## Send Log
@@ -64,6 +70,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 |  | aCremation | `docs/seo/pitches/16-acremation-obituary-worksheet-resource.md` | /obituary-story-worksheet/ |  |  |  |  | Resource page suggestion |
 |  | LAPL History & Genealogy | `docs/seo/pitches/17-lapl-obituary-research-worksheet.md` | /obituary-story-worksheet/ |  |  |  |  | Library resource suggestion |
 |  | Patchogue-Medford Library | `docs/seo/pitches/18-patchogue-medford-obituary-research-worksheet.md` | /obituary-story-worksheet/ |  |  |  |  | Library resource suggestion |
+|  | ObituariesHelp | `docs/seo/pitches/20-obituarieshelp-resource-hub.md` | /obituary-story-worksheet/ |  |  |  |  | Resource hub suggestion |
+|  | Funeral Consumers Alliance | `docs/seo/pitches/21-funeral-consumers-alliance-national-resource.md` | /how-to-write-an-obituary-story/ |  |  |  |  | National consumer resource suggestion |
+|  | Funeral Consumers Alliance of Connecticut | `docs/seo/pitches/22-fca-connecticut-obituary-guide-resource.md` | /how-to-write-an-obituary-story/ |  |  |  |  | Obituary-writing guidance supplement |
+|  | Funeral Consumers Alliance of the Finger Lakes | `docs/seo/pitches/23-fca-finger-lakes-obituary-worksheet.md` | /obituary-story-worksheet/ |  |  |  |  | Worksheet supplement |
+|  | Funeral Cost Analyzer | `docs/seo/pitches/24-funeral-cost-analyzer-obituary-guide-resource.md` | /obituary-story-worksheet/ |  |  |  |  | Secondary commercial resource target |
+|  | Brown's Cremation | `docs/seo/pitches/25-browns-cremation-obituary-resource.md` | /obituary-story-worksheet/ |  |  |  |  | Lower-priority local funeral-home target |
 |  | Chronic Joy | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | /obituary-story-worksheet/ | Hold unless invited |  |  |  | Human-written only |
 |  | Modern Loss | Hold until submissions reopen | /obituary-stories/ | No open calls on 2026-06-04 |  |  |  | Check weekly |
 

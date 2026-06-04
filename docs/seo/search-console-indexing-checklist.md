@@ -62,4 +62,6 @@ site:finalnotes.page obituary comics
 "obituary stories" "finalnotes"
 ```
 
+Record each check in `docs/seo/ranking-evidence-2026-06-04.md` or a newer dated ranking-evidence snapshot. Use exact date, query, search source, observed position/page, and target URL.
+
 Do not mark the ranking goal complete until a live search result proves the target page is on page one for a relevant obituary query.
