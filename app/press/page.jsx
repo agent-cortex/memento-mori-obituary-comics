@@ -29,6 +29,11 @@ const storyAngles = [
 
 const linkTargets = [
   {
+    label: "Obituary stories and articles",
+    href: "/obituary-stories/",
+    note: "Best canonical link for obituary stories, obituary articles, visual obituaries, and keyword-focused roundups.",
+  },
+  {
     label: "Obituary comics archive",
     href: "/",
     note: "Best canonical link for broad coverage, roundups, newsletters, and resource pages.",

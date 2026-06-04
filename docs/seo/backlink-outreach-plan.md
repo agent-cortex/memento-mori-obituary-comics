@@ -24,6 +24,7 @@ Primary goal: earn relevant editorial links that help the obituary comics archiv
 | Use case | URL | Recommended anchor |
 | --- | --- | --- |
 | Broad coverage | https://www.finalnotes.page/ | Memento Mori Obituary Comics |
+| Obituary story keywords | https://www.finalnotes.page/obituary-stories/ | obituary stories and articles |
 | Press, reviewers, educators | https://www.finalnotes.page/press/ | obituary comics resource page |
 | Source standards | https://www.finalnotes.page/about/ | editorial method |
 | Latest issue | https://www.finalnotes.page/comics/solzhenitsyn-gulag-witness/ | Aleksandr Solzhenitsyn obituary comic |
@@ -66,10 +67,10 @@ Primary goal: earn relevant editorial links that help the obituary comics archiv
 
 1. Deploy the `/press/` page and verify sitemap, robots, canonical, and `/llms.txt` on production.
 2. Submit the current sitemap in Google Search Console and request indexing for `/`, `/press/`, `/about/`, and the latest three comic pages.
-3. Send five Tier 1 pitches: Modern Loss, Beyond the Dash, SOLRAD, The Comics Journal, and Graphic Medicine.
+3. Send five Tier 1 pitches from `docs/seo/backlink-outreach-tracker.md`: Modern Loss, Beyond the Dash, SOLRAD, The Comics Journal, and Graphic Medicine.
 4. Send two news/review tips: Comics Beat and The Nib.
 5. If the art is not generative AI, send Broken Frontier a review request with 2-3 interior pages. If it is generative AI, skip them.
-6. Create one longer linkable essay if pitches need a stronger asset: "What Are Obituary Comics?"
+6. Use `/obituary-stories/` as the primary link target for obituary-stories and obituary-articles searches; create one longer linkable essay if pitches still need a stronger asset: "What Are Obituary Comics?"
 7. Track every outreach in a spreadsheet: target, contact URL/email, date sent, pitch angle, linked URL, reply, live URL, anchor text, follow/nofollow, notes.
 
 ## Pitch Templates

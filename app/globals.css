@@ -2447,13 +2447,101 @@ body::before {
   letter-spacing: .05em;
   text-transform: uppercase;
 }
+.stories-page {
+  max-width: 1040px;
+}
+.stories-header-section h1 {
+  max-width: 11ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stories-header-section p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #d8c9ae;
+  font: 17px/1.7 var(--font-sans);
+}
+.stories-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.stories-intent-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 5vw, 48px);
+  align-items: start;
+  margin-bottom: 28px;
+  padding: 28px 0 34px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stories-intro h2 {
+  margin: 6px 0 14px;
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.stories-intro p {
+  max-width: 440px;
+  margin: 0;
+}
+.stories-intent-list {
+  display: grid;
+  gap: 14px;
+}
+.stories-intent-list article {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(244, 235, 214, 0.035);
+}
+.stories-intent-list h3 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font: 900 13px/1.25 var(--font-sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.stories-intent-list p {
+  margin: 0;
+  color: var(--paper);
+  font: 15px/1.65 var(--font-sans);
+}
+.stories-link-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .75fr);
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.stories-link-box a {
+  display: block;
+  padding: 16px;
+  border: 1px solid rgba(223, 177, 91, 0.34);
+  border-radius: 8px;
+  color: var(--gold);
+  background: rgba(223, 177, 91, 0.06);
+  font: 800 14px/1.45 var(--font-sans);
+  overflow-wrap: anywhere;
+}
+.stories-index {
+  padding-top: 10px;
+}
 
 @media (max-width: 860px) {
   .press-highlight,
-  .press-grid {
+  .press-grid,
+  .stories-intent-grid,
+  .stories-link-box {
     grid-template-columns: 1fr;
   }
-  .press-highlight p {
+  .press-highlight p,
+  .stories-intro p {
     max-width: none;
   }
   .press-subjects-head {

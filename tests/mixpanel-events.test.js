@@ -15,7 +15,9 @@ test("Mixpanel event taxonomy covers core site activity", () => {
 
 test("pageTypeFromPath classifies public routes", () => {
   assert.equal(pageTypeFromPath("/"), "home");
+  assert.equal(pageTypeFromPath("/obituary-stories/"), "obituary_stories");
   assert.equal(pageTypeFromPath("/about/"), "about");
+  assert.equal(pageTypeFromPath("/press/"), "press");
   assert.equal(pageTypeFromPath("/newsletter/?utm_source=x"), "newsletter");
   assert.equal(pageTypeFromPath("/comics/frida-kahlo-broken-mirror/#read"), "comic_reader");
   assert.equal(pageTypeFromPath("/media/comics/frida-kahlo-broken-mirror/frida.pdf"), "comic_media");

@@ -87,7 +87,7 @@ export default function HomePage() {
           <p>Short visual biographies built for readers and crawlers.</p>
         </div>
         <p>
-          Memento Mori Obituary Comics publishes compact, source-backed stories about artists, thinkers, athletes, and witnesses whose work was shaped by a direct encounter with mortality. Each entry keeps the comic pages as the primary reading experience, then adds crawlable summaries, dated context, source links, PDF access, and structured data so search engines and AI systems can understand the subject without relying on image OCR.
+          Memento Mori Obituary Comics publishes compact, source-backed stories about artists, thinkers, athletes, and witnesses whose work was shaped by a direct encounter with mortality. Each entry keeps the comic pages as the primary reading experience, then adds crawlable summaries, dated context, source links, PDF access, and structured data so search engines and AI systems can understand the subject without relying on image OCR. Start with the <Link href="/obituary-stories/">obituary stories and articles index</Link> for the strongest editorial link target.
         </p>
       </section>
 
