@@ -99,6 +99,11 @@ const linkTargets = [
     note: "Best canonical link for obituary example roundups, sample-story structures, and story-pattern resources.",
   },
   {
+    label: "Short obituary examples",
+    href: "/short-obituary-examples/",
+    note: "Best canonical link for short obituary examples, short obituary templates, simple obituary examples, brief death notices, and newspaper word-limit resources.",
+  },
+  {
     label: "Obituary wording examples",
     href: "/obituary-wording/",
     note: "Best canonical link for obituary wording examples, death announcement wording, family-list phrases, service wording, and phrase-bank resources.",

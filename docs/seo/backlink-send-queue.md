@@ -379,6 +379,17 @@ Send these after the mistakes/proofing batch. Use `/obituary-wording/` for obitu
 5. Dignity Memorial: companion for families moving from death announcement to obituary wording.
 6. US Urns Online: supplemental phrase bank for death announcement and obituary readers.
 
+## Twenty-Second Batch: Short Obituary Examples and Simple Templates
+
+Send these after the obituary wording batch. Use `/short-obituary-examples/` for short obituary examples, short obituary templates, simple obituary examples, brief death notices, newspaper word-limit resources, and funeral-home pages that help families write concise notices:
+
+1. Legacy.com: concise companion for short obituary template readers.
+2. Memorials.com: focused short-obituary companion for families deciding what to keep in a brief notice.
+3. FuneralFolio: supplement for short obituary template and memorial-program users.
+4. Examples.com: cleaner source-backed companion for short obituary example readers.
+5. Eduyush: companion for readers comparing print, online memorial, and relationship-based short examples.
+6. QuickFuneral: short-obituary writing supplement for simple obituary and funeral-program template readers.
+
 ## Follow-Up Timing
 
 - Day 7: follow up once if there is no response.

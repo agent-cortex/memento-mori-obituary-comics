@@ -268,6 +268,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 |  | Everplans | `docs/seo/pitches/111-everplans-death-notice-wording.md` | /obituary-wording/ |  |  |  |  | Death notice template target |
 |  | Dignity Memorial | `docs/seo/pitches/112-dignity-death-announcement-wording.md` | /obituary-wording/ |  |  |  |  | Death announcement wording target |
 |  | US Urns Online | `docs/seo/pitches/113-us-urns-death-announcement-wording.md` | /obituary-wording/ |  |  |  |  | Death announcement guide target |
+|  | Legacy.com | `docs/seo/pitches/114-legacy-short-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Short obituary template target |
+|  | Memorials.com | `docs/seo/pitches/115-memorials-short-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Short obituary examples target |
+|  | FuneralFolio | `docs/seo/pitches/116-funeralfolio-short-obituary-template.md` | /short-obituary-examples/ |  |  |  |  | Short obituary template companion |
+|  | Examples.com | `docs/seo/pitches/117-examplescom-short-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Short obituary examples target |
+|  | Eduyush | `docs/seo/pitches/118-eduyush-short-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Short obituary examples target |
+|  | QuickFuneral | `docs/seo/pitches/119-quickfuneral-simple-obituary-examples.md` | /short-obituary-examples/ |  |  |  |  | Simple obituary examples target |
 |  | Chronic Joy | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | /obituary-story-worksheet/ | Hold unless invited |  |  |  | Human-written only |
 |  | Modern Loss | Hold until submissions reopen | /obituary-stories/ | No open calls on 2026-06-04 |  |  |  | Check weekly |
 

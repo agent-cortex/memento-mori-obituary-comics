@@ -63,6 +63,7 @@ For each URL, record:
 | /obituary-checklist/ |  |  |  |  |
 | /obituary-mistakes-to-avoid/ |  |  |  |  |
 | /obituary-wording/ |  |  |  |  |
+| /short-obituary-examples/ |  |  |  |  |
 | /memorial-donation-wording-obituary/ |  |  |  |  |
 | /how-to-write-an-obituary-story/ |  |  |  |  |
 | /obituary-writing-prompts/ |  |  |  |  |
@@ -95,6 +96,7 @@ site:finalnotes.page obituary cost
 site:finalnotes.page obituary checklist
 site:finalnotes.page obituary mistakes to avoid
 site:finalnotes.page obituary wording
+site:finalnotes.page short obituary examples
 site:finalnotes.page memorial donation wording obituary
 site:finalnotes.page how to write an obituary story
 site:finalnotes.page obituary writing prompts
@@ -157,6 +159,11 @@ site:finalnotes.page obituary comics
 "survived by wording" "finalnotes"
 "preceded in death wording" "finalnotes"
 "obituary phrases" "finalnotes"
+"short obituary examples" "finalnotes"
+"short obituary template" "finalnotes"
+"simple obituary examples" "finalnotes"
+"brief obituary examples" "finalnotes"
+"short death notice examples" "finalnotes"
 "memorial donation wording obituary" "finalnotes"
 "in lieu of flowers wording" "finalnotes"
 "obituary donation wording" "finalnotes"

@@ -16,6 +16,8 @@ The ranking goal is not complete. Current web search samples did not surface can
 
 2026-06-05 post-deploy check: after `https://www.finalnotes.page/obituary-wording/` returned `200` on the canonical domain and appeared in live `sitemap.xml` and `/llms.txt`, sampled searches for `site:finalnotes.page "obituary wording"`, `"finalnotes.page/obituary-wording"`, `"obituary wording" "finalnotes"`, and `"death announcement wording" "finalnotes"` returned no results in the sampled web search result set. This confirms deployment and crawl-surface availability, but not indexing or first-page ranking.
 
+2026-06-05 continuation check: searches for `short obituary examples`, `short obituary template`, `short death notice examples`, and `simple obituary examples` surfaced a distinct short-notice lane. Results were dominated by Legacy, Memorials.com, FuneralFolio, Examples.com, Eduyush, QuickFuneral, template PDFs, and funeral-resource pages. This supports adding `https://www.finalnotes.page/short-obituary-examples/` as a separate link target for concise examples, newspaper word-limit decisions, brief death notices, and short-print-plus-long-online-story workflows.
+
 ## Search Landscape Observed
 
 SERP samples for obituary-writing, examples, and worksheet queries are dominated by:
@@ -43,6 +45,7 @@ Memorial donation and in-lieu-of-flowers searches surfaced another obituary-word
 Obituary cost and newspaper obituary pricing searches surfaced a cost-transparency lane: Legacy, Funeral.com, Trustworthy, obituary.design, FTC Funeral Rule materials, and official newspaper rate cards all cover line fees, photo fees, publication route, print-plus-online packages, and funeral-home third-party/cash-advance handling. That supports using `https://www.finalnotes.page/obituary-cost/` for funeral-cost articles, newspaper obituary pricing pages, funeral-home planning guides, consumer-advocacy resources, and family budgeting pages.
 Obituary mistakes and correction searches surfaced a proofing lane: Legacy, ObituaryGuide, Best Care Cremation, All Veterans - All Families Cremations, Indiana Funeral Care, and Legacy Help Center cover common obituary mistakes, writing pitfalls, inaccurate obituaries, final review, private details, and link-use rules. That supports using `https://www.finalnotes.page/obituary-mistakes-to-avoid/` for funeral-home writing guides, obituary-proofing resources, newspaper obituary desks, memorial-site help articles, family planning pages, and resource lists about common obituary errors or corrections.
 Obituary wording and death-announcement searches surfaced a phrase-bank lane: Legacy, OfficialObituary, Ever Loved, Everplans, Dignity Memorial, US Urns Online, FuneralFolio, Funeral.com, and related funeral-resource pages cover opening lines, family lists, survived-by wording, preceded-in-death wording, service details, private-service language, death announcement wording, and difficult cause-of-death phrasing. That supports using `https://www.finalnotes.page/obituary-wording/` for obituary wording examples, death announcement wording, survived-by wording, preceded-in-death wording, service wording, and phrase-bank resource links.
+Short obituary and simple-template searches surfaced a concise-notice lane: Legacy, Memorials.com, FuneralFolio, Examples.com, Eduyush, QuickFuneral, obituary template PDFs, and funeral-program resources cover short notices, simple obituary structures, 40-150 word examples, and paid newspaper word-limit decisions. That supports using `https://www.finalnotes.page/short-obituary-examples/` for short obituary examples, short obituary templates, simple obituary examples, brief death notices, and newspaper word-limit resources.
 
 ## High-Fit Sources Found In This Pass
 
@@ -142,6 +145,12 @@ Obituary wording and death-announcement searches surfaced a phrase-bank lane: Le
 | Everplans | Death notice and obituary templates cover announcement, survivor/predeceased-family, service, and donation fields. | `/obituary-wording/` | Pitch added |
 | Dignity Memorial | Death announcement guidance covers ways families share public news after a death. | `/obituary-wording/` | Pitch added |
 | US Urns Online | Death announcement guide covers examples, channels, timing, and wording for public announcements. | `/obituary-wording/` | Pitch added |
+| Legacy.com | Current guide specifically focused on simple and short obituary templates and examples. | `/short-obituary-examples/` | Pitch added |
+| Memorials.com | How-to-write guide includes short obituary examples and distinguishes brief notices from longer narrative obituaries. | `/short-obituary-examples/` | Pitch added |
+| FuneralFolio | Template bank includes a short obituary template for newspapers, funeral homes, and brief online memorials. | `/short-obituary-examples/` | Pitch added |
+| Examples.com | Dedicated short obituary examples page surfaced in sampled short/simple obituary searches. | `/short-obituary-examples/` | Pitch added |
+| Eduyush | Short obituary examples across newspaper, online memorial, and relationship-based formats. | `/short-obituary-examples/` | Pitch added |
+| QuickFuneral | Simple obituary examples and funeral-program template resources. | `/short-obituary-examples/` | Pitch added |
 
 ## Completion Rule
 
