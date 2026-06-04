@@ -18,6 +18,8 @@ The ranking goal is not complete. Current web search samples did not surface can
 
 2026-06-05 continuation check: searches for `short obituary examples`, `short obituary template`, `short death notice examples`, and `simple obituary examples` surfaced a distinct short-notice lane. Results were dominated by Legacy, Memorials.com, FuneralFolio, Examples.com, Eduyush, QuickFuneral, template PDFs, and funeral-resource pages. This supports adding `https://www.finalnotes.page/short-obituary-examples/` as a separate link target for concise examples, newspaper word-limit decisions, brief death notices, and short-print-plus-long-online-story workflows.
 
+2026-06-05 post-deploy check: after `https://www.finalnotes.page/short-obituary-examples/` returned `200` on the canonical domain and appeared in live `sitemap.xml` and `/llms.txt`, sampled searches for `site:finalnotes.page "short obituary examples"`, `"finalnotes.page/short-obituary-examples"`, `"short obituary examples" "finalnotes"`, and `"short obituary template" "finalnotes"` returned no results in the sampled web search result set. This confirms deployment and crawl-surface availability, but not indexing or first-page ranking.
+
 ## Search Landscape Observed
 
 SERP samples for obituary-writing, examples, and worksheet queries are dominated by:
