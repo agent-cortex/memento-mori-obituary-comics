@@ -19,6 +19,13 @@ Use this file as the next execution list. Send manually, one by one, after check
 | 8 | Darien Library Graphic Medicine | https://www.darienlibrary.org/graphic-medicine | Draft after confirming contact owner | Resource suggestion for grief comics discussion prompts | https://www.finalnotes.page/educators-libraries/ | Public-library graphic medicine pages can link naturally to reader-friendly discussion resources. |
 | 9 | University of Miami Graphic Medicine guide | https://guides.library.miami.edu/graphicmedicine | Draft after confirming contact owner | Resource suggestion: obituary comics for graphic medicine lists | https://www.finalnotes.page/educators-libraries/ | Another high-fit LibGuide target for graphic medicine and death/grief reading lists. |
 | 10 | The Nib | https://thenib.com/pitch-the-nib/ | Draft only if pitching an original comic | Original nonfiction comic pitch, not a backlink request | https://www.finalnotes.page/press/ | Their pitch page is comics-first and original-work focused, so use this only for an original comic proposal where any link is editorially incidental. |
+| 11 | Grief Collective | https://griefcollective.com/contact | `docs/seo/pitches/09-grief-collective-guest-interview.md` | Guest post or interview idea: visual obituary stories and grief writing | https://www.finalnotes.page/obituary-stories/ | Strong grief-writing fit and their guest/interview guidelines allow a short credit blurb linking to the author's site. |
+| 12 | Family History Fanatics | https://www.familyhistoryfanatics.com/contact | `docs/seo/pitches/14-family-history-fanatics-visual-story.md` | Resource idea: turning obituaries into visual family stories | https://www.finalnotes.page/obituary-stories/ | Direct topical overlap with their obit-to-family-story writing challenge and genealogy writing audience. |
+| 13 | Free UK Genealogy | https://www.freeukgenealogy.org.uk/contact/guest-post-2/ | `docs/seo/pitches/12-freeuk-genealogy-obit-to-story.md` | Guest post idea: From obituary record to family history story | https://www.finalnotes.page/obituary-stories/ | Their guest-post guidance asks for practical family-history value; obituary records are a natural fit if handled as evidence-first genealogy. |
+| 14 | TalkDeath | https://talkdeath.com/write-for-us/ | `docs/seo/pitches/10-talkdeath-visual-obituary-pitch.md` | Pitch: What visual obituaries can teach us about remembering the dead | https://www.finalnotes.page/obituary-stories/ | High topical relevance to death, grief, death positivity, and art/history, but requires a human-written non-SEO essay. |
+| 15 | Order of the Good Death | https://www.orderofthegooddeath.com/pitch-guide | `docs/seo/pitches/11-order-good-death-obituary-art-pitch.md` | Pitch: What visual obituaries reveal about how we remember the dead | https://www.finalnotes.page/what-are-obituary-comics/ | Strong death-culture authority; only viable as a genuinely original essay, not a product pitch. |
+| 16 | Remembering A Life | https://www.rememberingalife.com/pages/blog-guidelines | `docs/seo/pitches/08-remembering-a-life-tribute-article.md` | Blog submission: How to turn an obituary into a life story | https://www.finalnotes.page/obituary-stories/ | NFDA-backed remembrance audience and obituary-writing relevance, but requires a complete original article rather than a pitch. |
+| 17 | NGS Magazine | https://www.ngsgenealogy.org/magazine/ | `docs/seo/pitches/13-ngs-magazine-obituary-record-query.md` | Query: Using obituary records to build sourced life-story narratives | https://www.finalnotes.page/obituary-stories/ | High-authority genealogy route if a qualified author can write a technique-focused article with evidence standards. |
 
 ## Hold / Monitor
 
@@ -53,6 +60,18 @@ Send these after the first-day batch and after one personalized opening line is 
 2. Bradley University Graphic Medicine guide: library resource suggestion.
 3. UCLA Comics Studies guide: resource suggestion after confirming the current `Email Me` contact.
 4. Comics Beat: short news tip.
+
+## Third Batch: Obituary, Deathcare, and Genealogy
+
+Send these after the first two batches. They are higher-compliance opportunities, so do not send generated copy verbatim where the outlet requires original human writing:
+
+1. Grief Collective: guest post or interview pitch.
+2. Family History Fanatics: resource/video idea.
+3. Free UK Genealogy: query first, then write a unique family-history article.
+4. TalkDeath: human-written death-positive essay pitch.
+5. Order of the Good Death: human-written death-culture essay pitch.
+6. Remembering A Life: complete human-written Word doc, not a pitch.
+7. NGS Magazine: query only if the author can credibly write a genealogy technique article.
 
 ## Follow-Up Timing
 

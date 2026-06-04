@@ -55,6 +55,18 @@ Primary goal: earn relevant editorial links that help the obituary comics archiv
 | Substack writers on grief, deathcare, biographies, and comics | Relevant audience, easier editorial access, natural newsletter links. | Offer a concise guest note or interview using `/press/` as the reference URL. |
 | Reddit communities | Good discovery, usually nofollow, not a ranking-link play. | Continue careful feedback posts in relevant threads only when allowed and not promotional. |
 
+## Tier 3 Obituary, Deathcare, and Genealogy Targets
+
+| Target | Why it fits | Ask | Target URL |
+| --- | --- | --- | --- |
+| Remembering A Life | NFDA-backed remembrance audience with explicit blog guidelines for tribute, grief, and honoring loved ones. | Submit a complete human-written article, not a pitch. Use the author bio link if accepted. | `/obituary-stories/` |
+| Grief Collective | Guest posts and interview posts can include a credit blurb linking to the author's site. | Pitch a guest post or interview about choosing the memory that turns an obituary into a story. | `/obituary-stories/` |
+| TalkDeath | Death-positive editorial audience covering grief, funerary issues, death culture, history, and art. | Pitch a human-written essay about visual obituaries and remembering the dead; avoid SEO framing. | `/obituary-stories/` |
+| Order of the Good Death | High-authority death-culture publication with formal pitch guide. | Pitch an original death-culture essay about art, memory, and what visual obituaries reveal. | `/what-are-obituary-comics/` |
+| Free UK Genealogy | Guest-post guidance fits evidence-first articles about obituary records and family-history storytelling. | Query a practical article about turning obituary records into sourced family-history stories. | `/obituary-stories/` |
+| NGS Magazine | Genealogy authority that accepts queries for technique-focused articles. | Query only if a qualified author can write a third-person, footnoted article on obituary records. | `/obituary-stories/` |
+| Family History Fanatics | Direct topical overlap with their "Turn an Obit Into A Story" writing challenge. | Suggest a resource/video idea about visual family-history stories from obituary records. | `/obituary-stories/` |
+
 ## Avoid
 
 - Paid guest-post marketplaces and pages that openly sell link insertion.
@@ -69,10 +81,11 @@ Primary goal: earn relevant editorial links that help the obituary comics archiv
 2. Submit the current sitemap in Google Search Console and request indexing for `/`, `/press/`, `/about/`, and the latest three comic pages.
 3. Send the first-day Tier 1 pitches from `docs/seo/backlink-send-queue.md`: SOLRAD, The Comics Journal, and Beyond the Dash.
 4. Send the second batch: Graphic Medicine, Bradley University Graphic Medicine guide, UCLA Comics Studies guide, and Comics Beat.
-5. If the art is not generative AI, send Broken Frontier a review request with 2-3 interior pages. If it is generative AI, skip them.
-6. Use `/obituary-stories/` as the primary link target for obituary-stories and obituary-articles searches; create one longer linkable essay if pitches still need a stronger asset: "What Are Obituary Comics?"
-7. Keep Modern Loss on hold until its Submittable page reopens; do not send to closed calls.
-8. Track every outreach in a spreadsheet: target, contact URL/email, date sent, pitch angle, linked URL, reply, live URL, anchor text, follow/nofollow, notes.
+5. Send the obituary/deathcare/genealogy batch: Grief Collective, Family History Fanatics, Free UK Genealogy, TalkDeath, Order of the Good Death, Remembering A Life, and NGS Magazine where compliance requirements are met.
+6. If the art is not generative AI, send Broken Frontier a review request with 2-3 interior pages. If it is generative AI, skip them.
+7. Use `/obituary-stories/` as the primary link target for obituary-stories and obituary-articles searches; create one longer linkable essay if pitches still need a stronger asset: "What Are Obituary Comics?"
+8. Keep Modern Loss on hold until its Submittable page reopens; do not send to closed calls.
+9. Track every outreach in a spreadsheet: target, contact URL/email, date sent, pitch angle, linked URL, reply, live URL, anchor text, follow/nofollow, notes.
 
 ## Pitch Templates
 
