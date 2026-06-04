@@ -220,6 +220,9 @@ export default function ObituaryWritingPromptsPage() {
                 <Link href="/obituary-story-worksheet/">Printable worksheet</Link>
               </Button>
               <Button asChild>
+                <Link href="/life-story-obituary-template/">Template</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/how-to-write-an-obituary-story/">Writing guide</Link>
               </Button>
               <Button asChild>
@@ -314,7 +317,7 @@ export default function ObituaryWritingPromptsPage() {
             <div>
               <h2 id="best-link">Best Link Target For Prompt And Interview Pages</h2>
               <p>
-                Use this page for obituary writing prompt lists, legacy interview resources, hospice legacy projects, genealogy interviews, writing classes, and funeral-home planning pages. For a fillable planning page, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>.
+                Use this page for obituary writing prompt lists, legacy interview resources, hospice legacy projects, genealogy interviews, writing classes, and funeral-home planning pages. For reusable obituary formats, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For a fillable planning page, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>.
               </p>
             </div>
             <Link href="/obituary-writing-prompts/">{absoluteUrl("/obituary-writing-prompts/")}</Link>

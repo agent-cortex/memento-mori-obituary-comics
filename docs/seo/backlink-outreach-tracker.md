@@ -6,6 +6,7 @@ Primary link target for obituary-story keywords: https://www.finalnotes.page/obi
 Primary link target for obituary-writing and family-history how-to keywords: https://www.finalnotes.page/how-to-write-an-obituary-story/
 Primary link target for obituary prompts and legacy interview keywords: https://www.finalnotes.page/obituary-writing-prompts/
 Primary link target for obituary examples and wording-example keywords: https://www.finalnotes.page/obituary-examples/
+Primary link target for life story obituary template keywords: https://www.finalnotes.page/life-story-obituary-template/
 Primary link target for worksheet/resource-page backlinks: https://www.finalnotes.page/obituary-story-worksheet/
 Definition/explainer link target: https://www.finalnotes.page/what-are-obituary-comics/
 Educator/library link target: https://www.finalnotes.page/educators-libraries/
@@ -58,6 +59,11 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 | P3 | Horan & McConaty | https://www.horancares.com/contact-us | Supplemental family-writing prompts for obituary tips page. | https://www.finalnotes.page/obituary-writing-prompts/ | obituary writing prompts |
 | P2 | LifeEcho | https://lifeecho.org/contact | Companion resource for turning legacy interview recordings into written obituary or memorial articles. | https://www.finalnotes.page/obituary-writing-prompts/ | legacy interview questions |
 | P2 | Hospice Waterloo Region | https://www.hospicewaterloo.ca/contact/ | Supplemental writing prompts for hospice legacy activities. | https://www.finalnotes.page/obituary-writing-prompts/ | obituary writing prompts |
+| P2 | FuneralFolio | support@funeralfolio.com or https://www.funeralfolio.com/contact | Supplemental story-structure resource for obituary template and memorial-program users. | https://www.finalnotes.page/life-story-obituary-template/ | life story obituary template |
+| P2 | CreateMemorial | https://creatememorial.com/contact | Resource suggestion for obituary template and memorial-page readers. | https://www.finalnotes.page/life-story-obituary-template/ | life story obituary template |
+| P3 | obituary.design | mail@obituary.design | Story-focused companion resource for editable obituary template users. | https://www.finalnotes.page/life-story-obituary-template/ | obituary story template |
+| P3 | Allen Funeral Home | https://www.allenfuneralhome.us/contact-us | Supplemental family obituary template resource. | https://www.finalnotes.page/life-story-obituary-template/ | obituary template |
+| P3 | Bateman-Allen Funeral Home | https://www.batemanallenfuneralhome.com/contact-us/ | Supplemental story-first obituary template for its obituary-writing guide. | https://www.finalnotes.page/life-story-obituary-template/ | life story obituary template |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | Human-written grief/lament post only if invited. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary reflection worksheet |
 
 ## Send Log
@@ -98,6 +104,11 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 |  | Horan & McConaty | `docs/seo/pitches/33-horan-mcconaty-obituary-prompts-resource.md` | /obituary-writing-prompts/ |  |  |  |  | Funeral-home obituary tips target |
 |  | LifeEcho | `docs/seo/pitches/34-lifeecho-legacy-interview-obituary-prompts.md` | /obituary-writing-prompts/ |  |  |  |  | Legacy interview target |
 |  | Hospice Waterloo Region | `docs/seo/pitches/35-hospice-waterloo-legacy-obituary-prompts.md` | /obituary-writing-prompts/ |  |  |  |  | Hospice legacy activities target |
+|  | FuneralFolio | `docs/seo/pitches/36-funeralfolio-life-story-template-resource.md` | /life-story-obituary-template/ |  |  |  |  | Template and memorial program target |
+|  | CreateMemorial | `docs/seo/pitches/37-creatememorial-life-story-template-resource.md` | /life-story-obituary-template/ |  |  |  |  | Memorial page template target |
+|  | obituary.design | `docs/seo/pitches/38-obituary-design-template-resource.md` | /life-story-obituary-template/ |  |  |  |  | Editable template target |
+|  | Allen Funeral Home | `docs/seo/pitches/39-allen-funeral-home-template-supplement.md` | /life-story-obituary-template/ |  |  |  |  | Funeral-home forms/resource target |
+|  | Bateman-Allen Funeral Home | `docs/seo/pitches/40-bateman-allen-obituary-template-supplement.md` | /life-story-obituary-template/ |  |  |  |  | Funeral-home obituary guide target |
 |  | Chronic Joy | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | /obituary-story-worksheet/ | Hold unless invited |  |  |  | Human-written only |
 |  | Modern Loss | Hold until submissions reopen | /obituary-stories/ | No open calls on 2026-06-04 |  |  |  | Check weekly |
 

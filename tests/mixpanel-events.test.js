@@ -18,6 +18,7 @@ test("pageTypeFromPath classifies public routes", () => {
   assert.equal(pageTypeFromPath("/obituary-stories/"), "obituary_stories");
   assert.equal(pageTypeFromPath("/how-to-write-an-obituary-story/"), "obituary_writing_guide");
   assert.equal(pageTypeFromPath("/obituary-writing-prompts/"), "obituary_writing_prompts");
+  assert.equal(pageTypeFromPath("/life-story-obituary-template/"), "life_story_obituary_template");
   assert.equal(pageTypeFromPath("/obituary-examples/"), "obituary_examples");
   assert.equal(pageTypeFromPath("/obituary-story-worksheet/"), "obituary_story_worksheet");
   assert.equal(pageTypeFromPath("/what-are-obituary-comics/"), "obituary_comics_explainer");

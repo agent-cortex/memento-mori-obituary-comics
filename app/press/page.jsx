@@ -54,6 +54,11 @@ const linkTargets = [
     note: "Best canonical link for prompt lists, legacy interview questions, hospice legacy projects, genealogy interviews, and writing classes.",
   },
   {
+    label: "Life story obituary template",
+    href: "/life-story-obituary-template/",
+    note: "Best canonical link for obituary template roundups, memorial program resources, family-history forms, and story-focused template pages.",
+  },
+  {
     label: "Obituary examples and story patterns",
     href: "/obituary-examples/",
     note: "Best canonical link for obituary example roundups, obituary wording resources, and sample-story structures.",

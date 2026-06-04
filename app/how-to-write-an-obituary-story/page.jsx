@@ -164,6 +164,9 @@ export default function HowToWriteObituaryStoryPage() {
                 <Link href="/obituary-writing-prompts/">Writing prompts</Link>
               </Button>
               <Button asChild>
+                <Link href="/life-story-obituary-template/">Template</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/obituary-examples/">Obituary examples</Link>
               </Button>
               <Button asChild>
@@ -240,7 +243,7 @@ export default function HowToWriteObituaryStoryPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Writing Articles</h2>
               <p>
-                Use this page for articles, resource lists, family-history guides, grief-writing essays, and newsletters about how to turn an obituary into a sourced life story. For prompt lists and legacy interview questions, link to the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For example roundups and sample-structure posts, link to the <Link href="/obituary-examples/">obituary examples page</Link>. For examples of the finished visual form, link to the <Link href="/obituary-stories/">obituary stories index</Link>.
+                Use this page for articles, resource lists, family-history guides, grief-writing essays, and newsletters about how to turn an obituary into a sourced life story. For prompt lists and legacy interview questions, link to the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For template roundups and reusable formats, link to the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For example roundups and sample-structure posts, link to the <Link href="/obituary-examples/">obituary examples page</Link>. For examples of the finished visual form, link to the <Link href="/obituary-stories/">obituary stories index</Link>.
               </p>
             </div>
             <Link href="/how-to-write-an-obituary-story/">{absoluteUrl("/how-to-write-an-obituary-story/")}</Link>

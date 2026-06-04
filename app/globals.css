@@ -2599,6 +2599,9 @@ body::before {
 .prompts-page .explainer-header-section h1 {
   max-width: 14ch;
 }
+.template-page .explainer-header-section h1 {
+  max-width: 15ch;
+}
 .examples-page .explainer-header-section h1 {
   max-width: 12ch;
 }
@@ -2618,6 +2621,15 @@ body::before {
   font: 15px/1.6 var(--font-sans);
 }
 .writing-guide-prompts .stories-intent-list li + li {
+  margin-top: 8px;
+}
+.stories-intent-list ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--paper);
+  font: 15px/1.6 var(--font-sans);
+}
+.stories-intent-list li + li {
   margin-top: 8px;
 }
 .examples-frame-list {
@@ -2663,6 +2675,11 @@ body::before {
   font: 900 13px/1.25 var(--font-sans);
   letter-spacing: .14em;
   text-transform: uppercase;
+}
+.worksheet-box p {
+  margin: 0 0 12px;
+  color: #d8c9ae;
+  font: 15px/1.6 var(--font-sans);
 }
 .worksheet-box ul {
   margin: 0;

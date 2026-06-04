@@ -22,6 +22,7 @@ SERP samples for obituary-writing, examples, and worksheet queries are dominated
 This supports using `https://www.finalnotes.page/obituary-story-worksheet/` and `https://www.finalnotes.page/how-to-write-an-obituary-story/` as resource-list link targets, rather than asking for generic homepage links.
 It also supports using `https://www.finalnotes.page/obituary-examples/` for example roundups, wording resources, and sample-story pages.
 Prompt and legacy-interview searches surfaced a separate opportunity: families, funeral homes, hospice teams, and memory-preservation services need question banks before they draft. That supports using `https://www.finalnotes.page/obituary-writing-prompts/` for prompt-list, legacy interview, hospice legacy activity, and family-history interview resources.
+Template searches surfaced another gap: high-ranking pages mostly offer generic fill-in-the-blank obituary templates or design/program templates, while few separate life-story structure, source checks, and family privacy decisions. That supports using `https://www.finalnotes.page/life-story-obituary-template/` for template roundups, memorial-program resources, editable template sites, and funeral-home pages that already help families draft obituary text.
 
 ## High-Fit Sources Found In This Pass
 
@@ -43,6 +44,11 @@ Prompt and legacy-interview searches surfaced a separate opportunity: families, 
 | Horan & McConaty | Obituary tips page emphasizes story, personality, shared memories, research, and writing prompts. | `/obituary-writing-prompts/` | Pitch added |
 | LifeEcho | Publishes legacy interview question guidance for richer recorded memories. | `/obituary-writing-prompts/` | Pitch added |
 | Hospice Waterloo Region | Publishes hospice legacy activities and has a direct contact path. | `/obituary-writing-prompts/` | Pitch added |
+| FuneralFolio | Publishes obituary template and memorial-program resources for families preparing service materials. | `/life-story-obituary-template/` | Pitch added |
+| CreateMemorial | Publishes obituary template content for memorial-page users. | `/life-story-obituary-template/` | Pitch added |
+| obituary.design | Publishes editable obituary template resources and design-focused memorial content. | `/life-story-obituary-template/` | Pitch added |
+| Allen Funeral Home | Maintains family forms/resources that can support obituary drafting. | `/life-story-obituary-template/` | Pitch added |
+| Bateman-Allen Funeral Home | Publishes an obituary-writing guide with direct family-facing relevance. | `/life-story-obituary-template/` | Pitch added |
 
 ## Completion Rule
 

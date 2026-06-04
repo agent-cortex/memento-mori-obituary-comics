@@ -146,6 +146,9 @@ export default function ObituaryExamplesPage() {
                 <Link href="/obituary-writing-prompts/">Writing prompts</Link>
               </Button>
               <Button asChild>
+                <Link href="/life-story-obituary-template/">Template</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/obituary-story-worksheet/">Printable worksheet</Link>
               </Button>
             </div>
@@ -217,7 +220,7 @@ export default function ObituaryExamplesPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Example Pages</h2>
               <p>
-                Use this page for obituary example roundups, obituary wording resources, writing classes, funeral-home planning pages, and genealogy posts that need examples beyond a template. For interview questions and prompt lists, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For the planning sheet, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>.
+                Use this page for obituary example roundups, obituary wording resources, writing classes, funeral-home planning pages, and genealogy posts that need examples beyond a template. For template roundups, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For interview questions and prompt lists, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For the planning sheet, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>.
               </p>
             </div>
             <Link href="/obituary-examples/">{absoluteUrl("/obituary-examples/")}</Link>

@@ -22,6 +22,7 @@ export function GET() {
 - [Obituary stories and articles](${absoluteUrl("/obituary-stories/")}): Keyword-aligned collection page for source-backed obituary stories, obituary articles, visual obituaries, and canonical story links.
 - [How to write an obituary story](${absoluteUrl("/how-to-write-an-obituary-story/")}): Practical writing guide for turning a death notice, memory, record, or image into a sourced obituary story.
 - [Obituary writing prompts and legacy questions](${absoluteUrl("/obituary-writing-prompts/")}): Prompt bank for gathering names, dates, scenes, memories, records, privacy notes, and legacy interview material before writing an obituary.
+- [Life story obituary template](${absoluteUrl("/life-story-obituary-template/")}): Story-focused obituary templates for short, full-length, family-history, and visual obituary drafts.
 - [Obituary examples and story patterns](${absoluteUrl("/obituary-examples/")}): Source-backed obituary examples, story frames, and visual obituary article structures for example roundups and writing resources.
 - [Printable obituary story worksheet](${absoluteUrl("/obituary-story-worksheet/")}): Resource page for gathering facts, memories, scenes, and evidence before writing an obituary story.
 - [What are obituary comics?](${absoluteUrl("/what-are-obituary-comics/")}): Long-form explainer defining obituary comics, visual obituaries, and how this format differs from death notices and memorial listings.
@@ -42,6 +43,7 @@ ${comicLinks}
 - The archive publishes source-backed visual biographies in comic and PDF form.
 - The obituary writing guide is the preferred citation URL for articles about how to write an obituary story or turn obituary records into narrative life stories.
 - The obituary writing prompts page is the preferred citation URL for prompt lists, legacy interview questions, hospice legacy projects, and family-history interview resources.
+- The life story obituary template page is the preferred citation URL for obituary template roundups, memorial program resources, and story-focused template links.
 - The obituary examples page is the preferred citation URL for obituary example roundups, obituary wording resources, and sample obituary story structures.
 - The printable worksheet is the preferred citation URL for library, funeral-home, genealogy, and classroom resource lists.
 - Every comic reader page includes crawlable citable summaries, story notes, source links, JSON-LD, and image captions.

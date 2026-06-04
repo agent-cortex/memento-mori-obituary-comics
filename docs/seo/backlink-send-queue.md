@@ -46,6 +46,11 @@ Use this file as the next execution list. Send manually, one by one, after check
 | 35 | Horan & McConaty | https://www.horancares.com/contact-us | `docs/seo/pitches/33-horan-mcconaty-obituary-prompts-resource.md` | Supplemental obituary writing prompts for families | https://www.finalnotes.page/obituary-writing-prompts/ | Their obituary tips page emphasizes story, personality, shared memories, research, and prompts. |
 | 36 | LifeEcho | https://lifeecho.org/contact | `docs/seo/pitches/34-lifeecho-legacy-interview-obituary-prompts.md` | Resource suggestion for obituary and legacy interview prompts | https://www.finalnotes.page/obituary-writing-prompts/ | Legacy interview guidance is adjacent to turning recorded memories into written obituary stories. |
 | 37 | Hospice Waterloo Region | https://www.hospicewaterloo.ca/contact/ | `docs/seo/pitches/35-hospice-waterloo-legacy-obituary-prompts.md` | Supplemental obituary prompts for legacy activities | https://www.finalnotes.page/obituary-writing-prompts/ | Hospice legacy activities are a strong fit for prompts that turn memories into written tributes. |
+| 38 | FuneralFolio | support@funeralfolio.com or https://www.funeralfolio.com/contact | `docs/seo/pitches/36-funeralfolio-life-story-template-resource.md` | Supplemental life story obituary template resource | https://www.finalnotes.page/life-story-obituary-template/ | Memorial-program and obituary template fit; best framed as a story-structure supplement before layout. |
+| 39 | CreateMemorial | https://creatememorial.com/contact | `docs/seo/pitches/37-creatememorial-life-story-template-resource.md` | Resource suggestion for life story obituary templates | https://www.finalnotes.page/life-story-obituary-template/ | Memorial-page and obituary template audience; useful as a source-backed template companion. |
+| 40 | obituary.design | mail@obituary.design | `docs/seo/pitches/38-obituary-design-template-resource.md` | Story-focused obituary template resource | https://www.finalnotes.page/life-story-obituary-template/ | Editable obituary template/design resource where a story-first companion link is natural. |
+| 41 | Allen Funeral Home | https://www.allenfuneralhome.us/contact-us | `docs/seo/pitches/39-allen-funeral-home-template-supplement.md` | Supplemental life story obituary template | https://www.finalnotes.page/life-story-obituary-template/ | Funeral-home family resources and forms make a practical template supplement relevant. |
+| 42 | Bateman-Allen Funeral Home | https://www.batemanallenfuneralhome.com/contact-us/ | `docs/seo/pitches/40-bateman-allen-obituary-template-supplement.md` | Supplemental story-focused obituary template | https://www.finalnotes.page/life-story-obituary-template/ | Existing obituary-writing page makes this a direct template/resource fit. |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | Human-written grief/lament reflection post only if invited | https://www.finalnotes.page/obituary-story-worksheet/ | Submission page is by invitation and rejects AI-generated content, so hold unless a human-written personal essay is invited. |
 
 ## Hold / Monitor
@@ -64,6 +69,7 @@ Use this file as the next execution list. Send manually, one by one, after check
   - Obituary-writing and family-history how-to articles: `https://www.finalnotes.page/how-to-write-an-obituary-story/`
   - Prompt lists, legacy interview questions, and hospice legacy projects: `https://www.finalnotes.page/obituary-writing-prompts/`
   - Obituary example and wording-example pages: `https://www.finalnotes.page/obituary-examples/`
+  - Template roundups and memorial-program template resources: `https://www.finalnotes.page/life-story-obituary-template/`
   - Worksheet and planning-resource pages: `https://www.finalnotes.page/obituary-story-worksheet/`
   - Obituary-story roundups: `https://www.finalnotes.page/obituary-stories/`
   - Library/course resources: `https://www.finalnotes.page/educators-libraries/`
@@ -138,6 +144,16 @@ Send these after the obituary examples batch. Use `/obituary-writing-prompts/` f
 3. Horan & McConaty: supplemental prompt resource for family-written obituaries.
 4. LifeEcho: companion link for turning legacy interviews into written tributes.
 5. Hospice Waterloo Region: supplemental writing prompts for legacy activities.
+
+## Eighth Batch: Template and Memorial Program Resources
+
+Send these after the prompts/legacy-interview batch. Use `/life-story-obituary-template/` for template roundups, memorial-program resources, editable obituary template lists, and funeral-home pages that already help families draft obituary text:
+
+1. FuneralFolio: supplemental life story template for memorial-program users.
+2. CreateMemorial: resource suggestion for life story obituary templates.
+3. obituary.design: story-focused companion to editable obituary templates.
+4. Allen Funeral Home: supplemental family obituary template resource.
+5. Bateman-Allen Funeral Home: supplemental story-first obituary template.
 
 ## Follow-Up Timing
 
