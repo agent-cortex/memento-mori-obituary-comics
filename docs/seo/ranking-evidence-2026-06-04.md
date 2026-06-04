@@ -114,6 +114,12 @@ Obituary cost and newspaper obituary pricing searches surfaced a cost-transparen
 | Funeral Consumers Alliance | Consumer organization focused on funeral-price transparency and planning decisions. | `/obituary-cost/` | Pitch added |
 | Funeral Cost Analyzer | Cost-oriented funeral planning resource surfaced in obituary-writing and funeral-cost SERPs. | `/obituary-cost/` | Pitch added |
 | obituary.design | Current 2026 newspaper obituary cost comparison and obituary design/template resources. | `/obituary-cost/` | Pitch added |
+| Everplans | Direct checklist for writing a death notice or obituary, with end-of-life planning audience. | `/obituary-checklist/` | Pitch added |
+| ObitsArchive | Obituary template checklist for gathering announcement, life event, family, and service details. | `/obituary-checklist/` | Pitch added |
+| Memorials.com | Step-by-step obituary-writing guide with checklist-style gathering and review guidance. | `/obituary-checklist/` | Pitch added |
+| Survivorship A to Z | Pre-planning guidance on what to include and not include in an obituary. | `/obituary-checklist/` | Pitch added |
+| American Heritage Cemetery & Funeral Home | Funeral-home obituary-writing page that treats the obituary as both public notice and life account. | `/obituary-checklist/` | Pitch added |
+| Checklist.com | Funeral-planning checklist that includes collecting personal information for an obituary. | `/obituary-checklist/` | Pitch added |
 
 ## Completion Rule
 

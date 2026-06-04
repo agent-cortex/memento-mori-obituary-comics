@@ -106,6 +106,12 @@ Use this file as the next execution list. Send manually, one by one, after check
 | 95 | Funeral Consumers Alliance | fca@funerals.org | `docs/seo/pitches/93-funeral-consumers-alliance-obituary-cost.md` | Consumer resource for obituary notice costs | https://www.finalnotes.page/obituary-cost/ | National consumer organization fits price-transparency questions around funeral-home cash advances and third-party obituary notices. |
 | 96 | Funeral Cost Analyzer | contact@funeralcostanalyzer.com | `docs/seo/pitches/94-funeral-cost-analyzer-obituary-cost.md` | Obituary pricing companion resource | https://www.finalnotes.page/obituary-cost/ | Cost-oriented funeral planning site already surfaces in obituary-writing and funeral-cost SERPs. |
 | 97 | obituary.design | mail@obituary.design | `docs/seo/pitches/95-obituary-design-cost-guide.md` | Source-backed companion for obituary cost readers | https://www.finalnotes.page/obituary-cost/ | Current 2026 newspaper obituary cost comparison and obituary design/template resources make this a direct topical fit. |
+| 98 | Everplans | Confirm current Everplans editorial/contact path | `docs/seo/pitches/96-everplans-obituary-checklist.md` | Supplemental obituary checklist for families | https://www.finalnotes.page/obituary-checklist/ | Direct checklist page for writing a death notice or obituary and a strong end-of-life planning audience. |
+| 99 | ObitsArchive | https://www.obitsarchive.com/contact or current support/editorial path | `docs/seo/pitches/97-obitsarchive-obituary-checklist.md` | Companion checklist for obituary template readers | https://www.finalnotes.page/obituary-checklist/ | Obituary template checklist target with genealogy and obituary-record relevance. |
+| 100 | Memorials.com | https://www.memorials.com/contact-information.php or current editorial/contact path | `docs/seo/pitches/98-memorials-obituary-checklist.md` | Supplemental obituary checklist for your writing guide | https://www.finalnotes.page/obituary-checklist/ | Current step-by-step obituary-writing guide with checklist-style information gathering. |
+| 101 | Survivorship A to Z | https://survivorshipatoz.org/contact or current page contact path | `docs/seo/pitches/99-survivorshipatoz-obituary-checklist.md` | Resource suggestion for obituary planning readers | https://www.finalnotes.page/obituary-checklist/ | Pre-planning resource covers what to include and not include in an obituary. |
+| 102 | American Heritage Cemetery & Funeral Home | https://www.thehealingstartshere.com/contact-us or current funeral-home contact path | `docs/seo/pitches/100-american-heritage-obituary-checklist.md` | Supplemental obituary checklist for families | https://www.finalnotes.page/obituary-checklist/ | Funeral-home guide explains obituary writing as both public notice and life account. |
+| 103 | Checklist.com | https://checklist.com/contact or current site contact path | `docs/seo/pitches/101-checklistcom-obituary-checklist.md` | Obituary companion for funeral planning checklist readers | https://www.finalnotes.page/obituary-checklist/ | Broader funeral-planning checklist includes collecting personal information for an obituary. |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | Human-written grief/lament reflection post only if invited | https://www.finalnotes.page/obituary-story-worksheet/ | Submission page is by invitation and rejects AI-generated content, so hold unless a human-written personal essay is invited. |
 
 ## Hold / Monitor
@@ -127,6 +133,7 @@ Use this file as the next execution list. Send manually, one by one, after check
   - Newspaper help pages, funeral-home resources, death-notice explainers, and library obituary-index pages: `https://www.finalnotes.page/obituary-vs-death-notice/`
   - Newspaper obituary submission, placement, proof-of-death, deadline, price, and photo-rule pages: `https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/`
   - Obituary cost, newspaper pricing, line fees, photo fees, print-plus-online packages, and funeral-home cash advances: `https://www.finalnotes.page/obituary-cost/`
+  - Obituary checklists, obituary information gathering, family review, pre-publication planning, and funeral-planning checklist resources: `https://www.finalnotes.page/obituary-checklist/`
   - Memorial donation wording, in-lieu-of-flowers examples, charity-link safety, family-support language, and contribution wording: `https://www.finalnotes.page/memorial-donation-wording-obituary/`
   - Funeral-home planning pages, bereavement resources, eulogy-writing articles, memorial-program guides, and obituary/eulogy comparison pages: `https://www.finalnotes.page/obituary-vs-eulogy/`
   - Obituary privacy, identity-theft, consumer-safety, and bereavement scam-safety pages: `https://www.finalnotes.page/what-not-to-include-in-an-obituary/`
@@ -324,6 +331,17 @@ Send these after the memorial donation wording batch. Use `/obituary-cost/` for 
 4. Funeral Consumers Alliance: consumer resource for obituary notices as third-party or cash-advance funeral items.
 5. Funeral Cost Analyzer: specific obituary-pricing companion for line fees, photo fees, and publication routes.
 6. obituary.design: companion for readers comparing newspaper pricing with short-print and full-online story decisions.
+
+## Nineteenth Batch: Obituary Checklist and Information Gathering
+
+Send these after the cost batch. Use `/obituary-checklist/` for obituary checklists, obituary information gathering, family review, pre-publication planning, end-of-life checklists, and funeral-planning resources that mention preparing obituary information:
+
+1. Everplans: direct companion for death notice and obituary checklist readers.
+2. ObitsArchive: supplemental proof, cost, privacy, and publication checklist after readers gather template information.
+3. Memorials.com: concise companion for checking facts, service details, costs, and private details before publication.
+4. Survivorship A to Z: family and caregiver resource for collecting obituary information before publication.
+5. American Heritage Cemetery & Funeral Home: family-facing checklist before readers contact the funeral home or newspaper.
+6. Checklist.com: focused obituary companion for the obituary-preparation step in funeral planning.
 
 ## Follow-Up Timing
 

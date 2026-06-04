@@ -12,6 +12,7 @@ Primary link target for obituary privacy, identity-theft, and scam-safety keywor
 Primary link target for fake obituary sites, obituary piracy, and scam-verification keywords: https://www.finalnotes.page/fake-obituary-sites/
 Primary link target for newspaper obituary submission and placement keywords: https://www.finalnotes.page/how-to-submit-an-obituary-to-a-newspaper/
 Primary link target for obituary cost, newspaper price, and paid notice budgeting keywords: https://www.finalnotes.page/obituary-cost/
+Primary link target for obituary checklist, information gathering, and pre-publication planning keywords: https://www.finalnotes.page/obituary-checklist/
 Primary link target for memorial donation, in-lieu-of-flowers, and contribution wording keywords: https://www.finalnotes.page/memorial-donation-wording-obituary/
 Primary link target for obituary-writing and family-history how-to keywords: https://www.finalnotes.page/how-to-write-an-obituary-story/
 Primary link target for obituary prompts and legacy interview keywords: https://www.finalnotes.page/obituary-writing-prompts/
@@ -129,6 +130,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 | P2 | Funeral Consumers Alliance | fca@funerals.org | Consumer resource for obituary notices as third-party or cash-advance funeral items. | https://www.finalnotes.page/obituary-cost/ | paid obituary cost guide |
 | P3 | Funeral Cost Analyzer | contact@funeralcostanalyzer.com | Obituary-pricing companion for line fees, photo fees, and publication routes. | https://www.finalnotes.page/obituary-cost/ | obituary pricing guide |
 | P3 | obituary.design | mail@obituary.design | Source-backed companion for short-print and full-online story cost decisions. | https://www.finalnotes.page/obituary-cost/ | obituary cost guide |
+| P2 | Everplans | Confirm current Everplans editorial/contact path | Companion checklist for death notice and obituary checklist readers. | https://www.finalnotes.page/obituary-checklist/ | obituary checklist |
+| P2 | ObitsArchive | https://www.obitsarchive.com/contact or current support/editorial path | Supplemental pre-publication checklist for obituary template readers. | https://www.finalnotes.page/obituary-checklist/ | obituary information checklist |
+| P2 | Memorials.com | https://www.memorials.com/contact-information.php or current editorial/contact path | Checklist companion for its step-by-step obituary-writing guide. | https://www.finalnotes.page/obituary-checklist/ | writing an obituary checklist |
+| P3 | Survivorship A to Z | https://survivorshipatoz.org/contact or current page contact path | Resource suggestion for what-to-include and what-to-leave-out planning readers. | https://www.finalnotes.page/obituary-checklist/ | obituary planning checklist |
+| P3 | American Heritage Cemetery & Funeral Home | https://www.thehealingstartshere.com/contact-us or current funeral-home contact path | Family-facing checklist before readers contact the funeral home or newspaper. | https://www.finalnotes.page/obituary-checklist/ | obituary checklist |
+| P3 | Checklist.com | https://checklist.com/contact or current site contact path | Focused obituary companion for funeral-planning checklist readers. | https://www.finalnotes.page/obituary-checklist/ | obituary information checklist |
 | Hold | Chronic Joy | https://chronic-joy.org/write-for-us/ | Human-written grief/lament post only if invited. | https://www.finalnotes.page/obituary-story-worksheet/ | obituary reflection worksheet |
 
 ## Send Log
@@ -229,6 +236,12 @@ Execution queue: `docs/seo/backlink-send-queue.md`
 |  | Funeral Consumers Alliance | `docs/seo/pitches/93-funeral-consumers-alliance-obituary-cost.md` | /obituary-cost/ |  |  |  |  | Consumer price-transparency target |
 |  | Funeral Cost Analyzer | `docs/seo/pitches/94-funeral-cost-analyzer-obituary-cost.md` | /obituary-cost/ |  |  |  |  | Funeral-cost resource target |
 |  | obituary.design | `docs/seo/pitches/95-obituary-design-cost-guide.md` | /obituary-cost/ |  |  |  |  | 2026 newspaper obituary cost target |
+|  | Everplans | `docs/seo/pitches/96-everplans-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Obituary checklist resource target |
+|  | ObitsArchive | `docs/seo/pitches/97-obitsarchive-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Obituary template checklist target |
+|  | Memorials.com | `docs/seo/pitches/98-memorials-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Step-by-step writing guide target |
+|  | Survivorship A to Z | `docs/seo/pitches/99-survivorshipatoz-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Include/not-include planning target |
+|  | American Heritage Cemetery & Funeral Home | `docs/seo/pitches/100-american-heritage-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Funeral-home resource target |
+|  | Checklist.com | `docs/seo/pitches/101-checklistcom-obituary-checklist.md` | /obituary-checklist/ |  |  |  |  | Funeral-planning checklist target |
 |  | Chronic Joy | `docs/seo/pitches/19-chronic-joy-obituary-reflection-post.md` | /obituary-story-worksheet/ | Hold unless invited |  |  |  | Human-written only |
 |  | Modern Loss | Hold until submissions reopen | /obituary-stories/ | No open calls on 2026-06-04 |  |  |  | Check weekly |
 

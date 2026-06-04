@@ -137,6 +137,9 @@ export default function ObituaryStoryWorksheetPage() {
                 <Link href="/how-to-write-an-obituary-story/">Read the writing guide</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-checklist/">Obituary checklist</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/obituary-writing-prompts/">Writing prompts</Link>
               </Button>
               <Button asChild>
@@ -207,7 +210,7 @@ export default function ObituaryStoryWorksheetPage() {
             <div>
               <h2 id="best-link">Best Link Target For Worksheet Pages</h2>
               <p>
-                Use this page for library resource lists, funeral-home planning resources, genealogy prompts, grief-writing guides, and classroom worksheets. For genealogy search, citation, and obituary-record lookup resources, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For obituary/death-notice comparison pages, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>. For obituary/eulogy comparison pages, use the <Link href="/obituary-vs-eulogy/">obituary vs eulogy explainer</Link>. For obituary privacy and scam-safety pages, use the <Link href="/what-not-to-include-in-an-obituary/">what not to include in an obituary checklist</Link>. For journalism lessons and reported obituary article resources, use the <Link href="/obituary-articles/">obituary articles page</Link>. For full lesson-plan repositories, use the <Link href="/obituary-lesson-plan/">obituary lesson plan</Link>. For prompt banks and legacy interview resources, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For copyable formats, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sample structures, use the <Link href="/obituary-examples/">obituary examples page</Link>. For the longer explanation, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>.
+                Use this page for library resource lists, funeral-home planning resources, genealogy prompts, grief-writing guides, and classroom worksheets. For a broader pre-publication checklist, use the <Link href="/obituary-checklist/">obituary checklist</Link>. For genealogy search, citation, and obituary-record lookup resources, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For obituary/death-notice comparison pages, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>. For obituary/eulogy comparison pages, use the <Link href="/obituary-vs-eulogy/">obituary vs eulogy explainer</Link>. For obituary privacy and scam-safety pages, use the <Link href="/what-not-to-include-in-an-obituary/">what not to include in an obituary checklist</Link>. For journalism lessons and reported obituary article resources, use the <Link href="/obituary-articles/">obituary articles page</Link>. For full lesson-plan repositories, use the <Link href="/obituary-lesson-plan/">obituary lesson plan</Link>. For prompt banks and legacy interview resources, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For copyable formats, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For sample structures, use the <Link href="/obituary-examples/">obituary examples page</Link>. For the longer explanation, use the <Link href="/how-to-write-an-obituary-story/">obituary story writing guide</Link>.
               </p>
             </div>
             <Link href="/obituary-story-worksheet/">{absoluteUrl("/obituary-story-worksheet/")}</Link>

@@ -217,6 +217,9 @@ export default function ObituaryCostPage() {
                 <Link href="/memorial-donation-wording-obituary/">Donation wording</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-checklist/">Checklist</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/what-not-to-include-in-an-obituary/">Privacy checklist</Link>
               </Button>
             </div>
@@ -290,7 +293,7 @@ export default function ObituaryCostPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Cost Resources</h2>
               <p>
-                Use this page for funeral-cost articles, newspaper obituary pricing pages, funeral-home planning guides, consumer-advocacy resources, and family budgeting pages that explain paid obituaries or death notice costs. For placement deadlines and proof-of-death rules, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For short notice versus full obituary decisions, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>. For a shorter print draft, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For donation language before publication, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For public-detail review, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>.
+                Use this page for funeral-cost articles, newspaper obituary pricing pages, funeral-home planning guides, consumer-advocacy resources, and family budgeting pages that explain paid obituaries or death notice costs. For a general pre-publication information checklist, use the <Link href="/obituary-checklist/">obituary checklist</Link>. For placement deadlines and proof-of-death rules, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>. For short notice versus full obituary decisions, use the <Link href="/obituary-vs-death-notice/">obituary vs death notice explainer</Link>. For a shorter print draft, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For donation language before publication, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For public-detail review, use the <Link href="/what-not-to-include-in-an-obituary/">obituary privacy checklist</Link>.
               </p>
             </div>
             <Link href="/obituary-cost/">{absoluteUrl("/obituary-cost/")}</Link>

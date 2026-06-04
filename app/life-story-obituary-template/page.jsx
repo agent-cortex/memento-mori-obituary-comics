@@ -206,6 +206,9 @@ export default function LifeStoryObituaryTemplatePage() {
                 <Link href="/obituary-story-worksheet/">Printable worksheet</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-checklist/">Checklist</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/obituary-research-guide/">Research guide</Link>
               </Button>
               <Button asChild>
@@ -229,7 +232,7 @@ export default function LifeStoryObituaryTemplatePage() {
               A life story obituary template gives structure without flattening the person into a form. Use it after collecting the public facts, then add one specific scene, object, relationship, or source-backed detail that makes the life recognizable.
             </p>
             <p>
-              If you only need a basic death notice, keep the obituary short. If you have room online, use the fuller template and bring in the story material from the <Link href="/obituary-research-guide/">obituary research guide</Link>, <Link href="/obituary-writing-prompts/">obituary writing prompts</Link>, and <Link href="/obituary-story-worksheet/">worksheet</Link>. If print price is the limiting factor, use the <Link href="/obituary-cost/">obituary cost guide</Link> before cutting the story down.
+              If you only need a basic death notice, keep the obituary short. If you have room online, use the fuller template and bring in the story material from the <Link href="/obituary-checklist/">obituary checklist</Link>, <Link href="/obituary-research-guide/">obituary research guide</Link>, <Link href="/obituary-writing-prompts/">obituary writing prompts</Link>, and <Link href="/obituary-story-worksheet/">worksheet</Link>. If print price is the limiting factor, use the <Link href="/obituary-cost/">obituary cost guide</Link> before cutting the story down.
             </p>
           </section>
 
@@ -314,7 +317,7 @@ export default function LifeStoryObituaryTemplatePage() {
             <div>
               <h2 id="best-link">Best Link Target For Template Pages</h2>
               <p>
-                Use this page for obituary template roundups, funeral-home writing resources, family-history forms, memorial program resources, and classroom writing assignments that need a story-focused template. For question banks, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For print length, photo fees, and quote questions before payment, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For memorial contributions and in-lieu-of-flowers examples, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For newspaper placement requirements after the draft is ready, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>.
+                Use this page for obituary template roundups, funeral-home writing resources, family-history forms, memorial program resources, and classroom writing assignments that need a story-focused template. For pre-publication information gathering, use the <Link href="/obituary-checklist/">obituary checklist</Link>. For question banks, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For print length, photo fees, and quote questions before payment, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For memorial contributions and in-lieu-of-flowers examples, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For newspaper placement requirements after the draft is ready, use the <Link href="/how-to-submit-an-obituary-to-a-newspaper/">newspaper obituary submission checklist</Link>.
               </p>
             </div>
             <Link href="/life-story-obituary-template/">{absoluteUrl("/life-story-obituary-template/")}</Link>

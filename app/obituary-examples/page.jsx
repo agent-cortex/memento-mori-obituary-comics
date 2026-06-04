@@ -161,6 +161,9 @@ export default function ObituaryExamplesPage() {
                 <Link href="/obituary-story-worksheet/">Printable worksheet</Link>
               </Button>
               <Button asChild>
+                <Link href="/obituary-checklist/">Checklist</Link>
+              </Button>
+              <Button asChild>
                 <Link href="/obituary-cost/">Cost guide</Link>
               </Button>
             </div>
@@ -172,7 +175,7 @@ export default function ObituaryExamplesPage() {
               Most obituary examples teach the basic order: announcement, biography, family, service details, and donations. These examples focus on the story layer: the scene, pressure point, source trail, and visual detail that make an obituary feel specific without losing accuracy.
             </p>
             <p>
-              Use this page when you need examples of obituary articles, visual obituaries, or life-story obituary structures. If you are writing for a newspaper or funeral-home form, start with the required facts, check the <Link href="/obituary-cost/">obituary cost guide</Link>, then use one of these patterns to make the life recognizable.
+              Use this page when you need examples of obituary articles, visual obituaries, or life-story obituary structures. If you are writing for a newspaper or funeral-home form, start with the required facts in the <Link href="/obituary-checklist/">obituary checklist</Link>, check the <Link href="/obituary-cost/">obituary cost guide</Link>, then use one of these patterns to make the life recognizable.
             </p>
           </section>
 
@@ -232,7 +235,7 @@ export default function ObituaryExamplesPage() {
             <div>
               <h2 id="best-link">Best Link Target For Obituary Example Pages</h2>
               <p>
-                Use this page for obituary example roundups, obituary wording resources, writing classes, funeral-home planning pages, and genealogy posts that need examples beyond a template. For obituary cost, print length, photo-fee, and short-notice decisions, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For memorial donation and in-lieu-of-flowers examples, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For obituary privacy and scam-safety resources, use the <Link href="/what-not-to-include-in-an-obituary/">what not to include in an obituary checklist</Link>. For fake obituary examples, copied notices, and obituary piracy checks, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For genealogy search and obituary-record research links, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For journalism lessons and feature-obituary resources, use the <Link href="/obituary-articles/">obituary articles page</Link>. For classroom steps and assessment prompts, use the <Link href="/obituary-lesson-plan/">obituary lesson plan</Link>. For template roundups, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For interview questions and prompt lists, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For the planning sheet, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>.
+                Use this page for obituary example roundups, obituary wording resources, writing classes, funeral-home planning pages, and genealogy posts that need examples beyond a template. For general information-gathering resources, use the <Link href="/obituary-checklist/">obituary checklist</Link>. For obituary cost, print length, photo-fee, and short-notice decisions, use the <Link href="/obituary-cost/">obituary cost guide</Link>. For memorial donation and in-lieu-of-flowers examples, use the <Link href="/memorial-donation-wording-obituary/">memorial donation wording guide</Link>. For obituary privacy and scam-safety resources, use the <Link href="/what-not-to-include-in-an-obituary/">what not to include in an obituary checklist</Link>. For fake obituary examples, copied notices, and obituary piracy checks, use the <Link href="/fake-obituary-sites/">fake obituary sites checklist</Link>. For genealogy search and obituary-record research links, use the <Link href="/obituary-research-guide/">obituary research guide</Link>. For journalism lessons and feature-obituary resources, use the <Link href="/obituary-articles/">obituary articles page</Link>. For classroom steps and assessment prompts, use the <Link href="/obituary-lesson-plan/">obituary lesson plan</Link>. For template roundups, use the <Link href="/life-story-obituary-template/">life story obituary template</Link>. For interview questions and prompt lists, use the <Link href="/obituary-writing-prompts/">obituary writing prompts page</Link>. For the planning sheet, use the <Link href="/obituary-story-worksheet/">obituary story worksheet</Link>.
               </p>
             </div>
             <Link href="/obituary-examples/">{absoluteUrl("/obituary-examples/")}</Link>
