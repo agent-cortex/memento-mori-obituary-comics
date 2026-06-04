@@ -1,5 +1,78 @@
 [
   {
+    "slug": "solzhenitsyn-gulag-witness",
+    "title": "The Man Who Wrote the Camps",
+    "person": "Aleksandr Isayevich Solzhenitsyn",
+    "years": "1918–2008",
+    "dek": "Russian novelist and historian who exposed the Soviet Gulag.",
+    "mortality_event": "1945 arrest, eight years in Soviet labour camps, internal exile, and cancer before the works that exposed the Gulag.",
+    "published_at": "2026-06-04",
+    "pages": [
+      "pages/01-solzhenitsyn-gulag-witness.jpg",
+      "pages/02-solzhenitsyn-gulag-witness.jpg",
+      "pages/03-solzhenitsyn-gulag-witness.jpg",
+      "pages/04-solzhenitsyn-gulag-witness.jpg",
+      "pages/05-solzhenitsyn-gulag-witness.jpg",
+      "pages/06-solzhenitsyn-gulag-witness.jpg",
+      "pages/07-solzhenitsyn-gulag-witness.jpg",
+      "pages/08-solzhenitsyn-gulag-witness.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/02-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/03-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/04-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/05-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/06-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/07-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ],
+      "pages/08-solzhenitsyn-gulag-witness.jpg": [
+        1080,
+        1440
+      ]
+    },
+    "sources": [
+      {
+        "name": "Britannica",
+        "url": "https://www.britannica.com/biography/Aleksandr-Solzhenitsyn"
+      },
+      {
+        "name": "Nobel Prize",
+        "url": "https://www.nobelprize.org/prizes/literature/1970/solzhenitsyn/facts/"
+      },
+      {
+        "name": "The Guardian",
+        "url": "https://www.theguardian.com/books/2008/aug/04/nobelprize.russia2"
+      },
+      {
+        "name": "Aleksandr Solzhenitsyn Center",
+        "url": "https://www.solzhenitsyncenter.org/his-life-overview/biography"
+      }
+    ],
+    "pdf": "solzhenitsyn-gulag-witness.pdf",
+    "contact_sheet": "contact-sheet.jpg"
+  },
+  {
     "slug": "primo-levi",
     "title": "The Chemist Who Witnessed",
     "person": "Primo Levi",
