@@ -28,6 +28,9 @@
     "blob:backfill:dry-run": "node scripts/backfill_blob_from_public_media.js --dry-run",
     "blob:dry-run": "node scripts/upload_comics_to_blob.js --dry-run",
     "blob:upload": "node scripts/upload_comics_to_blob.js",
+    "blob:upload-live": "node scripts/upload_comics_to_live_blob.js",
+    "blob:upload-live:dry-run": "node scripts/upload_comics_to_live_blob.js --dry-run",
+    "blob:verify-live": "node scripts/verify_live_blob_upload.js",
     "test": "node --test tests/*.test.js"
   },
   "dependencies": {
