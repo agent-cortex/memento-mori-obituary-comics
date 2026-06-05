@@ -34,6 +34,8 @@ export const metadata = {
 export default function HomePage() {
   const comics = getComics();
   const latest = getLatestComic();
+  const starterComics = comics.slice(0, 3);
+  const archiveCount = comics.length;
 
   return (
     <>
@@ -60,6 +62,31 @@ export default function HomePage() {
                 <Link href="#archive">Browse archive</Link>
               </Button>
             </div>
+            <div className="hero-proof" aria-label="Archive trust signals">
+              <span>{archiveCount} source-backed comics</span>
+              <span>Crawlable summaries and source links</span>
+              <span>PDF and share links on every issue</span>
+            </div>
+            {starterComics.length ? (
+              <section className="hero-starters" aria-labelledby="hero-starters-heading">
+                <div className="hero-starters-head">
+                  <div className="kicker">Start Here</div>
+                  <h2 id="hero-starters-heading">Choose a life to enter through</h2>
+                </div>
+                <div className="hero-starters-list">
+                  {starterComics.map((comic, index) => (
+                    <Link className="hero-starter-card" href={`/comics/${comic.slug}/#read`} key={comic.slug}>
+                      <span className="hero-starter-index">0{index + 1}</span>
+                      <span className="hero-starter-copy">
+                        <strong>{comic.person}</strong>
+                        <span>{comic.dek}</span>
+                      </span>
+                      <span className="hero-starter-cta">Read now</span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
           </section>
           <LatestPanel comic={latest} />
         </div>
