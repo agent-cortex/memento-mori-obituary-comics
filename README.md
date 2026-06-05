@@ -18,6 +18,8 @@ These are the main public citation targets for readers, librarians, journalists,
 - [Obituary research guide](https://www.finalnotes.page/obituary-research-guide/)
 - [Press and source-request resources](https://www.finalnotes.page/press/)
 
+Repository citation map: [public obituary citation resources](docs/public-obituary-citation-resources.md).
+
 ## Maintainer surface
 
 This project is maintained as a small open-source publishing system. The repo includes:
