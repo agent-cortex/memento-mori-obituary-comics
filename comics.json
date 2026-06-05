@@ -1,5 +1,78 @@
 [
   {
+    "slug": "cervantes-captive-knight",
+    "title": "The Captive Who Wrote the Knight",
+    "person": "Miguel de Cervantes Saavedra",
+    "years": "1547–1616",
+    "dek": "Spanish soldier, captive, playwright, and novelist whose Don Quixote helped invent the modern novel.",
+    "mortality_event": "Wounded at Lepanto in 1571 and held captive in Algiers for five years before Don Quixote.",
+    "published_at": "2026-06-05",
+    "pages": [
+      "pages/01-cervantes-captive-knight.jpg",
+      "pages/02-cervantes-captive-knight.jpg",
+      "pages/03-cervantes-captive-knight.jpg",
+      "pages/04-cervantes-captive-knight.jpg",
+      "pages/05-cervantes-captive-knight.jpg",
+      "pages/06-cervantes-captive-knight.jpg",
+      "pages/07-cervantes-captive-knight.jpg",
+      "pages/08-cervantes-captive-knight.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/02-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/03-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/04-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/05-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/06-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/07-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ],
+      "pages/08-cervantes-captive-knight.jpg": [
+        1080,
+        1440
+      ]
+    },
+    "sources": [
+      {
+        "name": "Britannica",
+        "url": "https://www.britannica.com/biography/Miguel-de-Cervantes"
+      },
+      {
+        "name": "Museo Casa Natal de Cervantes",
+        "url": "https://museocasanataldecervantes.org/meet-cervantes/"
+      },
+      {
+        "name": "BBC Culture",
+        "url": "https://www.bbc.com/culture/article/20160421-when-cervantes-was-captured-by-pirates"
+      },
+      {
+        "name": "The Guardian",
+        "url": "https://www.theguardian.com/books/2003/dec/13/classics.miguelcervantes"
+      }
+    ],
+    "pdf": "cervantes-captive-knight.pdf",
+    "contact_sheet": "contact-sheet.jpg"
+  },
+  {
     "slug": "solzhenitsyn-gulag-witness",
     "title": "The Man Who Wrote the Camps",
     "person": "Aleksandr Isayevich Solzhenitsyn",
