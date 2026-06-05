@@ -8,6 +8,16 @@ Fallback Vercel URL: https://memento-mori-obituary-comics.vercel.app/
 
 Repository: https://github.com/megabyte0x/memento-mori-obituary-comics
 
+## Public resource links
+
+These are the main public citation targets for readers, librarians, journalists, and teachers:
+
+- [Obituary stories and articles](https://www.finalnotes.page/obituary-stories/)
+- [Obituary articles as reported life stories](https://www.finalnotes.page/obituary-articles/)
+- [How to write an obituary story](https://www.finalnotes.page/how-to-write-an-obituary-story/)
+- [Obituary research guide](https://www.finalnotes.page/obituary-research-guide/)
+- [Press and source-request resources](https://www.finalnotes.page/press/)
+
 ## Maintainer surface
 
 This project is maintained as a small open-source publishing system. The repo includes:
