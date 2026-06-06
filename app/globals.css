@@ -423,7 +423,7 @@ a {
 .latest-panel-cover {
   aspect-ratio: auto;
   width: 100%;
-  height: clamp(360px, 38vw, 510px);
+  height: var(--latest-cover-height, clamp(420px, 49vw, 620px));
   overflow: hidden;
   border: 1px solid rgba(223, 177, 91, 0.72);
   border-radius: 12px;
