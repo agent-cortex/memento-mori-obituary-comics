@@ -1531,6 +1531,8 @@ body.theme-stark .reader-footer {
   color: var(--paper);
   text-decoration: none;
   transition: var(--transition);
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .source-chip:hover {
   border-color: var(--gold);
@@ -1689,8 +1691,8 @@ body.theme-stark .reader-footer {
     grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     border-radius: 99px;
-    gap: 8px;
-    padding: 6px 12px;
+    gap: 6px;
+    padding: 6px 10px;
     top: 10px;
     width: calc(100vw - 24px);
     max-width: 480px;
@@ -1718,8 +1720,8 @@ body.theme-stark .reader-footer {
   .reader-toolbar .reader-title {
     order: 0;
     text-align: center;
-    font-size: 11px;
-    padding: 6px 10px;
+    font-size: 10px;
+    padding: 6px 8px;
     border: none;
     background: rgba(255, 255, 255, 0.035);
     border-radius: 99px;
@@ -1728,14 +1730,14 @@ body.theme-stark .reader-footer {
     text-overflow: ellipsis;
     margin: 0 auto;
     width: 100%;
-    max-width: 220px;
+    max-width: none;
   }
 
   .reader-toolbar .reader-actions {
     grid-column: auto;
     width: auto;
     justify-content: flex-end;
-    gap: 6px;
+    gap: 4px;
     flex-shrink: 0;
   }
   
@@ -1745,7 +1747,10 @@ body.theme-stark .reader-footer {
 
   .reader-btn,
   .toolbar-select-btn {
-    padding: 7px 11px;
+    min-height: 30px;
+    padding: 6px 9px;
+    font-size: 10px;
+    gap: 4px;
   }
   
   /* Reduced Vertical Padding since toolbar is now extremely compact */
@@ -1756,6 +1761,53 @@ body.theme-stark .reader-footer {
     width: 42px;
     height: 42px;
     font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .epilogue-sources {
+    gap: 10px;
+  }
+
+  .source-chip {
+    width: 100%;
+    padding: 10px 14px;
+    text-align: center;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 420px) {
+  .reader-toolbar {
+    width: calc(100vw - 16px);
+    gap: 4px;
+    padding: 6px 8px;
+  }
+
+  .reader-toolbar .reader-back {
+    width: 30px;
+    height: 30px;
+  }
+
+  .reader-toolbar .reader-title {
+    font-size: 9px;
+    padding: 6px;
+  }
+
+  .reader-toolbar .reader-actions {
+    gap: 3px;
+  }
+
+  .reader-btn,
+  .toolbar-select-btn {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .reader-btn svg,
+  .toolbar-select-btn svg {
+    width: 12px;
+    height: 12px;
   }
 }
 .reader-source-line { max-width: 780px; margin: 0 auto; }

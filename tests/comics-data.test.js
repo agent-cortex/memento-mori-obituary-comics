@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
+import { sourceItems } from "../lib/comics.js";
 import { comicAssetBlobPath, comicMediaPath } from "../lib/media-paths.js";
 
 const ROOT = process.cwd();
@@ -43,4 +44,35 @@ test("comic data has required metadata and stable Blob-backed media paths", () =
       assert.equal(comicMediaPath(comic, comic.contact_sheet), `/media/comics/${comic.slug}/${comic.contact_sheet}`);
     }
   }
+});
+
+test("sourceItems extracts embedded URLs from malformed source labels", () => {
+  const normalized = sourceItems({
+    sources: [
+      "United States Holocaust Memorial Museum: https://encyclopedia.ushmm.org/content/en/article/elie-wiesel",
+      {
+        name: "Nobel Prize: https://www.nobelprize.org/prizes/peace/1986/wiesel/biographical/",
+        url: "",
+      },
+      {
+        name: "",
+        url: "https://www.britannica.com/biography/Elie-Wiesel",
+      },
+    ],
+  });
+
+  assert.deepEqual(normalized, [
+    {
+      name: "United States Holocaust Memorial Museum",
+      url: "https://encyclopedia.ushmm.org/content/en/article/elie-wiesel",
+    },
+    {
+      name: "Nobel Prize",
+      url: "https://www.nobelprize.org/prizes/peace/1986/wiesel/biographical/",
+    },
+    {
+      name: "https://www.britannica.com/biography/Elie-Wiesel",
+      url: "https://www.britannica.com/biography/Elie-Wiesel",
+    },
+  ]);
 });
