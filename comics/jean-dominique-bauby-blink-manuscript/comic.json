@@ -1,0 +1,64 @@
+{
+  "slug": "jean-dominique-bauby-blink-manuscript",
+  "title": "Blink Manuscript",
+  "person": "Jean-Dominique Bauby",
+  "years": "1952–1997",
+  "dek": "French Elle editor who dictated a landmark memoir one eyelid blink at a time.",
+  "mortality_event": "1995 stroke causing locked-in syndrome before he dictated The Diving Bell and the Butterfly by blinking.",
+  "published_at": "2026-06-07",
+  "pages": [
+    "pages/01-jean-dominique-bauby-blink-manuscript.jpg",
+    "pages/02-jean-dominique-bauby-blink-manuscript.jpg",
+    "pages/03-jean-dominique-bauby-blink-manuscript.jpg",
+    "pages/04-jean-dominique-bauby-blink-manuscript.jpg",
+    "pages/05-jean-dominique-bauby-blink-manuscript.jpg",
+    "pages/06-jean-dominique-bauby-blink-manuscript.jpg",
+    "pages/07-jean-dominique-bauby-blink-manuscript.jpg"
+  ],
+  "page_dimensions": {
+    "pages/01-jean-dominique-bauby-blink-manuscript.jpg": [
+      768,
+      1408
+    ],
+    "pages/02-jean-dominique-bauby-blink-manuscript.jpg": [
+      768,
+      1408
+    ],
+    "pages/03-jean-dominique-bauby-blink-manuscript.jpg": [
+      768,
+      1408
+    ],
+    "pages/04-jean-dominique-bauby-blink-manuscript.jpg": [
+      720,
+      1280
+    ],
+    "pages/05-jean-dominique-bauby-blink-manuscript.jpg": [
+      720,
+      1280
+    ],
+    "pages/06-jean-dominique-bauby-blink-manuscript.jpg": [
+      720,
+      1280
+    ],
+    "pages/07-jean-dominique-bauby-blink-manuscript.jpg": [
+      720,
+      1280
+    ]
+  },
+  "sources": [
+    {
+      "name": "Bookreporter",
+      "url": "https://www.bookreporter.com/authors/jean-dominique-bauby"
+    },
+    {
+      "name": "Guardian",
+      "url": "https://www.theguardian.com/film/2008/jan/27/2"
+    },
+    {
+      "name": "Britannica",
+      "url": "https://www.britannica.com/topic/The-Diving-Bell-and-the-Butterfly-film-by-Schnabel"
+    }
+  ],
+  "pdf": "jean-dominique-bauby-blink-manuscript.pdf",
+  "contact_sheet": "contact-sheet.jpg"
+}
