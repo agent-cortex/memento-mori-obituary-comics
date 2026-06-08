@@ -1,5 +1,74 @@
 [
   {
+    "slug": "alfred-nobel-merchant-of-death",
+    "title": "The Merchant of Death",
+    "person": "Alfred Nobel",
+    "years": "1833–1896",
+    "dek": "Swedish chemist who invented dynamite, read his own premature obituary, and rewrote his legacy by founding the Nobel Prizes.",
+    "mortality_event": "1864 Heleneborg explosion killed brother Emil; 1888 premature obituary called him 'merchant of death' — twin hinges that led to the Nobel Prizes.",
+    "published_at": "2026-06-08",
+    "pages": [
+      "pages/01-alfred-nobel-merchant-of-death.jpg",
+      "pages/02-alfred-nobel-merchant-of-death.jpg",
+      "pages/03-alfred-nobel-merchant-of-death.jpg",
+      "pages/04-alfred-nobel-merchant-of-death.jpg",
+      "pages/05-alfred-nobel-merchant-of-death.jpg",
+      "pages/06-alfred-nobel-merchant-of-death.jpg",
+      "pages/07-alfred-nobel-merchant-of-death.jpg",
+      "pages/08-alfred-nobel-merchant-of-death.jpg"
+    ],
+    "page_dimensions": {
+      "pages/01-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/02-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/03-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/04-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/05-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/06-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/07-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ],
+      "pages/08-alfred-nobel-merchant-of-death.jpg": [
+        720,
+        1280
+      ]
+    },
+    "sources": [
+      {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Alfred_Nobel"
+      },
+      {
+        "name": "Britannica",
+        "url": "https://www.britannica.com/biography/Alfred-Nobel"
+      },
+      {
+        "name": "NobelPrize.org",
+        "url": "https://www.nobelprize.org/alfred-nobel"
+      }
+    ],
+    "pdf": "alfred-nobel-merchant-of-death.pdf",
+    "contact_sheet": "contact-sheet.jpg"
+  },
+  {
     "slug": "jean-dominique-bauby-blink-manuscript",
     "title": "Blink Manuscript",
     "person": "Jean-Dominique Bauby",
