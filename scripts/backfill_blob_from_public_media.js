@@ -10,7 +10,7 @@ import { loadEnvFile } from "./upload_comics_to_blob.js";
 
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ONE_YEAR = 31536000;
-const DEFAULT_SOURCE_BASE = "https://memento-mori-obituary-comics.vercel.app";
+const DEFAULT_SOURCE_BASE = "https://www.finalnotes.page";
 const DEFAULT_CONCURRENCY = 4;
 
 function parseArgs(argv) {
