@@ -3,51 +3,46 @@
   "title": "George Orwell: The Throat of Truth",
   "person": "George Orwell",
   "years": "1903–1950",
-  "dek": "English novelist and essayist whose wound in Spain sharpened his lifelong fight against political lies.",
-  "mortality_event": "Shot through the throat near Huesca during the Spanish Civil War in May 1937; survived with permanent damage to his voice before writing Animal Farm and Nineteen Eighty-Four.",
+  "dek": "The writer who survived a bullet through the throat and gave power a name.",
+  "mortality_event": "Shot through the throat by a sniper in the Spanish Civil War in 1937; survived to write Animal Farm and Nineteen Eighty-Four before dying of tuberculosis in 1950.",
   "published_at": "2026-06-12",
   "pages": [
-    "pages/01-page-cover.jpg",
-    "pages/02-page-before-spain.jpg",
-    "pages/03-page-huesca.jpg",
-    "pages/04-page-damaged-voice.jpg",
-    "pages/05-page-catalonia.jpg",
-    "pages/06-page-animal-farm.jpg",
-    "pages/07-page-1984.jpg",
-    "pages/08-page-legacy.jpg"
+    "pages/01-george-orwell-throat-of-truth.jpg",
+    "pages/02-george-orwell-throat-of-truth.jpg",
+    "pages/03-george-orwell-throat-of-truth.jpg",
+    "pages/04-george-orwell-throat-of-truth.jpg",
+    "pages/05-george-orwell-throat-of-truth.jpg",
+    "pages/06-george-orwell-throat-of-truth.jpg",
+    "pages/07-george-orwell-throat-of-truth.jpg"
   ],
   "page_dimensions": {
-    "pages/01-page-cover.jpg": [
-      1200,
-      1600
+    "pages/01-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ],
-    "pages/02-page-before-spain.jpg": [
-      1200,
-      1600
+    "pages/02-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ],
-    "pages/03-page-huesca.jpg": [
-      1200,
-      1600
+    "pages/03-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ],
-    "pages/04-page-damaged-voice.jpg": [
-      1200,
-      1600
+    "pages/04-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ],
-    "pages/05-page-catalonia.jpg": [
-      1200,
-      1600
+    "pages/05-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ],
-    "pages/06-page-animal-farm.jpg": [
-      1200,
-      1600
+    "pages/06-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ],
-    "pages/07-page-1984.jpg": [
-      1200,
-      1600
-    ],
-    "pages/08-page-legacy.jpg": [
-      1200,
-      1600
+    "pages/07-george-orwell-throat-of-truth.jpg": [
+      720,
+      1280
     ]
   },
   "sources": [
@@ -56,12 +51,12 @@
       "url": "https://www.britannica.com/biography/George-Orwell"
     },
     {
-      "name": "Orwell Foundation",
+      "name": "The Orwell Foundation",
       "url": "https://www.orwellfoundation.com/the-orwell-foundation/orwell/biography/"
     },
     {
-      "name": "PubMed",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/17277635/"
+      "name": "NEH",
+      "url": "https://www.neh.gov/article/george-orwell-outdoorsman"
     }
   ],
   "pdf": "george-orwell-throat-of-truth.pdf",
